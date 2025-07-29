@@ -1,0 +1,20 @@
+<!-- ==========================================
+     NAVBAR PILL
+     Component ID: DMC-CMP-4000
+     Pill-shaped navbar with centered logo as nav item
+     ========================================== -->
+<nav class="dmc-navbar-bar">
+  <div class="dmc-navbar-links dmc-navbar-links-left">
+    <a *ngFor="let link of leftNavLinks" [href]="link.url" class="dmc-navbar-link" [attr.aria-label]="link.label">
+      {{ link.label }}
+    </a>
+  </div>
+  <div class="dmc-navbar-logo-container">
+    <img src="assets/favicon.ico" alt="DAMICO Logo" class="dmc-navbar-logo" />
+  </div>
+  <div class="dmc-navbar-links dmc-navbar-links-right">
+    <a *ngFor="let link of rightNavLinks" [href]="link.url" class="dmc-navbar-link" [attr.aria-label]="link.label">
+      {{ link.label }}
+    </a>
+  </div>
+</nav>
