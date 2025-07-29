@@ -1,0 +1,208 @@
+/* ==========================================================================
+   SITE COMPONENT STYLES
+   Component ID: [DMC-CMP-0200]
+   
+   Main site layout and component positioning
+   ========================================================================== */
+
+/* ==========================================================================
+   VARIABLES AND CONFIGURATION
+   Component-specific variables and settings
+   ========================================================================== */
+:host {
+    /* Layout Heights */
+    --dmc-site-header-strip-height: 2.75rem;
+    --dmc-site-header-bar-height: 50px;
+    --dmc-site-header-margin: var(--dmc-site-header-strip-height);
+    --dmc-site-breadcrumb-height: 40px;
+    --dmc-site-footer-height: 60px;
+    
+    /* Spacing */
+    --dmc-site-padding: 1rem;
+    --dmc-site-max-width: 1200px;
+    
+    /* Colors */
+    --dmc-site-primary-color: #0056b3;
+    --dmc-site-secondary-color: #f8f9fa;
+    --dmc-site-text-color: #333;
+    --dmc-site-link-color: #0056b3;
+    --dmc-site-border-color: #e9ecef;
+    
+    /* Typography */
+    --dmc-site-font-family: 'Arial', sans-serif;
+    --dmc-site-font-size: 16px;
+    --dmc-site-line-height: 1.5;
+
+    /* Debug Colors - REMOVE IN PRODUCTION */
+    --debug-border-color: rgba(0, 86, 179, 0.3);
+}
+
+/* Note: Device-specific variables are now handled in the TypeScript code
+   in the updateLayoutForDeviceType method. This ensures consistent
+   responsive behavior across the application. */
+
+/* ==========================================================================
+   BASE STYLES
+   Container and general layout styles
+   ========================================================================== */
+.dmc-site-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    font-family: var(--dmc-site-font-family);
+    font-size: var(--dmc-site-font-size);
+    line-height: var(--dmc-site-line-height);
+    color: var(--dmc-site-text-color);
+}
+
+/* ==========================================================================
+   HEADER STRIP SECTION
+   Fixed position top navigation bar
+   ========================================================================== */
+dmc-header-strip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--dmc-site-header-strip-height);
+}
+
+/* ==========================================================================
+   HEADER BAR SECTION
+   Main navigation bar below header strip
+   ========================================================================== */
+.dmc-site-dynamic-header {
+    margin-top: var(--dmc-site-header-margin);
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    padding: 0 var(--dmc-site-padding);
+}
+
+/* ---------- DEVICE-SPECIFIC MARGIN ADJUSTMENTS ---------- */
+/* Mobile Layouts: Margin exactly equal to header strip height */
+.dmc-dynamic-header--mobile-small,
+.dmc-dynamic-header--mobile-large {
+    margin-top: var(--dmc-site-header-strip-height);
+}
+
+/* Tablet Small: Start of gradual margin increase */
+.dmc-dynamic-header--tablet-small {
+    margin-top: calc(var(--dmc-site-header-strip-height) + 1.5rem);
+}
+
+/* Tablet Large */
+.dmc-dynamic-header--tablet-large {
+    margin-top: calc(var(--dmc-site-header-strip-height) + 2rem);
+}
+
+/* Laptop Small */
+.dmc-dynamic-header--laptop-small {
+    margin-top: calc(var(--dmc-site-header-strip-height) + 2.5rem);
+}
+
+/* Laptop Large */
+.dmc-dynamic-header--laptop-large {
+    margin-top: calc(var(--dmc-site-header-strip-height) + 3rem);
+}
+
+/* Desktop Small */
+.dmc-dynamic-header--desktop-small {
+    margin-top: calc(var(--dmc-site-header-strip-height) + 3.5rem);
+}
+
+/* Desktop Large */
+.dmc-dynamic-header--desktop-large {
+    margin-top: calc(var(--dmc-site-header-strip-height) + 4rem);
+}
+
+/* Debug Styles - REMOVE IN PRODUCTION */
+.dmc-dynamic-header--debug {
+    border: 1px solid var(--debug-border-color);
+}
+
+/* ==========================================================================
+   BREADCRUMB SECTION
+   Navigation path indicator below header bar
+   ========================================================================== */
+.dmc-site-breadcrumb {
+    position: relative;
+    z-index: 998;
+    height: var(--dmc-site-breadcrumb-height);
+    background-color: var(--dmc-site-secondary-color);
+    border-bottom: 1px solid var(--dmc-site-border-color);
+    padding: 0 var(--dmc-site-padding);
+    margin-top: 1rem; /* Small gap after header bar */
+}
+
+.dmc-breadcrumb-placeholder {
+    font-size: 0.9rem;
+}
+
+.dmc-breadcrumb-placeholder a {
+    color: var(--dmc-site-link-color);
+    text-decoration: none;
+}
+
+.dmc-breadcrumb-placeholder a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   MAIN CONTENT SECTION
+   Primary content area with router outlet
+   ========================================================================== */
+.dmc-site-content {
+    flex: 1;
+    padding: var(--dmc-site-padding);
+    max-width: var(--dmc-site-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    overflow-y: auto;
+    margin-top: 1rem; /* Small gap after breadcrumb */
+}
+
+/* ==========================================================================
+   FOOTER SECTION
+   Site footer with copyright information
+   ========================================================================== */
+.dmc-site-footer {
+    height: var(--dmc-site-footer-height);
+    background-color: var(--dmc-site-secondary-color);
+    padding: 1rem;
+}
+
+.dmc-footer-content {
+    max-width: var(--dmc-site-max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   Media query based style adjustments
+   ========================================================================== */
+
+/* ---------- TABLET (≤768px) ---------- */
+@media (max-width: 768px) {
+    :host {
+        --dmc-site-footer-height: 60px;
+        --dmc-site-breadcrumb-height: 30px;
+        --dmc-site-padding: 0.75rem;
+    }
+    
+    .dmc-site-logo a {
+        font-size: 1rem;
+    }
+}
+
+/* ---------- MOBILE (≤480px) ---------- */
+@media (max-width: 480px) {
+    :host {
+        --dmc-site-padding: 0.5rem;
+        --dmc-site-font-size: 14px;
+    }
+} 

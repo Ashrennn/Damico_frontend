@@ -1,0 +1,70 @@
+<!-- ==========================================
+     SITE COMPONENT
+     Component ID: [DMC-CMP-0200]
+     
+     Layout Structure:
+     1. Header Strip (Fixed, top-most)
+     2. Header Bar (Not fixed, positioned below strip with responsive margin)
+     3. Header Menu (Below header bar, responsive navigation)
+     4. Breadcrumb (Below header menu)
+     5. Main Content (Scrollable)
+     6. Footer (Fixed height)
+     ========================================== -->
+
+<div class="dmc-site-container">
+    <!-- ==========================================
+         HEADER STRIP SECTION
+         Fixed position, top-most navigation
+         Height: var(--dmc-site-header-strip-height)
+         z-index: 1000
+         ========================================== -->
+    <dmc-header-strip class="dmc-header-strip--debug"></dmc-header-strip>
+
+    <!-- ==========================================
+         HEADER BAR SECTION
+         Not fixed, positioned below header strip
+         For mobile: margin-top = header strip height
+         For larger screens: margin-top increases gradually
+         Height: var(--dmc-site-header-bar-height)
+         z-index: 999
+         ========================================== -->
+    <dmc-dynamic-header class="dmc-site-dynamic-header"></dmc-dynamic-header>
+
+    <!-- ==========================================
+         HEADER MENU SECTION
+         Below header bar, responsive navigation
+         Height: var(--dmc-site-header-menu-height)
+         z-index: 998
+         ========================================== -->
+<!--     <dmc-header-menu [class]="'dmc-site-header-menu dmc-header-menu--' + currentDeviceTypeClass">
+    </dmc-header-menu> -->
+
+    <!-- ==========================================
+         BREADCRUMB SECTION
+         Below header menu
+         Height: var(--dmc-site-breadcrumb-height)
+         z-index: 997
+         ========================================== -->
+    <div class="dmc-site-breadcrumb">
+        <dmc-breadcrumb [items]="breadcrumbData"></dmc-breadcrumb>
+    </div>
+
+    <!-- ==========================================
+         MAIN CONTENT SECTION
+         Scrollable area below fixed headers
+         ========================================== -->
+    <main class="dmc-site-content">
+        <router-outlet></router-outlet>
+    </main>
+
+    <!-- ==========================================
+         FOOTER SECTION
+         Fixed height footer at bottom
+         Height: var(--dmc-site-footer-height)
+         ========================================== -->
+    <footer class="dmc-site-footer">
+        <div class="dmc-footer-content">
+            <p>&copy; 2024 Damico Energy. All rights reserved.</p>
+        </div>
+    </footer>
+</div> 
