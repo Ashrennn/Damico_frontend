@@ -1,0 +1,891 @@
+/* ==========================================
+   HOME PAGE STYLES
+   Component ID: DMC-CMP-5000
+   ========================================== */
+
+/* ==========================================
+   HERO SECTION
+   Damilube product showcase
+   ========================================== */
+.dmc-home-hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a1f3a 0%, #1a3a5a 100%);
+  display: flex;
+  align-items: center;
+  padding: 2rem 4vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.dmc-home-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dmc-home-hero-text {
+  flex: 1;
+  color: #fff;
+  z-index: 2;
+}
+
+.dmc-home-hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.dmc-home-hero-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #e6edfa;
+  max-width: 500px;
+}
+
+.dmc-home-hero-button {
+  background: #fff;
+  color: #06254b;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dmc-home-hero-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.dmc-home-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dmc-home-hero-can {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.dmc-home-hero-can-main {
+  width: 200px;
+  height: 300px;
+  background: linear-gradient(45deg, #06254b, #1a3a5a);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border: 3px solid #FFD700;
+}
+
+.dmc-home-hero-can-main::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  border-radius: 15px;
+}
+
+.dmc-home-hero-can-blur-1,
+.dmc-home-hero-can-blur-2 {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  background: linear-gradient(45deg, #06254b, #1a3a5a);
+  border-radius: 15px;
+  opacity: 0.6;
+  filter: blur(10px);
+}
+
+.dmc-home-hero-can-blur-1 {
+  top: 50px;
+  left: -50px;
+}
+
+.dmc-home-hero-can-blur-2 {
+  top: 100px;
+  right: -50px;
+}
+
+/* ==========================================
+   UAE BUNKER RESPONDER SECTION
+   ========================================== */
+.dmc-home-uae-bunker {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dmc-home-uae-bunker-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.dmc-home-uae-bunker-port-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+  position: relative;
+}
+
+.dmc-home-uae-bunker-port-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect width="100%" height="100%" fill="%2300bcd4"/><circle cx="200" cy="400" r="50" fill="%23fff" opacity="0.1"/><circle cx="800" cy="300" r="30" fill="%23fff" opacity="0.1"/><rect x="100" y="500" width="800" height="100" fill="%23fff" opacity="0.2"/></svg>');
+  background-size: cover;
+}
+
+.dmc-home-uae-bunker-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 4vw;
+}
+
+.dmc-home-uae-bunker-flag {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dmc-home-uae-flag {
+  width: 80px;
+  height: 60px;
+  background: linear-gradient(to bottom, #000 0%, #000 33%, #fff 33%, #fff 66%, #00bcd4 66%, #00bcd4 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.dmc-home-uae-bunker-overlay {
+  background: rgba(6, 37, 75, 0.8);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+.dmc-home-uae-bunker-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dmc-home-uae-bunker-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dmc-home-uae-bunker-card {
+  width: 200px;
+  height: 120px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.dmc-home-uae-bunker-card-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+}
+
+/* ==========================================
+   SERVICES LIST SECTION
+   ========================================== */
+.dmc-home-services {
+  background: #fff;
+  padding: 4rem 4vw;
+}
+
+.dmc-home-services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.dmc-home-services-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dmc-home-service-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.dmc-home-service-item:hover {
+  background: #f8fbff;
+}
+
+.dmc-home-service-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #06254b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dmc-home-service-icon-placeholder {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.dmc-home-service-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #06254b;
+}
+
+.dmc-home-services-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+.dmc-home-service-date {
+  background: #06254b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   LOADED VESSELS SECTION
+   ========================================== */
+.dmc-home-vessels {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dmc-home-vessels-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.dmc-home-vessels-ocean {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+  position: relative;
+}
+
+.dmc-home-vessels-ocean::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to top, #f4d03f 0%, #f39c12 100%);
+  border-radius: 50% 50% 0 0;
+}
+
+.dmc-home-vessels-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 4vw;
+}
+
+.dmc-home-vessels-ship {
+  flex: 1;
+}
+
+.dmc-home-vessels-ship-illustration {
+  width: 300px;
+  height: 200px;
+  background: #ff9800;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+}
+
+.dmc-home-vessels-ship-illustration::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #ff9800;
+}
+
+.dmc-home-vessels-counter {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.dmc-home-vessels-count {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 0;
+  color: #06254b;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.dmc-home-vessels-description {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem 0;
+  color: #06254b;
+}
+
+.dmc-home-vessels-button {
+  background: #06254b;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dmc-home-vessels-button:hover {
+  background: #0a1f3a;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   BECOME A SHIP OWNER SECTION
+   ========================================== */
+.dmc-home-ship-owner {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dmc-home-ship-owner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.dmc-home-ship-owner-sky {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #87ceeb 0%, #4fc3f7 100%);
+  position: relative;
+}
+
+.dmc-home-ship-owner-sky::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><circle cx="200" cy="100" r="30" fill="%23fff" opacity="0.8"/><circle cx="800" cy="150" r="25" fill="%23fff" opacity="0.6"/><circle cx="400" cy="80" r="20" fill="%23fff" opacity="0.7"/></svg>');
+  background-size: cover;
+}
+
+.dmc-home-ship-owner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 4vw;
+}
+
+.dmc-home-ship-owner-text {
+  flex: 1;
+  color: #06254b;
+}
+
+.dmc-home-ship-owner-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #06254b;
+}
+
+.dmc-home-ship-owner-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a3a5a;
+}
+
+.dmc-home-ship-owner-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #1a3a5a;
+  max-width: 500px;
+}
+
+.dmc-home-ship-owner-ship {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dmc-home-ship-owner-ship-illustration {
+  width: 400px;
+  height: 300px;
+  background: #06254b;
+  border-radius: 20px;
+  position: relative;
+}
+
+.dmc-home-ship-owner-cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.dmc-home-ship-owner-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 200px;
+}
+
+.dmc-home-ship-owner-card-image {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.dmc-home-ship-owner-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+}
+
+.dmc-home-ship-owner-card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #06254b;
+}
+
+.dmc-home-ship-owner-card-description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   DAMILUBE PRODUCT SHOWCASE SECTION
+   ========================================== */
+.dmc-home-damilube {
+  background: #fff;
+  padding: 4rem 4vw;
+  text-align: center;
+}
+
+.dmc-home-damilube-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.dmc-home-damilube-panels {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.dmc-home-damilube-panel {
+  width: 200px;
+  text-align: center;
+}
+
+.dmc-home-damilube-panel-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.dmc-home-damilube-panel-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+}
+
+.dmc-home-damilube-panel-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #06254b;
+}
+
+.dmc-home-damilube-button {
+  background: #06254b;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dmc-home-damilube-button:hover {
+  background: #0a1f3a;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   FOOTER SECTION
+   ========================================== */
+.dmc-home-footer {
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.dmc-home-footer-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.dmc-home-footer-beach {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f4d03f 0%, #f39c12 100%);
+  position: relative;
+}
+
+.dmc-home-footer-beach::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect width="100%" height="100%" fill="%23f4d03f"/><circle cx="100" cy="500" r="20" fill="%23fff" opacity="0.3"/><circle cx="900" cy="550" r="15" fill="%23fff" opacity="0.2"/><circle cx="500" cy="580" r="25" fill="%23fff" opacity="0.4"/></svg>');
+  background-size: cover;
+}
+
+.dmc-home-footer-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(240, 248, 255, 0.9);
+  margin: 2rem 4vw;
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 1400px;
+  margin: 2rem auto;
+}
+
+.dmc-home-footer-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dmc-home-footer-logo-placeholder {
+  width: 100px;
+  height: 60px;
+  background: #06254b;
+  border-radius: 8px;
+  margin: 0 auto 1rem auto;
+}
+
+.dmc-home-footer-portal-button {
+  background: #06254b;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dmc-home-footer-portal-button:hover {
+  background: #0a1f3a;
+}
+
+.dmc-home-footer-links {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.dmc-home-footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.dmc-home-footer-column-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+
+.dmc-home-footer-column-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dmc-home-footer-column-links li {
+  margin-bottom: 0.5rem;
+}
+
+.dmc-home-footer-link {
+  color: #1a3a5a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dmc-home-footer-link:hover {
+  color: #06254b;
+}
+
+.dmc-home-footer-address {
+  color: #1a3a5a;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.dmc-home-footer-bottom {
+  position: relative;
+  z-index: 2;
+  background: rgba(6, 37, 75, 0.9);
+  color: #fff;
+  padding: 1rem 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dmc-home-footer-copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dmc-home-footer-copyright p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.dmc-home-footer-legal {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dmc-home-footer-legal-link {
+  color: #e6edfa;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.dmc-home-footer-legal-link:hover {
+  color: #fff;
+}
+
+.dmc-home-footer-made-by {
+  font-size: 0.8rem;
+  color: #e6edfa;
+}
+
+.dmc-home-footer-certificates {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dmc-home-footer-certificate {
+  width: 60px;
+  height: 30px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.dmc-home-footer-certificate.comodo {
+  background: #4CAF50;
+}
+
+.dmc-home-footer-certificate.sectigo {
+  background: #2196F3;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 1200px) {
+  .dmc-home-hero-title {
+    font-size: 3rem;
+  }
+
+  .dmc-home-vessels-count {
+    font-size: 4rem;
+  }
+
+  .dmc-home-ship-owner-title {
+    font-size: 2.5rem;
+  }
+
+  .dmc-home-damilube-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .dmc-home-hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-uae-bunker-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-vessels-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-ship-owner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-services-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .dmc-home-damilube-panels {
+    justify-content: center;
+  }
+
+  .dmc-home-footer-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .dmc-home-hero-title {
+    font-size: 2rem;
+  }
+
+  .dmc-home-vessels-count {
+    font-size: 3rem;
+  }
+
+  .dmc-home-ship-owner-title {
+    font-size: 2rem;
+  }
+
+  .dmc-home-damilube-title {
+    font-size: 2.5rem;
+  }
+
+  .dmc-home-damilube-panels {
+    gap: 1rem;
+  }
+
+  .dmc-home-damilube-panel {
+    width: 150px;
+  }
+}
