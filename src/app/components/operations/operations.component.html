@@ -1,0 +1,89 @@
+<!-- ==========================================
+     OPERATIONS PAGE
+     Component ID: DMC-CMP-5002
+     ========================================== -->
+
+<!-- HERO SECTION -->
+<section class="dmc-operations-hero">
+  <div class="dmc-operations-hero-content">
+    <div class="dmc-operations-hero-text">
+      <h1>{{ hero.title }}</h1>
+      <p>{{ hero.subtitle }}</p>
+      <div class="dmc-operations-hero-tabs">
+        <button *ngFor="let tab of hero.tabs" [class.active]="tab === hero.activeTab">{{ tab }}</button>
+      </div>
+      <div class="dmc-operations-hero-search">
+        <input placeholder="Location" [(ngModel)]="hero.search.location" />
+        <input placeholder="Vessel Type" [(ngModel)]="hero.search.vesselType" />
+        <input placeholder="Capacity" [(ngModel)]="hero.search.capacity" />
+        <button class="dmc-operations-hero-search-btn">Search</button>
+      </div>
+    </div>
+    <div class="dmc-operations-hero-image">
+      <img [src]="hero.image" alt="Ship Hero" />
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="dmc-operations-stats">
+  <div class="dmc-operations-stats-cards">
+    <div *ngFor="let stat of stats" class="dmc-operations-stat-card">
+      <div class="dmc-operations-stat-value">{{ stat.value }}</div>
+      <div class="dmc-operations-stat-label">{{ stat.label }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="dmc-operations-features">
+  <h2>Why Choose Us?</h2>
+  <p>We provide tailored vessel brokerage services, ensuring you find the perfect vessel for your needs with ease and reliability.</p>
+  <div class="dmc-operations-features-cards">
+    <div *ngFor="let feature of features" class="dmc-operations-feature-card">
+      <div class="dmc-operations-feature-icon">
+        <!-- Placeholder for icon -->
+        <span>{{ feature.icon }}</span>
+      </div>
+      <div class="dmc-operations-feature-title">{{ feature.title }}</div>
+      <div class="dmc-operations-feature-desc">{{ feature.desc }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- VESSEL CARDS SECTION -->
+<section class="dmc-operations-vessels">
+  <div class="dmc-operations-vessel-cards">
+    <div *ngFor="let vessel of vessels" class="dmc-operations-vessel-card">
+      <img [src]="vessel.image" [alt]="vessel.type" class="dmc-operations-vessel-image" />
+      <div class="dmc-operations-vessel-type">{{ vessel.type }}</div>
+      <div class="dmc-operations-vessel-desc">{{ vessel.desc }}</div>
+      <div class="dmc-operations-vessel-details">
+        <span>{{ vessel.dwt }}</span> •
+        <span>{{ vessel.age }}</span> •
+        <span>{{ vessel.location }}</span>
+      </div>
+      <div class="dmc-operations-vessel-price">Price: {{ vessel.price }}</div>
+      <button class="dmc-operations-vessel-btn">See more</button>
+    </div>
+  </div>
+</section>
+
+<!-- HELP SECTION -->
+<section class="dmc-operations-help">
+  <div class="dmc-operations-help-content">
+    <div class="dmc-operations-help-text">
+      <h3>{{ help.title }}</h3>
+      <p>{{ help.desc }}</p>
+      <button class="dmc-operations-help-btn">{{ help.button }}</button>
+    </div>
+    <div class="dmc-operations-help-images">
+      <img *ngFor="let img of help.images" [src]="img" alt="Vessel Library" />
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (reuse from home/footer if needed) -->
+<footer class="dmc-operations-footer">
+  <!-- Footer content here or reuse home/footer -->
+</footer>
