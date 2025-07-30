@@ -1,0 +1,36 @@
+<!-- ==========================================
+     CONTACT PAGE
+     Component ID: DMC-CMP-5005
+     ========================================== -->
+
+<!-- HERO SECTION WITH BACKGROUND -->
+<section class="dmc-contact-hero" [ngStyle]="{ 'background-image': 'url(' + background + ')' }">
+  <div class="dmc-contact-hero-overlay">
+    <div class="dmc-contact-cards">
+      <!-- Welcome Card -->
+      <div class="dmc-contact-welcome-card">
+        <h2>{{ welcome.title }}</h2>
+        <p>{{ welcome.desc }}</p>
+        <div class="dmc-contact-socials">
+          <a *ngFor="let social of welcome.socials" [href]="social.url" target="_blank">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Newsletter Signup Card -->
+      <div class="dmc-contact-newsletter-card">
+        <h3>Sign Up to Our Newsletter</h3>
+        <form class="dmc-contact-newsletter-form">
+          <input type="text" placeholder="Enter your name" [(ngModel)]="newsletter.name" name="name" />
+          <input type="email" placeholder="Enter your email" [(ngModel)]="newsletter.email" name="email" />
+          <button class="dmc-contact-newsletter-btn" type="submit">SIGN UP</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (reuse from home/footer if needed) -->
+<footer class="dmc-contact-footer">
+  <!-- Footer content here or reuse home/footer -->
+</footer>
