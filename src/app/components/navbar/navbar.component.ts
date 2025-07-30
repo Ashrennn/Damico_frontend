@@ -28,6 +28,7 @@
  */
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dmc-navbar',
@@ -37,8 +38,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  constructor(private router: Router) {}
+
   navLinks = [
-    { label: 'About', url: '#' },
+    { label: 'About', url: '/about' },
     { label: 'Operations', url: '#' },
     { label: 'Library', url: '#' },
     { label: 'Bunkering', url: '#' },
@@ -51,5 +54,13 @@ export class NavbarComponent {
   }
   get rightNavLinks() {
     return this.navLinks.slice(3);
+  }
+
+  navigateTo(url: string) {
+    if (url.startsWith('/')) {
+      this.router.navigate([url]);
+    } else {
+      window.location.href = url;
+    }
   }
 }
