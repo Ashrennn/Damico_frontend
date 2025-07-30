@@ -42,11 +42,11 @@ export class NavbarComponent {
 
   navLinks = [
     { label: 'About', url: '/about' },
-    { label: 'Operations', url: '#' },
-    { label: 'Library', url: '#' },
-    { label: 'Bunkering', url: '#' },
+    { label: 'Operations', url: '/operations' },
+    { label: 'Library', url: '/library' },
+    { label: 'Bunkering', url: '/bunkering' },
     { label: 'DMC-CSR', url: '#' },
-    { label: 'Contact', url: '#' }
+    { label: 'Contact', url: '/contact' }
   ];
 
   get leftNavLinks() {
