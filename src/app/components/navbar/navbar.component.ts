@@ -45,7 +45,7 @@ export class NavbarComponent {
     { label: 'Operations', url: '/operations' },
     { label: 'Library', url: '/library' },
     { label: 'Bunkering', url: '/bunkering' },
-    { label: 'DMC-CSR', url: '#' },
+    { label: 'DMC-CSR', url: '/dmc-csr' },
     { label: 'Contact', url: '/contact' }
   ];
 
