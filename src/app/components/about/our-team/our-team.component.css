@@ -1,0 +1,365 @@
+/* ==========================================
+   OUR TEAM PAGE STYLES
+   Component ID: DMC-CMP-5010
+   ========================================== */
+
+/* HERO SECTION */
+.dmc-our-team-hero {
+  min-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-our-team-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 37, 75, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dmc-our-team-hero-content {
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+.dmc-our-team-hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.dmc-our-team-hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+.dmc-our-team-hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* CONTAINER */
+.dmc-our-team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* SECTION HEADER */
+.dmc-our-team-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.dmc-our-team-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-our-team-section-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* LEADERSHIP SECTION */
+.dmc-our-team-leadership {
+  padding: 6rem 0;
+  background: #fff;
+}
+.dmc-our-team-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+.dmc-our-team-leadership-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(6, 37, 75, 0.1);
+  transition: transform 0.3s ease;
+}
+.dmc-our-team-leadership-card:hover {
+  transform: translateY(-8px);
+}
+.dmc-our-team-leadership-image {
+  height: 250px;
+  overflow: hidden;
+}
+.dmc-our-team-leadership-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dmc-our-team-leadership-content {
+  padding: 2rem;
+}
+.dmc-our-team-leadership-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 0.5rem;
+}
+.dmc-our-team-leadership-content h4 {
+  font-size: 1rem;
+  color: #2196F3;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.dmc-our-team-leadership-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.dmc-our-team-leadership-links {
+  display: flex;
+  gap: 1rem;
+}
+.dmc-our-team-linkedin,
+.dmc-our-team-email {
+  color: #2196F3;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.dmc-our-team-linkedin:hover,
+.dmc-our-team-email:hover {
+  color: #1976D2;
+}
+
+/* STATISTICS SECTION */
+.dmc-our-team-stats {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #06254b 0%, #2196F3 100%);
+  color: #fff;
+}
+.dmc-our-team-stats .dmc-our-team-section-header h2,
+.dmc-our-team-stats .dmc-our-team-section-header p {
+  color: #fff;
+}
+.dmc-our-team-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.dmc-our-team-stat-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+.dmc-our-team-stat-value {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.dmc-our-team-stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* DEPARTMENTS SECTION */
+.dmc-our-team-departments {
+  padding: 6rem 0;
+  background: #f8f9fa;
+}
+.dmc-our-team-departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.dmc-our-team-department-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(6, 37, 75, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.dmc-our-team-department-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-our-team-department-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.dmc-our-team-department-content h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 0.5rem;
+}
+.dmc-our-team-department-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.dmc-our-team-department-members {
+  font-size: 0.9rem;
+  color: #2196F3;
+  font-weight: 500;
+}
+
+/* CULTURE SECTION */
+.dmc-our-team-culture {
+  padding: 6rem 0;
+  background: #fff;
+}
+.dmc-our-team-culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.dmc-our-team-culture-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #f8f9fa;
+  transition: transform 0.3s ease;
+}
+.dmc-our-team-culture-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-our-team-culture-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.dmc-our-team-culture-content h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-our-team-culture-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* CALL TO ACTION SECTION */
+.dmc-our-team-cta {
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-our-team-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 37, 75, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dmc-our-team-cta-content {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+.dmc-our-team-cta-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.dmc-our-team-cta-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+.dmc-our-team-cta-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.dmc-our-team-cta-btn {
+  background: #fff;
+  color: #06254b;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dmc-our-team-cta-btn:hover {
+  background: #f8f9fa;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+  .dmc-our-team-leadership-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .dmc-our-team-departments-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dmc-our-team-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .dmc-our-team-section-header h2 {
+    font-size: 2rem;
+  }
+  .dmc-our-team-leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  .dmc-our-team-departments-grid {
+    grid-template-columns: 1fr;
+  }
+  .dmc-our-team-culture-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .dmc-our-team-cta-content h2 {
+    font-size: 2rem;
+  }
+  .dmc-our-team-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dmc-our-team-department-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dmc-our-team-leadership-links {
+    justify-content: center;
+  }
+  .dmc-our-team-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

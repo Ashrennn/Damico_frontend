@@ -1,0 +1,351 @@
+/* ==========================================
+   WHO ARE WE PAGE STYLES
+   Component ID: DMC-CMP-5007
+   ========================================== */
+
+/* HERO SECTION */
+.dmc-who-are-we-hero {
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-who-are-we-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dmc-who-are-we-hero-content {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+.dmc-who-are-we-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.dmc-who-are-we-hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* CULTURE SECTION */
+.dmc-who-are-we-culture {
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-who-are-we-culture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dmc-who-are-we-culture-overlay h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* GENERAL TEXT SECTION */
+.dmc-who-are-we-text {
+  padding: 4rem 0;
+  background: #fff;
+}
+.dmc-who-are-we-text-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.dmc-who-are-we-text-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+/* CONTENT BLOCKS */
+.dmc-who-are-we-blocks {
+  background: #f8f9fa;
+}
+.dmc-who-are-we-block {
+  padding: 4rem 0;
+}
+.dmc-who-are-we-block-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.dmc-who-are-we-block-image {
+  flex: 1;
+  height: 400px;
+  overflow: hidden;
+}
+.dmc-who-are-we-block-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dmc-who-are-we-block-content {
+  flex: 1;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dmc-who-are-we-block-content h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.dmc-who-are-we-block-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* CALL TO ACTION 1 */
+.dmc-who-are-we-cta1 {
+  background: #06254b;
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+.dmc-who-are-we-cta1-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.dmc-who-are-we-cta1-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.dmc-who-are-we-cta1-subtitle {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+.dmc-who-are-we-cta1-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* CALL TO ACTION 2 */
+.dmc-who-are-we-cta2 {
+  background: #06254b;
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+.dmc-who-are-we-cta2-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.dmc-who-are-we-cta2-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.dmc-who-are-we-cta2-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.dmc-who-are-we-newsletter {
+  display: flex;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dmc-who-are-we-email-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+.dmc-who-are-we-email-input::placeholder {
+  color: #666;
+}
+
+/* CTA BUTTONS */
+.dmc-who-are-we-cta-btn {
+  background: #fff;
+  color: #06254b;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.dmc-who-are-we-cta-btn:hover {
+  background: #f8f9fa;
+}
+
+/* FOOTER */
+.dmc-who-are-we-footer {
+  background: linear-gradient(135deg, #87CEEB 0%, #98D8E8 100%);
+  position: relative;
+}
+.dmc-who-are-we-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+.dmc-who-are-we-footer-bg {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0 1rem;
+}
+.dmc-who-are-we-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.dmc-who-are-we-footer-logo h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-who-are-we-footer-badges {
+  display: flex;
+  gap: 1rem;
+}
+.dmc-who-are-we-footer-badges span {
+  background: #06254b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.dmc-who-are-we-footer-links {
+  display: flex;
+  gap: 3rem;
+  flex: 1;
+}
+.dmc-who-are-we-footer-column h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-who-are-we-footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dmc-who-are-we-footer-column li {
+  margin-bottom: 0.5rem;
+}
+.dmc-who-are-we-footer-column a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.dmc-who-are-we-footer-column a:hover {
+  color: #06254b;
+}
+.dmc-who-are-we-footer-bottom {
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+  .dmc-who-are-we-block-container {
+    flex-direction: column;
+  }
+  .dmc-who-are-we-block-image {
+    height: 300px;
+  }
+  .dmc-who-are-we-footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .dmc-who-are-we-footer-links {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dmc-who-are-we-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .dmc-who-are-we-culture-overlay h2 {
+    font-size: 2.5rem;
+  }
+  .dmc-who-are-we-block-content {
+    padding: 2rem 1.5rem;
+  }
+  .dmc-who-are-we-block-content h3 {
+    font-size: 1.8rem;
+  }
+  .dmc-who-are-we-cta1-content h2,
+  .dmc-who-are-we-cta2-content h2 {
+    font-size: 2rem;
+  }
+  .dmc-who-are-we-newsletter {
+    flex-direction: column;
+  }
+  .dmc-who-are-we-email-input {
+    min-width: auto;
+  }
+}
