@@ -37,7 +37,11 @@
           <div class="dmc-about-section-number">{{ sections[0].number }}</div>
           <h2 class="dmc-about-title">{{ sections[0].title }}</h2>
           <p class="dmc-about-description">{{ sections[0].description }}</p>
-          <button class="dmc-about-button">{{ sections[0].buttonText }}</button>
+          <button
+            class="dmc-about-button"
+            (click)="handleButtonClick(sections[0].buttonAction)">
+            {{ sections[0].buttonText }}
+          </button>
         </div>
       </div>
     </div>
@@ -56,7 +60,11 @@
           <div class="dmc-about-section-number">{{ sections[1].number }}</div>
           <h2 class="dmc-about-title">{{ sections[1].title }}</h2>
           <p class="dmc-about-description">{{ sections[1].description }}</p>
-          <button class="dmc-about-button">{{ sections[1].buttonText }}</button>
+          <button
+            class="dmc-about-button"
+            (click)="handleButtonClick(sections[1].buttonAction)">
+            {{ sections[1].buttonText }}
+          </button>
         </div>
       </div>
     </div>
@@ -75,7 +83,11 @@
           <div class="dmc-about-section-number">{{ sections[2].number }}</div>
           <h2 class="dmc-about-title">{{ sections[2].title }}</h2>
           <p class="dmc-about-description">{{ sections[2].description }}</p>
-          <button class="dmc-about-button">{{ sections[2].buttonText }}</button>
+          <button
+            class="dmc-about-button"
+            (click)="handleButtonClick(sections[2].buttonAction)">
+            {{ sections[2].buttonText }}
+          </button>
         </div>
       </div>
     </div>
@@ -94,7 +106,11 @@
           <div class="dmc-about-section-number">{{ sections[3].number }}</div>
           <h2 class="dmc-about-title">{{ sections[3].title }}</h2>
           <p class="dmc-about-description">{{ sections[3].description }}</p>
-          <button class="dmc-about-button">{{ sections[3].buttonText }}</button>
+          <button
+            class="dmc-about-button"
+            (click)="handleButtonClick(sections[3].buttonAction)">
+            {{ sections[3].buttonText }}
+          </button>
         </div>
       </div>
     </div>

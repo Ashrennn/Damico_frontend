@@ -1,0 +1,476 @@
+/* ==========================================
+   OUR HISTORY PAGE STYLES
+   Component ID: DMC-CMP-5008
+   ========================================== */
+
+/* HERO SECTION */
+.dmc-our-history-hero {
+  min-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-our-history-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 37, 75, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dmc-our-history-hero-content {
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+.dmc-our-history-hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.dmc-our-history-hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+.dmc-our-history-hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* CONTAINER */
+.dmc-our-history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* SECTION HEADER */
+.dmc-our-history-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.dmc-our-history-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-our-history-section-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* TIMELINE SECTION */
+.dmc-our-history-timeline {
+  padding: 6rem 0;
+  background: #fff;
+}
+.dmc-our-history-timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.dmc-our-history-timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #06254b 0%, #2196F3 100%);
+  transform: translateX(-50%);
+}
+.dmc-our-history-timeline-event {
+  position: relative;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+.dmc-our-history-timeline-event:nth-child(odd) .dmc-our-history-timeline-content {
+  flex-direction: row;
+  text-align: left;
+}
+.dmc-our-history-timeline-event:nth-child(even) .dmc-our-history-timeline-content {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.dmc-our-history-timeline-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+.dmc-our-history-timeline-content::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 4px solid #2196F3;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.dmc-our-history-timeline-year {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  transform: translateX(-50%);
+  background: #2196F3;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  z-index: 3;
+}
+.dmc-our-history-timeline-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(6, 37, 75, 0.1);
+  transition: transform 0.3s ease;
+}
+.dmc-our-history-timeline-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-our-history-timeline-image {
+  height: 200px;
+  overflow: hidden;
+}
+.dmc-our-history-timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dmc-our-history-timeline-text {
+  padding: 2rem;
+}
+.dmc-our-history-timeline-text h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-our-history-timeline-text p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.dmc-our-history-timeline-achievements {
+  list-style: none;
+  padding: 0;
+}
+.dmc-our-history-timeline-achievements li {
+  color: #2196F3;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.dmc-our-history-timeline-achievements li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* ACHIEVEMENTS SECTION */
+.dmc-our-history-achievements {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #06254b 0%, #2196F3 100%);
+  color: #fff;
+}
+.dmc-our-history-achievements .dmc-our-history-section-header h2,
+.dmc-our-history-achievements .dmc-our-history-section-header p {
+  color: #fff;
+}
+.dmc-our-history-achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.dmc-our-history-achievement-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+.dmc-our-history-achievement-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-our-history-achievement-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.dmc-our-history-achievement-content h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.dmc-our-history-achievement-count {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #FFD700;
+}
+.dmc-our-history-achievement-content p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* EVOLUTION SECTION */
+.dmc-our-history-evolution {
+  padding: 6rem 0;
+  background: #f8f9fa;
+}
+.dmc-our-history-evolution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.dmc-our-history-evolution-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(6, 37, 75, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.dmc-our-history-evolution-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-our-history-evolution-period {
+  position: absolute;
+  top: -15px;
+  left: 2rem;
+  background: #2196F3;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.dmc-our-history-evolution-content {
+  margin-top: 1rem;
+}
+.dmc-our-history-evolution-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-our-history-evolution-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.dmc-our-history-evolution-focus h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 0.5rem;
+}
+.dmc-our-history-evolution-focus ul {
+  list-style: none;
+  padding: 0;
+}
+.dmc-our-history-evolution-focus li {
+  color: #2196F3;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+.dmc-our-history-evolution-focus li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #2196F3;
+  font-weight: bold;
+}
+
+/* VALUES SECTION */
+.dmc-our-history-values {
+  padding: 6rem 0;
+  background: #fff;
+}
+.dmc-our-history-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.dmc-our-history-value-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #f8f9fa;
+  transition: transform 0.3s ease;
+}
+.dmc-our-history-value-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-our-history-value-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.dmc-our-history-value-content h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #06254b;
+  margin-bottom: 1rem;
+}
+.dmc-our-history-value-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* CALL TO ACTION SECTION */
+.dmc-our-history-cta {
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-our-history-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 37, 75, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dmc-our-history-cta-content {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+.dmc-our-history-cta-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.dmc-our-history-cta-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+.dmc-our-history-cta-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.dmc-our-history-cta-btn {
+  background: #fff;
+  color: #06254b;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dmc-our-history-cta-btn:hover {
+  background: #f8f9fa;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+  .dmc-our-history-timeline-container::before {
+    left: 2rem;
+  }
+  .dmc-our-history-timeline-event:nth-child(odd) .dmc-our-history-timeline-content,
+  .dmc-our-history-timeline-event:nth-child(even) .dmc-our-history-timeline-content {
+    flex-direction: row;
+    text-align: left;
+  }
+  .dmc-our-history-timeline-content::before {
+    left: 2rem;
+  }
+  .dmc-our-history-timeline-year {
+    left: 2rem;
+    transform: none;
+  }
+  .dmc-our-history-evolution-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dmc-our-history-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .dmc-our-history-section-header h2 {
+    font-size: 2rem;
+  }
+  .dmc-our-history-timeline-container::before {
+    left: 1rem;
+  }
+  .dmc-our-history-timeline-content::before {
+    left: 1rem;
+  }
+  .dmc-our-history-timeline-year {
+    left: 1rem;
+  }
+  .dmc-our-history-timeline-content {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+  .dmc-our-history-achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dmc-our-history-evolution-grid {
+    grid-template-columns: 1fr;
+  }
+  .dmc-our-history-values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .dmc-our-history-cta-content h2 {
+    font-size: 2rem;
+  }
+  .dmc-our-history-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dmc-our-history-achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  .dmc-our-history-timeline-text {
+    padding: 1.5rem;
+  }
+  .dmc-our-history-evolution-card {
+    padding: 1.5rem;
+  }
+}
