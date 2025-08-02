@@ -59,12 +59,52 @@ export class HomeComponent {
 
   // Services List Data
   servicesData = [
-    { title: 'Marine Fuel Supply', date: '15 MAR' },
-    { title: 'Trade Operations', date: '20 APR' },
-    { title: 'Vessel Brokerage', date: '10 MAY' },
-    { title: 'Lubricant Distribution', date: '05 JUN' },
-    { title: 'Technical Services', date: '15 JUL' }
-  ];
+  {
+    icon: 'assets/icons/marine-fuel.jpg',
+    title: 'Marine Fuel Supply',
+    subtitle: 'MENA Region',
+    description:
+      'Specialized in providing high-quality marine fuel solutions across the MENA region, ensuring reliable and efficient bunkering services for vessels.',
+    dateDay: '15',
+    dateMonth: 'MAR',
+  },
+  {
+    icon: 'assets/icons/trade-operations.jpg',
+    title: 'Trade Operations',
+    subtitle: 'Global Markets',
+    description:
+      'Advanced trading desk operations managing commodity flows and risk exposure across international markets with cutting-edge technology.',
+    dateDay: '20',
+    dateMonth: 'APR',
+  },
+  {
+    icon: 'assets/icons/vessel-brokerage.jpg',
+    title: 'Vessel Brokerage',
+    subtitle: 'Maritime Services',
+    description:
+      'Professional vessel brokerage services offering comprehensive solutions for maritime transportation and chartering needs.',
+    dateDay: '10',
+    dateMonth: 'MAY',
+  },
+  {
+    icon: 'assets/icons/lubricant-distribution.jpg',
+    title: 'Lubricant Distribution',
+    subtitle: 'Premium Products',
+    description:
+      'Distribution of high-performance marine lubricants, ensuring optimal engine performance and reliability for marine vessels.',
+    dateDay: '05',
+    dateMonth: 'JUN',
+  },
+  {
+    icon: 'assets/icons/technical-services.jpg',
+    title: 'Technical Services',
+    subtitle: 'Expert Solutions',
+    description:
+      'Comprehensive technical support and consulting services for marine fuel management and optimization.',
+    dateDay: '15',
+    dateMonth: 'JUL',
+  },
+];
 
   // Loaded Vessels Data
   vesselsData = {
@@ -79,34 +119,34 @@ export class HomeComponent {
     subtitle: 'Navigating Success:',
     description: 'Join our network of successful ship owners and benefit from our comprehensive maritime services and expert support.',
     cards: [
-      { image: 'assets/find-vessel.jpg', title: 'Find Your Vessel!', description: 'Discover the perfect vessel for your needs' },
-      { image: 'assets/charter-flexibility.jpg', title: 'Charter with Flexibility', description: 'Flexible chartering solutions' },
-      { image: 'assets/expert-support.jpg', title: 'Trusted Expert Support', description: 'Professional guidance and support' }
+      { image: 'assets/icons/marine-fuel.jpg', title: 'Find Your Vessel!', description: 'Discover the perfect vessel for your needs' },
+      { image: 'assets/icons/vessel-brokerage.jpg', title: 'Charter with Flexibility', description: 'Flexible chartering solutions' },
+      { image: 'assets/icons/trade-operations.jpg', title: 'Trusted Expert Support', description: 'Professional guidance and support' }
     ]
   };
 
   // DAMILUBE Products Data
   damilubeProducts = [
-    { name: 'ENGINE COOLANT', image: 'assets/engine-coolant.jpg' },
-    { name: 'ENGINE FLUSH', image: 'assets/engine-flush.jpg' },
-    { name: 'LUBRICANTS', image: 'assets/lubricants.jpg' },
-    { name: 'GAS OIL', image: 'assets/gas-oil.jpg' },
-    { name: 'LNG', image: 'assets/lng.jpg' }
-  ];
-
+  { name: 'ENGINE COOLANT', image: 'assets/engine-coolant.jpg' },
+  { name: 'ENGINE FLUSH', image: 'assets/engine-flush.jpg' },
+  { name: 'LUBRICANTS', image: 'assets/lubricants.jpg' },
+  { name: 'GAS OIL', image: 'assets/gas-oil.jpg' },
+  { name: 'LNG', image: 'assets/lng.png' }
+];
   // Footer Data
   footerData = {
-    company: {
-      title: 'COMPANY',
-      links: ['About', 'News & Contact', 'Careers']
-    },
-    services: {
-      title: 'SERVICES',
-      links: ['Fuel', 'Vessel Brokerage', 'Bunker Trade', 'Technical']
-    },
-    address: {
-      title: 'ADDRESS',
-      content: 'Dubai, UAE\nContact: +971 4 XXX XXXX\nEmail: info@damico.com'
-    }
-  };
+  company: {
+    title: 'COMPANY',
+    links: ['About', 'News & Content', 'Careers', 'Contact']
+  },
+  services: {
+    title: 'SERVICES',
+    links: ['Damilube', 'Vessel Brokerage', 'Bunker Trade', 'Trade Desk']
+  },
+  address: {
+    title: 'ADDRESS',
+    content: 'Damico Energy\nHamriyah Free Zone\nSharjah – UAE\n274452'
+  }
+};
+
 }

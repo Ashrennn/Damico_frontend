@@ -18,7 +18,6 @@
     <div class="dmc-home-hero-image">
       <!-- Placeholder for 3D Damilube can render -->
       <div class="dmc-home-hero-can">
-        <div class="dmc-home-hero-can-main"></div>
         <div class="dmc-home-hero-can-blur-1"></div>
         <div class="dmc-home-hero-can-blur-2"></div>
       </div>
@@ -31,24 +30,33 @@
      Port image with UAE flag and service cards
      ========================================== -->
 <section class="dmc-home-uae-bunker">
-  <div class="dmc-home-uae-bunker-background">
-    <!-- Placeholder for port/harbor image -->
-    <div class="dmc-home-uae-bunker-port-image"></div>
-  </div>
+  <div class="dmc-home-uae-bunker-background"></div>
+
   <div class="dmc-home-uae-bunker-content">
-    <div class="dmc-home-uae-bunker-flag">
-      <!-- Placeholder for UAE flag -->
-      <div class="dmc-home-uae-flag"></div>
-    </div>
+    
+    <!-- Left: Text Block -->
     <div class="dmc-home-uae-bunker-overlay">
-      <h2 class="dmc-home-uae-bunker-title">{{ uaeBunkerData.title }}</h2>
+      <h2 class="dmc-home-uae-bunker-title">
+        Discover the UAE's <span class="highlight">Immediate</span> Bunker responder
+      </h2>
+      <p class="dmc-home-uae-bunker-description">
+        Your trusted partner for rapid and reliable fuel solutions. With a commitment to efficiency, compliance, and 24/7 availability, we ensure seamless operations for maritime vessels. Count on us for premium services that meet your urgent bunkering needs across UAE’s ports without delays.
+      </p>
     </div>
+
+    <!-- Right: Cards -->
     <div class="dmc-home-uae-bunker-cards">
-      <div *ngFor="let card of uaeBunkerData.cards" class="dmc-home-uae-bunker-card">
-        <!-- Placeholder for card images -->
-        <div class="dmc-home-uae-bunker-card-image"></div>
+      <div class="dmc-home-uae-bunker-card">
+        <img src="/assets/Cargo.jpg" alt="Card Image 1" />
+      </div>
+      <div class="dmc-home-uae-bunker-card">
+        <img src="/assets/Cart.png" alt="Card Image 2" />
+      </div>
+      <div class="dmc-home-uae-bunker-card">
+        <img src="/assets/Truck.jpg" alt="Card Image 3" />
       </div>
     </div>
+    
   </div>
 </section>
 
@@ -58,18 +66,20 @@
      ========================================== -->
 <section class="dmc-home-services">
   <div class="dmc-home-services-container">
-    <div class="dmc-home-services-list">
-      <div *ngFor="let service of servicesData" class="dmc-home-service-item">
+    <div *ngFor="let service of servicesData" class="dmc-home-service-card">
+      <div class="dmc-home-service-left">
         <div class="dmc-home-service-icon">
-          <!-- Placeholder for service icons -->
-          <div class="dmc-home-service-icon-placeholder"></div>
+          <img [src]="service.icon" alt="{{ service.title }}" />
         </div>
-        <span class="dmc-home-service-title">{{ service.title }}</span>
+        <div class="dmc-home-service-info">
+          <h3 class="dmc-home-service-title">{{ service.title }}</h3>
+          <h4 class="dmc-home-service-subtitle">{{ service.subtitle }}</h4>
+          <p class="dmc-home-service-description">{{ service.description }}</p>
+        </div>
       </div>
-    </div>
-    <div class="dmc-home-services-dates">
-      <div *ngFor="let service of servicesData" class="dmc-home-service-date">
-        {{ service.date }}
+      <div class="dmc-home-service-date">
+        <span class="date-day">{{ service.dateDay }}</span>
+        <span class="date-month">{{ service.dateMonth }}</span>
       </div>
     </div>
   </div>
@@ -81,18 +91,30 @@
      ========================================== -->
 <section class="dmc-home-vessels">
   <div class="dmc-home-vessels-background">
-    <!-- Placeholder for ocean/beach background -->
     <div class="dmc-home-vessels-ocean"></div>
   </div>
+
   <div class="dmc-home-vessels-content">
     <div class="dmc-home-vessels-ship">
-      <!-- Placeholder for cargo ship illustration -->
-      <div class="dmc-home-vessels-ship-illustration"></div>
+      <div class="dmc-home-vessels-ship-illustration">
+        <img src="/assets/images/ship.png" alt="Oil Tanker" />
+      </div>
     </div>
+
     <div class="dmc-home-vessels-counter">
       <h2 class="dmc-home-vessels-count">{{ vesselsData.count }}</h2>
-      <p class="dmc-home-vessels-description">{{ vesselsData.description }}</p>
-      <button class="dmc-home-vessels-button">{{ vesselsData.buttonText }}</button>
+      <p class="dmc-home-vessels-description">
+        Loaded Vessels for this year <span>(APRIL / 2025)</span>
+      </p>
+
+      <div class="dmc-home-vessels-box">
+        <h3>{{ vesselsData.buttonText }}</h3>
+        <p>
+          We are very much thrilled and happy to announce that for the year of
+          2025 / April Damico has loaded
+        </p>
+        <p><strong>Last report as of Tuesday, 1 April 2025.</strong></p>
+      </div>
     </div>
   </div>
 </section>
@@ -103,27 +125,27 @@
      ========================================== -->
 <section class="dmc-home-ship-owner">
   <div class="dmc-home-ship-owner-background">
-    <!-- Placeholder for sky background -->
     <div class="dmc-home-ship-owner-sky"></div>
   </div>
+
   <div class="dmc-home-ship-owner-content">
-    <div class="dmc-home-ship-owner-text">
-      <h2 class="dmc-home-ship-owner-title">{{ shipOwnerData.title }}</h2>
-      <div class="dmc-home-ship-owner-subtitle">{{ shipOwnerData.subtitle }}</div>
-      <p class="dmc-home-ship-owner-description">{{ shipOwnerData.description }}</p>
-    </div>
-    <div class="dmc-home-ship-owner-ship">
-      <!-- Placeholder for large cargo ship -->
-      <div class="dmc-home-ship-owner-ship-illustration"></div>
-    </div>
+    <h2 class="dmc-home-ship-owner-title">{{ shipOwnerData.title }}</h2>
+
     <div class="dmc-home-ship-owner-cards">
+      <div class="dmc-home-ship-owner-info-card">
+        <h3>{{ shipOwnerData.subtitle }}</h3>
+        <p>
+          Discover seamless buying, selling, and leasing solutions for vessels worldwide.
+          With unmatched industry expertise, a vast global network, and personalized support,
+          we are your trusted partner in maritime transactions.
+        </p>
+      </div>
+
       <div *ngFor="let card of shipOwnerData.cards" class="dmc-home-ship-owner-card">
         <div class="dmc-home-ship-owner-card-image">
-          <!-- Placeholder for card images -->
-          <div class="dmc-home-ship-owner-card-placeholder"></div>
+          <img [src]="card.image" alt="{{ card.title }}" />
         </div>
         <h3 class="dmc-home-ship-owner-card-title">{{ card.title }}</h3>
-        <p class="dmc-home-ship-owner-card-description">{{ card.description }}</p>
       </div>
     </div>
   </div>
@@ -135,15 +157,17 @@
      ========================================== -->
 <section class="dmc-home-damilube">
   <h2 class="dmc-home-damilube-title">DAMILUBE</h2>
+
   <div class="dmc-home-damilube-panels">
     <div *ngFor="let product of damilubeProducts" class="dmc-home-damilube-panel">
-      <div class="dmc-home-damilube-panel-image">
-        <!-- Placeholder for product illustrations -->
-        <div class="dmc-home-damilube-panel-placeholder"></div>
+      <div 
+        class="dmc-home-damilube-panel-image" 
+        [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }">
+        <span class="dmc-home-damilube-panel-label">{{ product.name }}</span>
       </div>
-      <span class="dmc-home-damilube-panel-label">{{ product.name }}</span>
     </div>
   </div>
+
   <button class="dmc-home-damilube-button">Know More</button>
 </section>
 
@@ -153,51 +177,59 @@
      ========================================== -->
 <footer class="dmc-home-footer">
   <div class="dmc-home-footer-background">
-    <!-- Placeholder for beach background -->
     <div class="dmc-home-footer-beach"></div>
   </div>
+
   <div class="dmc-home-footer-content">
-    <div class="dmc-home-footer-logo">
-      <!-- Placeholder for Arabic logo -->
-      <div class="dmc-home-footer-logo-placeholder"></div>
-      <button class="dmc-home-footer-portal-button">Employee Portal</button>
-    </div>
-    <div class="dmc-home-footer-links">
-      <div class="dmc-home-footer-column">
-        <h3 class="dmc-home-footer-column-title">{{ footerData.company.title }}</h3>
-        <ul class="dmc-home-footer-column-links">
-          <li *ngFor="let link of footerData.company.links">
-            <a href="#" class="dmc-home-footer-link">{{ link }}</a>
-          </li>
-        </ul>
+    <div class="dmc-home-footer-top">
+      <div class="dmc-home-footer-left">
+        <img src="/assets/images/logo-arabic.png" alt="Logo" class="dmc-home-footer-logo-img" />
+        <button class="dmc-home-footer-portal-button">Employee Portal</button>
+        <div class="dmc-home-footer-certificates">
+          <img src="/assets/images/comodo.png" alt="Comodo" />
+          <img src="/assets/images/sectigo.png" alt="Sectigo" />
+        </div>
       </div>
-      <div class="dmc-home-footer-column">
-        <h3 class="dmc-home-footer-column-title">{{ footerData.services.title }}</h3>
-        <ul class="dmc-home-footer-column-links">
-          <li *ngFor="let link of footerData.services.links">
-            <a href="#" class="dmc-home-footer-link">{{ link }}</a>
-          </li>
-        </ul>
-      </div>
-      <div class="dmc-home-footer-column">
-        <h3 class="dmc-home-footer-column-title">{{ footerData.address.title }}</h3>
-        <p class="dmc-home-footer-address">{{ footerData.address.content }}</p>
+
+      <div class="dmc-home-footer-links">
+        <div class="dmc-home-footer-column">
+          <h3 class="dmc-home-footer-column-title">{{ footerData.company.title }}</h3>
+          <ul class="dmc-home-footer-column-links">
+            <li *ngFor="let link of footerData.company.links">
+              <a href="#" class="dmc-home-footer-link">{{ link }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dmc-home-footer-column">
+          <h3 class="dmc-home-footer-column-title">{{ footerData.services.title }}</h3>
+          <ul class="dmc-home-footer-column-links">
+            <li *ngFor="let link of footerData.services.links">
+              <a href="#" class="dmc-home-footer-link">{{ link }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dmc-home-footer-column">
+          <h3 class="dmc-home-footer-column-title">{{ footerData.address.title }}</h3>
+          <p class="dmc-home-footer-address">{{ footerData.address.content }}</p>
+        </div>
       </div>
     </div>
   </div>
+
   <div class="dmc-home-footer-bottom">
-    <div class="dmc-home-footer-copyright">
-      <p>&copy; 2024 DAMICO. All rights reserved.</p>
-      <div class="dmc-home-footer-legal">
-        <a href="#" class="dmc-home-footer-legal-link">Privacy Policy</a>
-        <a href="#" class="dmc-home-footer-legal-link">Security</a>
-        <span class="dmc-home-footer-made-by">Made by Damico Prod</span>
-      </div>
-    </div>
-    <div class="dmc-home-footer-certificates">
-      <!-- Placeholder for COMODO and SECTIGO logos -->
-      <div class="dmc-home-footer-certificate comodo"></div>
-      <div class="dmc-home-footer-certificate sectigo"></div>
-    </div>
+  <h3>Damico Energy<span class="footer-dot">•</span></h3>
+  <p class="dmc-home-footer-bottom-text">
+    Copyright © April – 2025 Damico Energy. All rights reserved. <br />
+    Products and services are offered by Damico Energy as a key player in the global energy sector,
+    delivering innovative energy solutions. The company is committed to compliance with international guidelines,
+    ensuring transparency and trust in all its operations.
+  </p>
+  <div class="dmc-home-footer-legal">
+    <a href="#" class="dmc-home-footer-legal-link">Regulatory Disclosures</a>
+    <a href="#" class="dmc-home-footer-legal-link">Privacy Policy</a>
+    <a href="#" class="dmc-home-footer-legal-link">Security</a>
+    <span class="dmc-home-footer-made-by">Made by Jenoza Prod</span>
   </div>
+</div>
 </footer>
+
