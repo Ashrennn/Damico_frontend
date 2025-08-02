@@ -53,9 +53,10 @@ body, :host {
 }
 .dmc-headerbar-center {
   display: flex;
-  gap: 1.2vw;
+  gap: 4rem;
   justify-content: center;
   flex: 1;
+  margin-left:3rem ;
   align-items: center;
 }
 .dmc-headerbar-link {
