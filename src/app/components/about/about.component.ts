@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 
 /**
@@ -37,11 +37,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit, OnDestroy {
-  constructor(private router: Router) {}
 
-  /**
-   * Navigation items for the floating sidebar
-   */
+  // ✅ Inject platformId properly
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
   navigationItems = [
     { id: 'who-we-are', label: 'Who We Are', active: false },
     { id: 'about-us', label: 'About Us', active: true },
@@ -87,25 +89,23 @@ export class AboutComponent implements OnInit, OnDestroy {
     }
   ];
 
-  ngOnInit() {
-    this.setupScrollListener();
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.setupScrollListener();
+    }
   }
 
-  ngOnDestroy() {
-    this.removeScrollListener();
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.removeScrollListener();
+    }
   }
 
-  /**
-   * Navigate to a specific section and update active state
-   * @param sectionId - The ID of the section to navigate to
-   */
   navigateToSection(sectionId: string): void {
-    // Update active state
     this.navigationItems.forEach(item => {
       item.active = item.id === sectionId;
     });
 
-    // Smooth scroll to section
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
@@ -115,9 +115,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     }
   }
 
-  /**
-   * Handle scroll events to update active navigation item
-   */
   onScroll(): void {
     const sections = this.sections.map(s => document.getElementById(s.id));
     const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -136,7 +133,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     });
   }
 
-  // Navigation methods for buttons
   navigateToWhoWeAre() {
     this.router.navigate(['/who-are-we']);
   }
@@ -153,7 +149,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.router.navigate(['/our-team']);
   }
 
-  // Handle button clicks
   handleButtonClick(action: string) {
     switch(action) {
       case 'navigateToWhoWeAre':
@@ -171,11 +166,13 @@ export class AboutComponent implements OnInit, OnDestroy {
     }
   }
 
+  private scrollHandler = () => this.onScroll();
+
   private setupScrollListener() {
-    window.addEventListener('scroll', () => this.onScroll());
+    window.addEventListener('scroll', this.scrollHandler);
   }
 
   private removeScrollListener() {
-    window.removeEventListener('scroll', () => this.onScroll());
+    window.removeEventListener('scroll', this.scrollHandler);
   }
 }
