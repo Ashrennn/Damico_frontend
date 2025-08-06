@@ -1,0 +1,18 @@
+<section 
+  class="section-four {{ customClass }}"
+  [ngStyle]="sectionStyles"
+  (click)="onSectionClick()">
+  
+  <div class="section-container" [style.max-width]="maxWidth">
+    <div class="section-header" *ngIf="title || subtitle">
+      <h2 class="section-title" *ngIf="title">{{ title }}</h2>
+      <p class="section-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+    </div>
+    
+    <div class="section-content" 
+         [class]="'layout-' + layout"
+         [ngStyle]="layout === 'cards' ? gridStyles : {}">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</section> 

@@ -1,0 +1,943 @@
+/* ==========================================
+   HOME PAGE STYLES
+   Component ID: DMC-CMP-5000
+   ========================================== */
+
+/* ==========================================
+   LAYOUT INTEGRATION
+   ========================================== */
+/* Account for layout components */
+.dmc-home-hero {
+  margin-top: 0; /* Remove any top margin since layout handles spacing */
+}
+
+/* UAE Flag */
+.dmc-uae-flag {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+
+  .dmc-flag-pole {
+    width: 4px;
+    height: 120px;
+    background: #8b4513;
+    margin: 0 auto;
+  }
+
+  .dmc-flag-fabric {
+    width: 160px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .dmc-flag-stripe {
+    height: 20px;
+    width: 100%;
+
+    &.dmc-flag-red { background: #ce1126; }
+    &.dmc-flag-green { background: #00732f; }
+    &.dmc-flag-white { background: #fff; }
+    &.dmc-flag-black { background: #000; }
+  }
+}
+
+/* Product Can Image */
+.dmc-product-can {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* ==========================================
+   HERO SECTION
+   Damilube product showcase
+   ========================================== */
+.dmc-home-hero {
+  min-height: 100vh;
+  background: url("/assets/Temporay BG.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 2rem 4vw;
+  position: relative;
+  overflow: hidden;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &-text {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+
+  &-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e6edfa;
+    max-width: 500px;
+  }
+
+  &-button {
+    background: #fff;
+    color: #06254b;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+  }
+
+  &-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &-can {
+    position: relative;
+    width: 300px;
+    height: 400px;
+
+    &-main {
+      width: 200px;
+      height: 300px;
+      background: linear-gradient(45deg, #06254b, #1a3a5a);
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border: 3px solid #FFD700;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        background: linear-gradient(45deg, #fff, #f0f0f0);
+        border-radius: 15px;
+      }
+    }
+
+    &-blur-1,
+    &-blur-2 {
+      position: absolute;
+      width: 150px;
+      height: 200px;
+      background: linear-gradient(45deg, #06254b, #1a3a5a);
+      border-radius: 15px;
+      opacity: 0.6;
+      filter: blur(10px);
+    }
+
+    &-blur-1 {
+      top: 50px;
+      left: -50px;
+    }
+
+    &-blur-2 {
+      top: 100px;
+      right: -50px;
+    }
+  }
+}
+
+/* ==========================================
+   UAE BUNKER RESPONDER SECTION
+   ========================================== */
+.dmc-home-uae-bunker {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("/assets/Temp BG 2.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    filter: brightness(0.6);
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 4rem 4vw;
+    gap: 3rem;
+  }
+
+  &-overlay {
+    flex: 1 1 45%;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+
+  &-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    .highlight {
+      color: #f26522;
+    }
+  }
+
+  &-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+  }
+
+  &-cards {
+    flex: 1 1 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  &-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    &:nth-child(3) {
+      grid-column: span 2;
+      height: 200px;
+    }
+  }
+}
+
+/* ==========================================
+   SERVICES LIST SECTION
+   ========================================== */
+.dmc-home-services {
+  background: #fff;
+  padding: 4rem 4vw;
+
+  &-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+  }
+
+  &-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex: 1;
+  }
+
+  &-icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    background: #f0f4f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &-emoji {
+    font-size: 3rem;
+    display: block;
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #06254b;
+    margin: 0;
+  }
+
+  &-subtitle {
+    font-size: 0.95rem;
+    color: #888;
+    font-weight: 600;
+    margin-top: 0.3rem;
+  }
+
+  &-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-top: 0.5rem;
+    max-width: 600px;
+  }
+
+  &-date {
+    background-color: #06254b;
+    color: #fff;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    min-width: 80px;
+
+    .date-day {
+      font-size: 1.8rem;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .date-month {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* ==========================================
+   LOADED VESSELS SECTION
+   ========================================== */
+.dmc-home-vessels {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &-ocean {
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/sea-sand.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 4vw;
+    flex-wrap: wrap;
+  }
+
+  &-ship {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-illustration img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &-counter {
+    flex: 1;
+    text-align: center;
+    color: #06254b;
+    padding: 1rem;
+  }
+
+  &-count {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+    color: #001f4e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &-description {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem 0;
+    font-weight: 600;
+
+    span {
+      color: #ff5722;
+    }
+  }
+
+  &-box {
+    background: #06254b;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    max-width: 420px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* ==========================================
+   BECOME A SHIP OWNER SECTION
+   ========================================== */
+.dmc-home-ship-owner {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &-sky {
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/owner.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 4rem 4vw;
+    text-align: center;
+  }
+
+  &-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #06254b;
+    margin-bottom: 3rem;
+  }
+
+  &-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  &-info-card {
+    background: rgba(0, 80, 60, 0.15);
+    color: #06254b;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 240px;
+    text-align: left;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+
+  &-card {
+    background: transparent;
+    border-radius: 12px;
+    padding: 0;
+    text-align: center;
+    max-width: 200px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+
+    &-image img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    &-title {
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      right: 0;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 0 0 12px 12px;
+    }
+  }
+}
+
+/* ==========================================
+   DAMILUBE PRODUCT SHOWCASE SECTION
+   ========================================== */
+.dmc-home-damilube {
+  position: relative;
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  overflow: hidden;
+
+  &-title {
+    font-size: 6rem;
+    font-weight: 900;
+    color: #00163a;
+    margin-bottom: 2.5rem;
+    z-index: 2;
+    letter-spacing: -2px;
+  }
+
+  &-panels {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    z-index: 2;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &-panel {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 400px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      z-index: 3;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    &-label {
+      background: rgba(0, 22, 58, 0.7);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &-button {
+    margin-top: 2.5rem;
+    background: #00163a;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+
+    &:hover {
+      background: #003366;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f0f4f8;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 1200px) {
+  .dmc-home-hero-title {
+    font-size: 3rem;
+  }
+
+  .dmc-home-vessels-count {
+    font-size: 4rem;
+  }
+
+  .dmc-home-ship-owner-title {
+    font-size: 2.5rem;
+  }
+
+  .dmc-home-damilube-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .dmc-home-hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-uae-bunker-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-vessels-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-ship-owner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dmc-home-services-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .dmc-home-damilube-panels {
+    justify-content: center;
+  }
+
+  /* Footer styles removed - using layout footer component */
+}
+
+@media (max-width: 768px) {
+  .dmc-home-uae-bunker-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .dmc-home-uae-bunker-overlay,
+  .dmc-home-uae-bunker-cards {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .dmc-home-uae-bunker-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dmc-home-uae-bunker-card:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .dmc-home-ship-owner-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dmc-home-ship-owner-card img {
+    height: 200px;
+  }
+
+  .dmc-home-ship-owner-info-card {
+    width: 90%;
+  }
+
+  .dmc-home-damilube-title {
+    font-size: 3rem;
+  }
+
+  .dmc-home-damilube-panel {
+    width: 150px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dmc-home-hero-title {
+    font-size: 2rem;
+  }
+
+  .dmc-home-vessels-count {
+    font-size: 3rem;
+  }
+
+  .dmc-home-ship-owner-title {
+    font-size: 2rem;
+  }
+
+  .dmc-home-damilube-title {
+    font-size: 2.5rem;
+  }
+
+  .dmc-home-damilube-panels {
+    gap: 1rem;
+  }
+
+  .dmc-home-damilube-panel {
+    width: 150px;
+  }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideInLeft {
+  from { 
+    opacity: 0; 
+    transform: translateX(-50px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes slideInRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(50px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+.fade-in { 
+  animation: fadeIn 0.8s ease-out; 
+}
+
+.slide-in-left { 
+  animation: slideInLeft 0.8s ease-out; 
+}
+
+.slide-in-right { 
+  animation: slideInRight 0.8s ease-out; 
+}
+
+/* ==========================================
+   HOVER EFFECTS
+   ========================================== */
+.feature-card,
+.service-card {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+
+  &.btn-primary {
+    background: var(--primary-color);
+    color: white;
+
+    &:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+  }
+
+  &.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+
+    &:hover {
+      background: white;
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+.btn:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+  .hero-actions, 
+  .btn { 
+    display: none; 
+  }
+  
+  .feature-card, 
+  .service-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+} 

@@ -1,0 +1,126 @@
+<!-- ==========================================
+     OPERATIONS PAGE
+     Component ID: DMC-CMP-5002
+     ========================================== -->
+
+<!-- HERO SECTION -->
+<app-section-one
+  [title]="heroData.title"
+  [subtitle]="heroData.subtitle"
+  [backgroundImage]="heroData.backgroundImage"
+  [showOverlay]="heroData.showOverlay"
+  [overlayOpacity]="heroData.overlayOpacity"
+  [minHeight]="'70vh'"
+  [alignContent]="'center'"
+  customClass="operations-hero"
+  (sectionClick)="onSectionClick()">
+
+  <div class="hero-search">
+    <div class="search-tabs">
+      <button *ngFor="let tab of hero.tabs" 
+              [class.active]="tab === hero.activeTab"
+              class="tab-button">
+        {{ tab }}
+      </button>
+    </div>
+    <div class="search-form">
+      <input placeholder="Location" [(ngModel)]="hero.search.location" />
+      <input placeholder="Vessel Type" [(ngModel)]="hero.search.vesselType" />
+      <input placeholder="Capacity" [(ngModel)]="hero.search.capacity" />
+      <button class="search-button" (click)="onSearch()">Search</button>
+    </div>
+  </div>
+</app-section-one>
+
+<!-- STATS SECTION -->
+<app-section-two
+  [title]="statsData.title"
+  [subtitle]="statsData.subtitle"
+  [backgroundColor]="statsData.backgroundColor"
+  [textColor]="statsData.textColor"
+  [layout]="statsData.layout"
+  [columns]="statsData.columns"
+  [gap]="statsData.gap"
+  customClass="operations-stats"
+  (sectionClick)="onSectionClick()">
+
+  <div class="stats-grid">
+    <div *ngFor="let stat of stats" class="stat-card">
+      <div class="stat-value">{{ stat.value }}</div>
+      <div class="stat-label">{{ stat.label }}</div>
+    </div>
+  </div>
+</app-section-two>
+
+<!-- FEATURES SECTION -->
+<app-section-two
+  [title]="featuresData.title"
+  [subtitle]="featuresData.subtitle"
+  [backgroundColor]="featuresData.backgroundColor"
+  [textColor]="featuresData.textColor"
+  [layout]="featuresData.layout"
+  [columns]="featuresData.columns"
+  [gap]="featuresData.gap"
+  customClass="operations-features"
+  (sectionClick)="onSectionClick()">
+
+  <div class="features-grid">
+    <div *ngFor="let feature of features" class="feature-card">
+      <div class="feature-icon">
+        <span>{{ feature.icon }}</span>
+      </div>
+      <h3 class="feature-title">{{ feature.title }}</h3>
+      <p class="feature-desc">{{ feature.desc }}</p>
+    </div>
+  </div>
+</app-section-two>
+
+<!-- VESSELS SECTION -->
+<app-section-four
+  [title]="vesselsData.title"
+  [subtitle]="vesselsData.subtitle"
+  [backgroundColor]="vesselsData.backgroundColor"
+  [textColor]="vesselsData.textColor"
+  [layout]="vesselsData.layout"
+  [columns]="vesselsData.columns"
+  [gap]="vesselsData.gap"
+  customClass="operations-vessels"
+  (sectionClick)="onSectionClick()">
+
+  <div class="vessels-grid">
+    <div *ngFor="let vessel of vessels" class="vessel-card">
+      <img [src]="vessel.image" [alt]="vessel.type" class="vessel-image" />
+      <div class="vessel-content">
+        <h3 class="vessel-type">{{ vessel.type }}</h3>
+        <p class="vessel-desc">{{ vessel.desc }}</p>
+        <div class="vessel-details">
+          <span>{{ vessel.dwt }}</span> •
+          <span>{{ vessel.age }}</span> •
+          <span>{{ vessel.location }}</span>
+        </div>
+        <div class="vessel-price">Price: {{ vessel.price }}</div>
+        <button class="vessel-button">See more</button>
+      </div>
+    </div>
+  </div>
+</app-section-four>
+
+<!-- HELP SECTION -->
+<app-section-three
+  [title]="helpData.title"
+  [subtitle]="helpData.subtitle"
+  [backgroundColor]="helpData.backgroundColor"
+  [textColor]="helpData.textColor"
+  [layout]="helpData.layout"
+  [imagePosition]="helpData.imagePosition"
+  [imageUrl]="helpData.imageUrl"
+  [imageAlt]="helpData.imageAlt"
+  customClass="operations-help"
+  (sectionClick)="onSectionClick()">
+
+  <div class="help-content">
+    <h3>{{ help.title }}</h3>
+    <p>{{ help.desc }}</p>
+    <button class="help-button">{{ help.button }}</button>
+  </div>
+</app-section-three>

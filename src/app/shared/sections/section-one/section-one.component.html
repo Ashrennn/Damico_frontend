@@ -1,0 +1,17 @@
+<section 
+  class="section-one {{ customClass }}"
+  [ngStyle]="sectionStyles"
+  (click)="onSectionClick()">
+  
+  <div class="section-overlay" *ngIf="showOverlay" [style.opacity]="overlayOpacity"></div>
+  
+  <div class="section-content" [class]="contentAlignment">
+    <div class="content-wrapper">
+      <h2 class="section-title" *ngIf="title">{{ title }}</h2>
+      <p class="section-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+      <div class="section-body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</section> 

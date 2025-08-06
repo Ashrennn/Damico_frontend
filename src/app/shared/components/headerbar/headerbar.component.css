@@ -1,0 +1,89 @@
+/* ==========================================
+   HEADER BAR STYLES
+   Component ID: DMC-CMP-4001
+   ========================================== */
+body, :host {
+  margin: 0;
+  padding: 0;
+}
+.dmc-headerbar-row {
+  margin-top: 0;
+  padding-top: 0;
+  top: 0;
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #06254b;
+  color: #fff;
+  min-height: 36px;
+  height: 36px;
+  padding: 0 2vw;
+  box-sizing: border-box;
+  z-index: 10;
+  font-family: 'Segoe UI', 'Tajawal', 'Cairo', Arial, sans-serif;
+}
+.dmc-headerbar-social {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.dmc-headerbar-social-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  color: #000;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+}
+.dmc-headerbar-social-icon:hover {
+  background: #fff;
+  color: #06254b;
+}
+.dmc-headerbar-center {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  flex: 1;
+  margin-left:3rem ;
+  align-items: center;
+}
+.dmc-headerbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+.dmc-headerbar-link:hover {
+  background: #fff;
+  color: #06254b;
+}
+.dmc-headerbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+.dmc-headerbar-arabic-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  padding-left: 0.8vw;
+}

@@ -1,0 +1,60 @@
+<footer class="footer-bar">
+  <div class="footer-content">
+    <div class="footer-section">
+      <div class="company-info">
+        <img src="assets/images/logo-arabic.png" alt="Damico Logo" class="footer-logo">
+        <p class="company-description">
+          Leading provider of marine fuel solutions and energy services in the UAE and beyond.
+        </p>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +971 4 123 4567</p>
+          <p><i class="fas fa-envelope"></i> info&#64;damico.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>Company</h3>
+      <ul class="footer-links">
+        <li *ngFor="let link of footerLinks.company">
+          <a [routerLink]="link.route">{{ link.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Services</h3>
+      <ul class="footer-links">
+        <li *ngFor="let link of footerLinks.services">
+          <a [routerLink]="link.route">{{ link.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Support</h3>
+      <ul class="footer-links">
+        <li *ngFor="let link of footerLinks.support">
+          <a [routerLink]="link.route">{{ link.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="#" class="social-link" *ngFor="let link of socialLinks">
+          <i class="fab fa-{{ link.icon }}"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {{ currentYear }} Damico. All rights reserved.</p>
+      <p>Designed with ❤️ for the marine industry</p>
+    </div>
+  </div>
+</footer> 

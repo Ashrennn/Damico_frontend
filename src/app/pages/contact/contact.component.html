@@ -1,0 +1,51 @@
+<!-- ==========================================
+     CONTACT PAGE
+     Component ID: DMC-CMP-5005
+     ========================================== -->
+
+<!-- HERO SECTION -->
+<app-section-one
+  [title]="heroData.title"
+  [subtitle]="heroData.subtitle"
+  [backgroundImage]="heroData.backgroundImage"
+  [showOverlay]="heroData.showOverlay"
+  [overlayOpacity]="heroData.overlayOpacity"
+  [minHeight]="'60vh'"
+  [alignContent]="'center'"
+  customClass="contact-hero"
+  (sectionClick)="onSectionClick()">
+</app-section-one>
+
+<!-- CONTACT SECTION -->
+<app-section-four
+  [title]="contactData.title"
+  [subtitle]="contactData.subtitle"
+  [backgroundColor]="contactData.backgroundColor"
+  [textColor]="contactData.textColor"
+  [layout]="contactData.layout"
+  customClass="contact-section"
+  (sectionClick)="onSectionClick()">
+
+  <div class="contact-content">
+    <!-- Welcome Card -->
+    <div class="contact-welcome-card">
+      <h2>{{ welcome.title }}</h2>
+      <p>{{ welcome.desc }}</p>
+      <div class="contact-socials">
+        <a *ngFor="let social of welcome.socials" [href]="social.url" target="_blank">
+          <i [class]="social.icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Newsletter Signup Card -->
+    <div class="contact-newsletter-card">
+      <h3>Sign Up to Our Newsletter</h3>
+      <form class="contact-newsletter-form" (ngSubmit)="onSubmitNewsletter()">
+        <input type="text" placeholder="Enter your name" [(ngModel)]="newsletter.name" name="name" />
+        <input type="email" placeholder="Enter your email" [(ngModel)]="newsletter.email" name="email" />
+        <button class="contact-newsletter-btn" type="submit">SIGN UP</button>
+      </form>
+    </div>
+  </div>
+</app-section-four>

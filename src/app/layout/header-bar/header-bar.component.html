@@ -1,0 +1,39 @@
+<header class="header-bar" [class.scrolled]="isScrolled">
+  <div class="header-container">
+    <!-- Left Navigation -->
+    <nav class="nav-left">
+      <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
+      <a routerLink="/operations" routerLinkActive="active" class="nav-link">Operations</a>
+      <a routerLink="/library" routerLinkActive="active" class="nav-link">Library</a>
+    </nav>
+
+    <!-- Central Logo -->
+    <div class="logo-section">
+      <a routerLink="/home" class="logo-link">
+        <img src="/assets/favicon.ico" alt="Damico Logo" class="logo-favicon">
+      </a>
+    </div>
+
+    <!-- Right Navigation -->
+    <nav class="nav-right">
+      <a routerLink="/bunkering" routerLinkActive="active" class="nav-link">Bunkering</a>
+      <a routerLink="/dmc-csr" routerLinkActive="active" class="nav-link">DMC-CSR</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+      <span class="hamburger" [class.active]="isMobileMenuOpen"></span>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-nav" [class.mobile-open]="isMobileMenuOpen">
+    <a routerLink="/about" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">About</a>
+    <a routerLink="/operations" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Operations</a>
+    <a routerLink="/library" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Library</a>
+    <a routerLink="/bunkering" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Bunkering</a>
+    <a routerLink="/dmc-csr" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">DMC-CSR</a>
+    <a routerLink="/contact" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Contact</a>
+  </nav>
+</header> 

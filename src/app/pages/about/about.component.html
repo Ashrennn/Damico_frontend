@@ -1,0 +1,139 @@
+<!-- ==========================================
+     ABOUT COMPONENT TEMPLATE
+     Component ID: DMC-CMP-5001
+     ========================================== -->
+
+<!-- ==========================================
+     FLOATING NAVIGATION
+     ========================================== -->
+<nav class="dmc-about-navigation">
+  <ul class="dmc-about-nav-list">
+    <li class="dmc-about-nav-item" *ngFor="let item of navigationItems">
+      <button
+        class="dmc-about-nav-button"
+        [class.active]="item.active"
+        (click)="navigateToSection(item.id)">
+        {{ item.label }}
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<!-- ==========================================
+     HERO SECTION
+     ========================================== -->
+<app-section-one
+  [title]="heroData.title"
+  [subtitle]="heroData.subtitle"
+  [backgroundImage]="heroData.backgroundImage"
+  [showOverlay]="heroData.showOverlay"
+  [overlayOpacity]="heroData.overlayOpacity"
+  [minHeight]="'70vh'"
+  [alignContent]="'center'"
+  customClass="about-hero"
+  (sectionClick)="onSectionClick()">
+</app-section-one>
+
+<!-- ==========================================
+     WHO WE ARE SECTION
+     ========================================== -->
+<app-section-three
+  [title]="whoWeAreData.title"
+  [subtitle]="whoWeAreData.subtitle"
+  [backgroundColor]="whoWeAreData.backgroundColor"
+  [textColor]="whoWeAreData.textColor"
+  [layout]="whoWeAreData.layout"
+  [imagePosition]="whoWeAreData.imagePosition"
+  [imageUrl]="whoWeAreData.imageUrl"
+  [imageAlt]="whoWeAreData.imageAlt"
+  customClass="about-who-we-are"
+  (sectionClick)="onSectionClick()">
+
+  <div class="section-content">
+    <div class="section-number">{{ sections[0].number }}</div>
+    <p class="section-description">{{ sections[0].description }}</p>
+    <button
+      class="section-button"
+      (click)="handleButtonClick(sections[0].buttonAction)">
+      {{ sections[0].buttonText }}
+    </button>
+  </div>
+</app-section-three>
+
+<!-- ==========================================
+     ABOUT US SECTION
+     ========================================== -->
+<app-section-three
+  [title]="aboutUsData.title"
+  [subtitle]="aboutUsData.subtitle"
+  [backgroundColor]="aboutUsData.backgroundColor"
+  [textColor]="aboutUsData.textColor"
+  [layout]="aboutUsData.layout"
+  [imagePosition]="aboutUsData.imagePosition"
+  [imageUrl]="aboutUsData.imageUrl"
+  [imageAlt]="aboutUsData.imageAlt"
+  customClass="about-about-us"
+  (sectionClick)="onSectionClick()">
+
+  <div class="section-content">
+    <div class="section-number">{{ sections[1].number }}</div>
+    <p class="section-description">{{ sections[1].description }}</p>
+    <button
+      class="section-button"
+      (click)="handleButtonClick(sections[1].buttonAction)">
+      {{ sections[1].buttonText }}
+    </button>
+  </div>
+</app-section-three>
+
+<!-- ==========================================
+     OUR HISTORY SECTION
+     ========================================== -->
+<app-section-three
+  [title]="ourHistoryData.title"
+  [subtitle]="ourHistoryData.subtitle"
+  [backgroundColor]="ourHistoryData.backgroundColor"
+  [textColor]="ourHistoryData.textColor"
+  [layout]="ourHistoryData.layout"
+  [imagePosition]="ourHistoryData.imagePosition"
+  [imageUrl]="ourHistoryData.imageUrl"
+  [imageAlt]="ourHistoryData.imageAlt"
+  customClass="about-our-history"
+  (sectionClick)="onSectionClick()">
+
+  <div class="section-content">
+    <div class="section-number">{{ sections[2].number }}</div>
+    <p class="section-description">{{ sections[2].description }}</p>
+    <button
+      class="section-button"
+      (click)="handleButtonClick(sections[2].buttonAction)">
+      {{ sections[2].buttonText }}
+    </button>
+  </div>
+</app-section-three>
+
+<!-- ==========================================
+     OUR PEOPLE SECTION
+     ========================================== -->
+<app-section-four
+  [title]="ourPeopleData.title"
+  [subtitle]="ourPeopleData.subtitle"
+  [backgroundColor]="ourPeopleData.backgroundColor"
+  [textColor]="ourPeopleData.textColor"
+  [layout]="ourPeopleData.layout"
+  [columns]="ourPeopleData.columns"
+  [gap]="ourPeopleData.gap"
+  customClass="about-our-people"
+  (sectionClick)="onSectionClick()">
+
+  <div class="team-cards">
+    <div class="team-card" *ngFor="let member of teamMembers">
+      <div class="member-avatar">
+        <img [src]="member.avatar" [alt]="member.name">
+      </div>
+      <h3 class="member-name">{{ member.name }}</h3>
+      <p class="member-role">{{ member.role }}</p>
+      <p class="member-description">{{ member.description }}</p>
+    </div>
+  </div>
+</app-section-four>

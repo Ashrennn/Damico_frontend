@@ -1,0 +1,404 @@
+/* ==========================================
+   DMC-CSR PAGE STYLES
+   Component ID: DMC-CMP-5006
+   ========================================== */
+
+/* HERO SECTION */
+.dmc-dmc-csr-hero {
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-dmc-csr-hero-overlay {
+  width: 100vw;
+  min-height: 80vh;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.dmc-dmc-csr-hero-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+.dmc-dmc-csr-main-card {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 8px 32px rgba(6,37,75,0.18);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+.dmc-dmc-csr-main-card h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #06254b;
+  line-height: 1.2;
+}
+.dmc-dmc-csr-main-card p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.dmc-dmc-csr-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.dmc-dmc-csr-btn {
+  background: #06254b;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(6,37,75,0.04);
+}
+.dmc-dmc-csr-btn:hover {
+  background: #1a3a5a;
+}
+
+/* STATISTICS PANEL */
+.dmc-dmc-csr-stats-panel {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 8px 32px rgba(6,37,75,0.18);
+  border-radius: 16px;
+  padding: 2rem;
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  backdrop-filter: blur(6px);
+  position: relative;
+}
+.dmc-dmc-csr-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dmc-dmc-csr-stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+.dmc-dmc-csr-stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #06254b;
+}
+.dmc-dmc-csr-video-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.dmc-dmc-csr-play-icon {
+  background: #e74c3c;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+/* CORPORATE PROFILE SECTION */
+.dmc-dmc-csr-corporate {
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-dmc-csr-corporate-overlay {
+  width: 100vw;
+  min-height: 80vh;
+  background: rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.dmc-dmc-csr-corporate-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+.dmc-dmc-csr-corporate-card {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 8px 32px rgba(6,37,75,0.18);
+  border-radius: 16px;
+  padding: 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+.dmc-dmc-csr-corporate-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #06254b;
+}
+.dmc-dmc-csr-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.dmc-dmc-csr-corporate-card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.dmc-dmc-csr-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  flex: 1.2;
+}
+.dmc-dmc-csr-image-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(6,37,75,0.1);
+  transition: transform 0.2s;
+}
+.dmc-dmc-csr-image-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-dmc-csr-image-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.dmc-dmc-csr-image-card h3 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #06254b;
+  text-align: center;
+}
+
+/* WHAT WE OFFER SECTION */
+.dmc-dmc-csr-offer {
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-dmc-csr-offer-overlay {
+  width: 100vw;
+  min-height: 80vh;
+  background: rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.dmc-dmc-csr-offer-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+.dmc-dmc-csr-offer-card {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 8px 32px rgba(6,37,75,0.18);
+  border-radius: 16px;
+  padding: 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+.dmc-dmc-csr-offer-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #06254b;
+}
+.dmc-dmc-csr-offer-card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.dmc-dmc-csr-products {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1.2;
+}
+.dmc-dmc-csr-product-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(6,37,75,0.1);
+  flex: 1;
+  transition: transform 0.2s;
+}
+.dmc-dmc-csr-product-card:hover {
+  transform: translateY(-4px);
+}
+.dmc-dmc-csr-product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+.dmc-dmc-csr-product-card h3 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #06254b;
+  text-align: center;
+}
+
+/* GLOBAL OFFICES SECTION */
+.dmc-dmc-csr-global {
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dmc-dmc-csr-global-overlay {
+  width: 100vw;
+  min-height: 60vh;
+  background: rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.dmc-dmc-csr-global-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 2rem;
+  text-align: center;
+}
+.dmc-dmc-csr-global-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #06254b;
+}
+.dmc-dmc-csr-world-map {
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(6,37,75,0.18);
+  backdrop-filter: blur(6px);
+}
+.dmc-dmc-csr-world-map img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* FOOTER */
+.dmc-dmc-csr-footer {
+  background: #06254b;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+  .dmc-dmc-csr-hero-content,
+  .dmc-dmc-csr-corporate-content,
+  .dmc-dmc-csr-offer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .dmc-dmc-csr-main-card,
+  .dmc-dmc-csr-stats-panel,
+  .dmc-dmc-csr-corporate-card,
+  .dmc-dmc-csr-offer-card {
+    width: 100%;
+    max-width: 600px;
+  }
+  .dmc-dmc-csr-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+  .dmc-dmc-csr-products {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dmc-dmc-csr-hero-content,
+  .dmc-dmc-csr-corporate-content,
+  .dmc-dmc-csr-offer-content {
+    padding: 0 1rem;
+  }
+  .dmc-dmc-csr-main-card h1 {
+    font-size: 1.8rem;
+  }
+  .dmc-dmc-csr-corporate-card h2,
+  .dmc-dmc-csr-offer-card h2 {
+    font-size: 1.6rem;
+  }
+  .dmc-dmc-csr-global-content h2 {
+    font-size: 2rem;
+  }
+  .dmc-dmc-csr-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .dmc-dmc-csr-products {
+    flex-direction: column;
+  }
+  .dmc-dmc-csr-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,33 @@
+/* Main content area with proper spacing for fixed headers */
+.main-content {
+  margin-top: 110px; /* Account for header-strip (40px) + header-bar (70px) */
+  min-height: calc(100vh - 110px - 300px); /* Viewport height minus headers and footer */
+  padding: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 100px; /* Reduced for mobile */
+    min-height: calc(100vh - 100px - 400px);
+    padding: 1rem 0;
+  }
+}
+
+/* Global styles for better typography */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #1e3c72;
+  outline-offset: 2px;
+}

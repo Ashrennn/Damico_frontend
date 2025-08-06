@@ -1,0 +1,51 @@
+<!-- ==========================================
+     BUNKERING PAGE
+     Component ID: DMC-CMP-5004
+     ========================================== -->
+
+<!-- HERO SECTION -->
+<app-section-one
+  [title]="heroData.title"
+  [subtitle]="heroData.subtitle"
+  [backgroundImage]="heroData.backgroundImage"
+  [showOverlay]="heroData.showOverlay"
+  [overlayOpacity]="heroData.overlayOpacity"
+  [minHeight]="'60vh'"
+  [alignContent]="'center'"
+  customClass="bunkering-hero"
+  (sectionClick)="onSectionClick()">
+</app-section-one>
+
+<!-- LOGIN SECTION -->
+<app-section-four
+  [title]="loginData.title"
+  [subtitle]="loginData.subtitle"
+  [backgroundColor]="loginData.backgroundColor"
+  [textColor]="loginData.textColor"
+  [layout]="loginData.layout"
+  customClass="bunkering-login"
+  (sectionClick)="onSectionClick()">
+
+  <div class="login-content">
+    <div class="sap-info">
+      <img [src]="sap.logo" alt="SAP Logo" class="sap-logo" />
+      <h2 class="sap-title">{{ sap.title }}</h2>
+      <h3 class="sap-subtitle">{{ sap.subtitle }}</h3>
+      <p class="sap-desc">{{ sap.desc }}</p>
+    </div>
+
+    <div class="login-form-container">
+      <form class="login-form" (ngSubmit)="onSubmitLogin()">
+        <label>Email address</label>
+        <input type="email" placeholder="username@bunker.damico.ae" [(ngModel)]="login.email" name="email" />
+        <label>Password</label>
+        <input type="password" placeholder="********" [(ngModel)]="login.password" name="password" />
+        <div class="login-options">
+          <label><input type="checkbox" [(ngModel)]="login.remember" name="remember" /> Remember me</label>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        <button class="login-button" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</app-section-four>

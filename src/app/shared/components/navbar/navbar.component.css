@@ -1,0 +1,242 @@
+/* ===========================================================================
+   NAVBAR STYLES
+   Component ID: DMC-CMP-4000
+
+   Styles for the responsive DAMICO navigation bar, including social/media icons, navigation links, and centered logo.
+   =========================================================================== */
+
+/* ===========================================================================
+   VARIABLES AND CONFIGURATION
+   Component-specific variables and settings
+   =========================================================================== */
+:host {
+  --dmc-navbar-primary-color: #001B3F;
+  --dmc-navbar-secondary-color: #D7E3FF;
+  --dmc-navbar-bg: #f5f8ff;
+  --dmc-navbar-link-color: #001B3F;
+  --dmc-navbar-link-active: #222;
+  --dmc-navbar-radius: 32px;
+  --dmc-navbar-logo-size: 80px;
+  --dmc-navbar-padding: 0.5rem 2rem;
+}
+
+/* ===========================================================================
+   TOP ROW SECTION
+   Social icons left, right placeholder
+   =========================================================================== */
+body, :host {
+  margin: 0;
+  padding: 0;
+}
+.dmc-navbar-top-row {
+  margin: 0;
+  top: 0;
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dmc-navbar-primary-color);
+  color: #fff;
+  min-height: 48px;
+  height: 48px;
+  padding: 0 3vw;
+  box-sizing: border-box;
+  z-index: 10;
+  font-family: 'Segoe UI', 'Tajawal', 'Cairo', Arial, sans-serif;
+}
+
+.dmc-navbar-right {
+  min-width: 40px;
+  height: 32px;
+}
+
+/* ==========================================
+   NAVBAR PILL STYLES
+   Component ID: DMC-CMP-4000
+   ========================================== */
+.dmc-navbar-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f6fd;
+  border-radius: 350px;
+  padding: 0.4rem 2vw;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  max-width: 1000px;   /* increased from 800px */
+  min-width: 60vw;
+  min-height: 15px;
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', 'Tajawal', 'Cairo', Arial, sans-serif;
+}
+.dmc-navbar-links {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.dmc-navbar-links-left {
+  justify-content: flex-start;
+  flex: 1;
+}
+.dmc-navbar-links-right {
+  justify-content: flex-end;
+  flex: 1;
+}
+.dmc-navbar-link {
+  color: #06254b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.2s, background 0.2s;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-family: inherit;
+}
+.dmc-navbar-link:hover {
+  color: #000;
+  background: #e6edfa;
+}
+.dmc-navbar-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
+.dmc-navbar-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #06254b;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* ===========================================================================
+   SOCIAL ICONS
+   =========================================================================== */
+.dmc-navbar-social {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.dmc-navbar-social-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.dmc-navbar-social-icon:hover {
+  background: #fff;
+  color: var(--dmc-navbar-primary-color);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.dmc-navbar-top-center {
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+}
+.dmc-navbar-top-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.25rem;
+  padding: 0.25rem 1.5rem;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+.dmc-navbar-top-link:hover {
+  background: var(--dmc-navbar-secondary-color);
+  color: var(--dmc-navbar-primary-color);
+}
+.dmc-navbar-arabic-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 2vw;
+  height: 100%;
+}
+
+/* ===========================================================================
+   RESPONSIVE ADJUSTMENTS
+   Device-specific style adjustments
+   =========================================================================== */
+:host(.dmc-navbar--mobile-small),
+:host(.dmc-navbar--mobile-large) {
+  --dmc-navbar-padding: 0.25rem 0.5rem;
+  --dmc-navbar-logo-size: 56px;
+}
+.dmc-navbar-bar {
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.dmc-navbar-links {
+  gap: 5rem;
+}
+
+:host(.dmc-navbar--tablet-large) {
+  --dmc-navbar-logo-size: 64px;
+}
+
+:host(.dmc-navbar--desktop-large) {
+  --dmc-navbar-logo-size: 100px;
+  max-width: 1200px;
+}
+
+@media (max-width: 1200px) {
+  .dmc-navbar-bar {
+    max-width: 90vw;
+    min-width: 0;
+    padding: 0.6rem 2vw;
+  }
+  .dmc-navbar-logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  .dmc-navbar-bar {
+    max-width: 100vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .dmc-navbar-links {
+    gap: 0.8vw;
+  }
+  .dmc-navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
