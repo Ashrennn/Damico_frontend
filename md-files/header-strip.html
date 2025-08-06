@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Strip - Damico Energy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+        }
+
+        /* Header Strip Container */
+        .header-strip {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #011A3F; /* Darker color for background */
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Debug border for development */
+        .header-strip {
+            border: 2px solid #ff0000; /* Red debug border */
+        }
+
+        /* Five Equal Sections */
+        .section-a, .section-b, .section-c, .section-d, .section-e {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ffffff; /* White debug border */
+        }
+
+
+
+        /* Individual section colors for debugging */
+        .section-a {
+            border-color: #ff0000; /* Red */
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+
+        .section-b {
+            border-color: #00ff00; /* Green */
+            position: relative;
+        }
+
+        .section-c {
+            border-color: #0000ff; /* Blue */
+            position: relative;
+        }
+
+        .section-d {
+            border-color: #ffff00; /* Yellow */
+            position: relative;
+        }
+
+        .section-e {
+            border-color: #ff00ff; /* Magenta */
+        }
+
+        /* Section A Sub-containers */
+        .sub-a-1, .sub-a-2, .sub-a-3 {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ff9999; /* Light red debug border */
+            margin: 0 2px;
+            padding: 10px;
+            min-height: 40px;
+        }
+
+        /* Social Icons */
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #D7E2FE, #c5d1f0);
+            box-shadow: 3px 3px 6px #000000, -3px -3px 6px #4a5568;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            color: #011A3F; /* Darker color for text */
+        }
+
+        .social-icon:active {
+            box-shadow: inset 3px 3px 6px #000000, inset -3px -3px 6px #4a5568;
+            transform: scale(0.95);
+        }
+
+        /* Menu Buttons */
+        .menu-btn {
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #011A3F, #001a2f);
+            box-shadow: 3px 3px 6px #000000, -3px -3px 6px #4a5568;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #D7E2FE; /* Lighter color for text */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .menu-btn:active {
+            box-shadow: inset 3px 3px 6px #000000, inset -3px -3px 6px #4a5568;
+            transform: scale(0.95);
+        }
+
+        /* Language Button */
+        .language-btn {
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #011A3F, #001a2f);
+            box-shadow: 3px 3px 6px #000000, -3px -3px 6px #4a5568;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #D7E2FE; /* Lighter color for text */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .language-btn:active {
+            box-shadow: inset 3px 3px 6px #000000, inset -3px -3px 6px #4a5568;
+            transform: scale(0.95);
+        }
+
+        /* Dropdown Menu - Glass Morphism */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1); /* Enhanced glass morphism */
+            backdrop-filter: blur(15px); /* Stronger blur effect */
+            border-radius: 20px; /* More rounded dropdown menu */
+            padding: 10px 0;
+            min-width: 200px; /* Increased width */
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            margin-top: 5px;
+        }
+
+        .dropdown.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-item {
+            padding: 8px 20px;
+            color: #011A3F; /* Darker color for dropdown text */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px; /* Reduced space between text and flag */
+            transition: background-color 0.3s ease; /* Only transition background */
+            font-size: 13px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            font-weight: 400;
+            border-radius: 50px; /* Even more rounded corners */
+            margin: 2px 8px; /* Add spacing for rounded hover effect */
+        }
+
+        .dropdown-item:hover {
+            background: rgba(1, 26, 63, 0.3); /* Darker color hover background */
+            box-shadow: none; /* Remove any shadow effects */
+        }
+
+        .dropdown-item span:first-child {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-item span:last-child {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-item:hover span:first-child {
+            transform: translateX(5px) scale(1.05); /* Language text moves right and zooms */
+        }
+
+        .dropdown-item:hover span:last-child {
+            transform: translateX(-5px) scale(1.05); /* Flag moves left and zooms */
+        }
+
+        /* Separators for all dropdown items - only visible on hover */
+        .dropdown-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            height: 1px;
+            background: linear-gradient(to right, 
+                transparent 0%, 
+                rgba(1, 26, 63, 0.3) 15%, 
+                rgba(1, 26, 63, 0.5) 30%, 
+                rgba(1, 26, 63, 0.9) 50%, 
+                rgba(1, 26, 63, 0.5) 70%, 
+                rgba(1, 26, 63, 0.3) 85%, 
+                transparent 100%);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .dropdown-item:hover::after {
+            left: 5%;
+            right: 5%;
+            opacity: 1;
+        }
+
+        /* Make section E relative for dropdown positioning */
+        .section-e {
+            position: relative;
+        }
+
+        /* Tablet Header Strip */
+        .tablet-header-strip {
+            position: fixed;
+            top: 60px; /* Position below main header */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%; /* Reduced width for tablet */
+            max-width: 800px; /* Maximum width constraint */
+            height: 60px;
+            background: #011A3F; /* Same dark color as main header */
+            display: flex;
+            align-items: center;
+            z-index: 998;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 2px solid #00ff00; /* Green debug border */
+        }
+
+        /* Tablet Sections */
+        .tablet-section {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ffffff; /* Debug border */
+            padding: 0 10px; /* Horizontal padding */
+        }
+
+        /* Smaller divisions for WhatsApp and Language */
+        .tablet-section:first-child,
+        .tablet-section:last-child {
+            flex: 0 0 120px; /* Fixed width, no growth */
+        }
+
+        /* Center sections take remaining space equally */
+        .tablet-section:nth-child(2),
+        .tablet-section:nth-child(3),
+        .tablet-section:nth-child(4) {
+            flex: 1; /* Equal distribution of remaining space */
+        }
+
+        /* Tablet Buttons - Elongated Neomorphism */
+        .tablet-btn {
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #011A3F, #001a2f);
+            box-shadow: 3px 3px 6px #000000, -3px -3px 6px #4a5568;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #D7E2FE; /* Light color for text */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        /* Fixed width for WhatsApp and Language buttons */
+        .tablet-section:first-child .tablet-btn,
+        .tablet-section:last-child .tablet-btn {
+            width: 100px;
+            min-width: 100px;
+        }
+
+        /* Center buttons take remaining space equally */
+        .tablet-section:nth-child(2) .tablet-btn,
+        .tablet-section:nth-child(3) .tablet-btn,
+        .tablet-section:nth-child(4) .tablet-btn {
+            width: 100%;
+            min-width: auto;
+        }
+
+        .tablet-btn:active {
+            box-shadow: inset 3px 3px 6px #000000, inset -3px -3px 6px #4a5568;
+            transform: scale(0.95);
+        }
+
+        /* Mobile Header Strip */
+        .mobile-header-strip {
+            position: fixed;
+            top: 120px; /* Position below tablet header */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%; /* Reduced width for mobile */
+            max-width: 400px; /* Maximum width constraint */
+            height: 50px;
+            background: #011A3F; /* Same dark color as main header */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 2px solid #ff0000; /* Debug border */
+        }
+
+        /* Mobile Sections */
+        .mobile-section {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ffffff; /* Debug border */
+        }
+
+        /* Mobile Buttons - Circular Neomorphism */
+        .mobile-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%; /* Perfect circle */
+            background: linear-gradient(145deg, #011A3F, #001a2f);
+            box-shadow: 3px 3px 6px #000000, -3px -3px 6px #4a5568;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #D7E2FE; /* Light color for icons */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-btn:active {
+            box-shadow: inset 3px 3px 6px #000000, inset -3px -3px 6px #4a5568;
+            transform: scale(0.95);
+        }
+
+        /* Content for demonstration */
+        .content {
+            margin-top: 250px; /* Increased margin to account for all three headers */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Strip -->
+    <div class="header-strip">
+        <!-- Section A -->
+        <div class="section-a">
+            <!-- Sub-container A-1 -->
+            <div class="sub-a-1">
+                <div class="social-icon">🔗</div>
+            </div>
+            
+            <!-- Sub-container A-2 -->
+            <div class="sub-a-2">
+                <div class="social-icon">📺</div>
+            </div>
+            
+            <!-- Sub-container A-3 -->
+            <div class="sub-a-3">
+                <div class="social-icon">📝</div>
+            </div>
+        </div>
+        
+        <!-- Section B -->
+        <div class="section-b">
+            <button class="menu-btn" onclick="toggleDropdown('knowledge-dropdown')">Knowledge Center</button>
+            <div id="knowledge-dropdown" class="dropdown">
+                <a href="#" class="dropdown-item">
+                    <span>Industry Reports</span>
+                    <span>📊</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Technical Guides</span>
+                    <span>📚</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Research Papers</span>
+                    <span>🔬</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Case Studies</span>
+                    <span>📋</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>White Papers</span>
+                    <span>📄</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Training Materials</span>
+                    <span>🎓</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section C -->
+        <div class="section-c">
+            <button class="menu-btn" onclick="toggleDropdown('international-dropdown')">International</button>
+            <div id="international-dropdown" class="dropdown">
+                <a href="#" class="dropdown-item">
+                    <span>Global Operations</span>
+                    <span>🌍</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Regional Offices</span>
+                    <span>🏢</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Trade Partners</span>
+                    <span>🤝</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Export Services</span>
+                    <span>🚢</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Market Analysis</span>
+                    <span>📈</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Compliance</span>
+                    <span>✅</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section D -->
+        <div class="section-d">
+            <button class="menu-btn" onclick="toggleDropdown('news-dropdown')">News & Media</button>
+            <div id="news-dropdown" class="dropdown">
+                <a href="#" class="dropdown-item">
+                    <span>Press Releases</span>
+                    <span>📰</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Company News</span>
+                    <span>📢</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Media Coverage</span>
+                    <span>📺</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Events</span>
+                    <span>🎪</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Blog</span>
+                    <span>✍️</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Social Media</span>
+                    <span>📱</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section E -->
+        <div class="section-e">
+            <button class="language-btn" onclick="toggleDropdown('language-dropdown')">
+                داميكو
+            </button>
+            
+            <!-- Language Dropdown -->
+            <div id="language-dropdown" class="dropdown">
+                <a href="#" class="dropdown-item">
+                    <span>English</span>
+                    <span>🇺🇸</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>العربية</span>
+                    <span>🇸🇦</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>हिंदी</span>
+                    <span>🇮🇳</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>中文</span>
+                    <span>🇨🇳</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <span>Español</span>
+                    <span>🇪🇸</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tablet Header Strip -->
+    <div class="tablet-header-strip">
+        <!-- Tablet Section 1 - WhatsApp -->
+        <div class="tablet-section">
+            <button class="tablet-btn">WhatsApp</button>
+        </div>
+        
+        <!-- Tablet Section 2 - Knowledge Center -->
+        <div class="tablet-section">
+            <button class="tablet-btn">Knowledge Center</button>
+        </div>
+        
+        <!-- Tablet Section 3 - International -->
+        <div class="tablet-section">
+            <button class="tablet-btn">International</button>
+        </div>
+        
+        <!-- Tablet Section 4 - News & Media -->
+        <div class="tablet-section">
+            <button class="tablet-btn">News & Media</button>
+        </div>
+        
+        <!-- Tablet Section 5 - Language -->
+        <div class="tablet-section">
+            <button class="tablet-btn">Language</button>
+        </div>
+    </div>
+
+    <!-- Mobile Header Strip -->
+    <div class="mobile-header-strip">
+        <!-- Mobile Section 1 - WhatsApp -->
+        <div class="mobile-section">
+            <button class="mobile-btn">📱</button>
+        </div>
+        
+        <!-- Mobile Section 2 - Knowledge Base -->
+        <div class="mobile-section">
+            <button class="mobile-btn">📚</button>
+        </div>
+        
+        <!-- Mobile Section 3 - International -->
+        <div class="mobile-section">
+            <button class="mobile-btn">🌍</button>
+        </div>
+        
+        <!-- Mobile Section 4 - News -->
+        <div class="mobile-section">
+            <button class="mobile-btn">📰</button>
+        </div>
+        
+        <!-- Mobile Section 5 - Google Translate -->
+        <div class="mobile-section">
+            <button class="mobile-btn">🌐</button>
+        </div>
+    </div>
+
+    <!-- Developer Documentation -->
+    <div class="content">
+        <h1>Header Strip Component - Developer Guide</h1>
+        
+        <h2>🎨 Design System & Color Scheme</h2>
+        <ul>
+            <li><strong>Primary Background:</strong> #011A3F (Dark Navy Blue)</li>
+            <li><strong>Text & Icons:</strong> #D7E2FE (Light Blue-Gray)</li>
+            <li><strong>Glass Morphism:</strong> rgba(255, 255, 255, 0.1) with backdrop-filter: blur(15px)</li>
+        </ul>
+
+        <h2>🏗️ Layout Structure</h2>
+        <ul>
+            <li><strong>Fixed Header:</strong> position: fixed, top: 0, height: 60px</li>
+            <li><strong>Five Equal Sections:</strong> flex: 1 for equal distribution</li>
+            <li><strong>Section A Sub-division:</strong> Three equal sub-containers for social icons</li>
+            <li><strong>Debug Borders:</strong> Colored borders for development visibility</li>
+        </ul>
+
+        <h2>🎯 Interactive Elements</h2>
+        <h3>Neomorphism Style (All Buttons)</h3>
+        <ul>
+            <li><strong>Background:</strong> linear-gradient(145deg, #011A3F, #001a2f)</li>
+            <li><strong>Shadows:</strong> box-shadow: 3px 3px 6px #000000, -3px -3px 6px #4a5568</li>
+            <li><strong>Active State:</strong> inset shadows with scale(0.95) transform</li>
+            <li><strong>Border Radius:</strong> 25px for buttons, 50px for dropdown items</li>
+        </ul>
+
+        <h3>Social Icons (Section A)</h3>
+        <ul>
+            <li><strong>Style:</strong> Circular neomorphism with lighter background</li>
+            <li><strong>Background:</strong> linear-gradient(145deg, #D7E2FE, #c5d1f0)</li>
+            <li><strong>Text Color:</strong> #011A3F (darker color for contrast)</li>
+            <li><strong>Icons:</strong> 🔗 (LinkedIn), 📺 (YouTube), 📝 (Blogger)</li>
+        </ul>
+
+        <h3>Menu Buttons (Sections B, C, D)</h3>
+        <ul>
+            <li><strong>Labels:</strong> "Knowledge Center", "International", "News & Media"</li>
+            <li><strong>Style:</strong> Elongated neomorphism buttons</li>
+            <li><strong>Text Color:</strong> #D7E2FE (lighter color)</li>
+        </ul>
+
+        <h3>Language Button (Section E)</h3>
+        <ul>
+            <li><strong>Text:</strong> "داميكو" (Arabic for Damico)</li>
+            <li><strong>Style:</strong> Elongated neomorphism with dropdown</li>
+        </ul>
+
+        <h2>📋 Dropdown System</h2>
+        <h3>Glass Morphism Effect</h3>
+        <ul>
+            <li><strong>Background:</strong> rgba(255, 255, 255, 0.1)</li>
+            <li><strong>Blur:</strong> backdrop-filter: blur(15px)</li>
+            <li><strong>Border:</strong> 1px solid rgba(255, 255, 255, 0.2)</li>
+            <li><strong>Border Radius:</strong> 20px for container, 50px for items</li>
+        </ul>
+
+        <h3>Dropdown Items</h3>
+        <ul>
+            <li><strong>Layout:</strong> Flexbox with space-between for text and icons</li>
+            <li><strong>Text Color:</strong> #011A3F (darker color)</li>
+            <li><strong>Hover Effects:</strong> Background color change + text/icon movement</li>
+            <li><strong>Animation:</strong> translateX(5px) scale(1.05) for text, translateX(-5px) scale(1.05) for icons</li>
+        </ul>
+
+        <h3>Separators</h3>
+        <ul>
+            <li><strong>Style:</strong> Gradient separators with darker color</li>
+            <li><strong>Animation:</strong> Expand from center on hover, opacity transition</li>
+            <li><strong>Color:</strong> rgba(1, 26, 63, 0.3-0.9) gradient</li>
+        </ul>
+
+        <h2>🔧 JavaScript Functionality</h2>
+        <ul>
+            <li><strong>Toggle System:</strong> toggleDropdown(dropdownId) function</li>
+            <li><strong>Click Outside:</strong> Closes all dropdowns when clicking outside</li>
+            <li><strong>Button Detection:</strong> Handles both .language-btn and .menu-btn elements</li>
+        </ul>
+
+        <h2>📱 Responsive Considerations</h2>
+        <ul>
+            <li><strong>Flexbox Layout:</strong> Equal section distribution</li>
+            <li><strong>Fixed Positioning:</strong> Header stays at top during scroll</li>
+            <li><strong>Z-index Management:</strong> Proper layering for dropdowns</li>
+        </ul>
+
+        <h2>🎭 Animation Details</h2>
+        <ul>
+            <li><strong>Transition Timing:</strong> 0.3s ease for smooth animations</li>
+            <li><strong>Hover Effects:</strong> Click-only active states (no hover shadows)</li>
+            <li><strong>Text Movement:</strong> Only text moves, background stays static</li>
+            <li><strong>Separator Animation:</strong> Center-to-edges expansion on hover</li>
+        </ul>
+
+        <h2>🔍 Debug Features</h2>
+        <ul>
+            <li><strong>Section Borders:</strong> Red, Green, Blue, Yellow, Magenta for easy identification</li>
+            <li><strong>Sub-container Borders:</strong> Light red for Section A subdivisions</li>
+            <li><strong>Header Border:</strong> Red border around entire header strip</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            const allDropdowns = document.querySelectorAll('.dropdown');
+            
+            // Close all other dropdowns
+            allDropdowns.forEach(dd => {
+                if (dd.id !== dropdownId) {
+                    dd.classList.remove('show');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const languageButtons = document.querySelectorAll('.language-btn');
+            const menuButtons = document.querySelectorAll('.menu-btn');
+            
+            let clickedInside = false;
+            
+            // Check language buttons
+            languageButtons.forEach(button => {
+                if (button.contains(event.target)) {
+                    clickedInside = true;
+                }
+            });
+            
+            // Check menu buttons
+            menuButtons.forEach(button => {
+                if (button.contains(event.target)) {
+                    clickedInside = true;
+                }
+            });
+            
+            dropdowns.forEach(dropdown => {
+                if (dropdown.contains(event.target)) {
+                    clickedInside = true;
+                }
+            });
+            
+            if (!clickedInside) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

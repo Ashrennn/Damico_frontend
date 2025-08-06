@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Bar Component</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+        }
+
+        /* Header Bar Container */
+        .header-bar-container {
+            width: 90%;
+            max-width: 1200px;
+            height: 50px; /* Reduced height */
+            background: #D7E2FE; /* Light color */
+            margin: 50px auto 0 auto; /* Increased top margin to move lower */
+            border-radius: 50px; /* 50px border radius */
+            display: flex;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.1); /* Floating drop shadow */
+            position: relative; /* For absolute positioning of logo circle */
+        }
+
+        /* Seven Equal Sections */
+        .section-1, .section-2, .section-3, .section-4, 
+        .section-5, .section-6, .section-7 {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(1, 26, 63, 0.2); /* Debug border */
+        }
+
+        /* Individual section colors for debugging */
+        .section-1 { border-color: #ff0000; }
+        .section-2 { border-color: #00ff00; }
+        .section-3 { border-color: #0000ff; }
+        .section-4 { border-color: #ffff00; }
+        .section-5 { border-color: #ff00ff; }
+        .section-6 { border-color: #00ffff; }
+        .section-7 { border-color: #ff8800; }
+
+        /* Center section reduced width */
+        .section-4 {
+            flex: 0.6; /* Further reduced width for center section */
+        }
+
+        /* Other sections share remaining space equally */
+        .section-1, .section-2, .section-3, .section-5, .section-6, .section-7 {
+            flex: 1.067; /* Adjusted to compensate for center section */
+        }
+
+        /* Neomorphism Buttons for first 3 and last 3 sections */
+        .section-1, .section-2, .section-3, .section-5, .section-6, .section-7 {
+            position: relative;
+        }
+
+        .header-btn {
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #D7E2FE, #c5d1f0);
+            box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8), 
+                        -3px -3px 6px rgba(0, 0, 0, 0.1),
+                        0 4px 8px rgba(0, 0, 0, 0.2); /* Lighter shadows + darker bottom drop shadow */
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #011A3F; /* Darker color for text */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px; /* Increased width */
+        }
+
+        .header-btn:active {
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), 
+                        inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+            transform: scale(0.95);
+        }
+
+        /* Active state for clicked buttons */
+        .header-btn.active {
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), 
+                        inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+            transform: scale(0.95);
+        }
+
+        /* Header Button Dropdown */
+        .header-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(215, 226, 254, 0.85); /* Enhanced glass morphism */
+            backdrop-filter: blur(20px);
+            border-radius: 15px; /* Reduced border radius */
+            padding: 6px 0; /* Reduced vertical padding */
+            min-width: 160px; /* Reduced width */
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), 
+                        0 0 0 1px rgba(255, 255, 255, 0.3); /* Enhanced glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            margin-top: 5px;
+        }
+
+        .header-dropdown-item {
+            padding: 6px 16px; /* Reduced padding */
+            color: #011A3F; /* Dark color for text */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Reduced space between icon and text */
+            transition: all 0.3s ease;
+            font-size: 13px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            font-weight: 400;
+            border-radius: 50px;
+            margin: 2px 6px; /* Reduced margin */
+        }
+
+        .header-dropdown-item i {
+            font-size: 14px; /* Reduced icon size */
+            color: #011A3F; /* Dark color for icon */
+            transition: all 0.4s ease; /* Slightly longer transition for smooth rotation */
+            display: inline-block;
+        }
+
+        .header-dropdown-item span {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .header-dropdown-item:hover {
+            background: rgba(1, 26, 63, 0.1); /* Light background on hover */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-dropdown-item:hover i {
+            transform: scale(1.3) rotate(360deg); /* Full 360 degree rotation with scaling */
+        }
+
+        .header-dropdown-item:hover span {
+            transform: translateX(5px); /* Text moves right */
+        }
+
+        /* Show dropdown when button is active */
+        .header-btn.active + .header-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Floating Logo Circle */
+        .logo-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95px; /* Slightly increased size */
+            height: 95px; /* Slightly increased size */
+            border-radius: 50%;
+            background: linear-gradient(145deg, #D7E2FE, #c5d1f0);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15), 
+                        0 4px 10px rgba(0,0,0,0.1),
+                        0 0 0 4px rgba(255, 255, 255, 0.3); /* White border effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            cursor: pointer;
+            /* Breathing/Scaling Animation */
+            animation: breathing 3s ease-in-out infinite;
+        }
+
+        /* Breathing Animation Keyframes */
+        @keyframes breathing {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15), 
+                            0 4px 10px rgba(0,0,0,0.1),
+                            0 0 0 4px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+                box-shadow: 0 12px 35px rgba(0,0,0,0.2), 
+                            0 6px 15px rgba(0,0,0,0.15),
+                            0 0 0 4px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .logo-circle:hover {
+            animation: none; /* Stop breathing animation on hover */
+            transform: translate(-50%, -50%) scale(1.1); /* More pronounced hover effect */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25), 
+                        0 8px 20px rgba(0,0,0,0.2),
+                        0 0 0 4px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo-circle:active {
+            animation: none; /* Stop breathing animation on active */
+            transform: translate(-50%, -50%) scale(0.9);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1), 
+                        0 2px 8px rgba(0,0,0,0.08),
+                        0 0 0 4px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Tablet Header Bar Container */
+        .tablet-header-bar-container {
+            width: 70%; /* Reduced width for tablet */
+            max-width: 800px;
+            height: 45px; /* Slightly smaller height */
+            background: #D7E2FE; /* Light color */
+            margin: 120px auto 0 auto; /* Increased top margin to position below desktop version */
+            border-radius: 50px; /* 50px border radius */
+            display: flex;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.1); /* Floating drop shadow */
+            position: relative; /* For absolute positioning of logo circle */
+        }
+
+        /* Five Equal Sections for Tablet */
+        .tablet-section-1, .tablet-section-2, .tablet-section-3, 
+        .tablet-section-4, .tablet-section-5 {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(1, 26, 63, 0.2); /* Debug border */
+        }
+
+        /* Individual section colors for debugging */
+        .tablet-section-1 { border-color: #ff0000; }
+        .tablet-section-2 { border-color: #00ff00; }
+        .tablet-section-3 { border-color: #0000ff; }
+        .tablet-section-4 { border-color: #ff00ff; }
+        .tablet-section-5 { border-color: #00ffff; }
+
+        /* Center section reduced width */
+        .tablet-section-3 {
+            flex: 0.6; /* Reduced width for center section */
+        }
+
+        /* Other sections share remaining space equally */
+        .tablet-section-1, .tablet-section-2, .tablet-section-4, .tablet-section-5 {
+            flex: 1.1; /* Adjusted to compensate for center section */
+        }
+
+        /* Neomorphism Buttons for tablet sections */
+        .tablet-section-1, .tablet-section-2, .tablet-section-4, .tablet-section-5 {
+            position: relative;
+        }
+
+        .tablet-header-btn {
+            padding: 6px 16px; /* Slightly smaller padding */
+            border-radius: 25px;
+            background: linear-gradient(145deg, #D7E2FE, #c5d1f0);
+            box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8), 
+                        -3px -3px 6px rgba(0, 0, 0, 0.1),
+                        0 4px 8px rgba(0, 0, 0, 0.2); /* Lighter shadows + darker bottom drop shadow */
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px; /* Slightly smaller font */
+            color: #011A3F; /* Darker color for text */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px; /* Reduced width */
+        }
+
+        .tablet-header-btn:active {
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), 
+                        inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+            transform: scale(0.95);
+        }
+
+        /* Active state for clicked buttons */
+        .tablet-header-btn.active {
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), 
+                        inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+            transform: scale(0.95);
+        }
+
+        /* Tablet Header Button Dropdown */
+        .tablet-header-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(215, 226, 254, 0.85); /* Enhanced glass morphism */
+            backdrop-filter: blur(20px);
+            border-radius: 15px; /* Reduced border radius */
+            padding: 6px 0; /* Reduced vertical padding */
+            min-width: 140px; /* Reduced width */
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), 
+                        0 0 0 1px rgba(255, 255, 255, 0.3); /* Enhanced glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            margin-top: 5px;
+        }
+
+        .tablet-header-dropdown-item {
+            padding: 6px 16px; /* Reduced padding */
+            color: #011A3F; /* Dark color for text */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Reduced space between icon and text */
+            transition: all 0.3s ease;
+            font-size: 12px; /* Slightly smaller font */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            font-weight: 400;
+            border-radius: 50px;
+            margin: 2px 6px; /* Reduced margin */
+        }
+
+        .tablet-header-dropdown-item i {
+            font-size: 13px; /* Reduced icon size */
+            color: #011A3F; /* Dark color for icon */
+            transition: all 0.4s ease; /* Slightly longer transition for smooth rotation */
+            display: inline-block;
+        }
+
+        .tablet-header-dropdown-item span {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .tablet-header-dropdown-item:hover {
+            background: rgba(1, 26, 63, 0.1); /* Light background on hover */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .tablet-header-dropdown-item:hover i {
+            transform: scale(1.3) rotate(360deg); /* Full 360 degree rotation with scaling */
+        }
+
+        .tablet-header-dropdown-item:hover span {
+            transform: translateX(5px); /* Text moves right */
+        }
+
+        /* Show dropdown when button is active */
+        .tablet-header-btn.active + .tablet-header-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Tablet Floating Logo Circle */
+        .tablet-logo-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px; /* Slightly increased size for tablet */
+            height: 80px; /* Slightly increased size for tablet */
+            border-radius: 50%;
+            background: linear-gradient(145deg, #D7E2FE, #c5d1f0);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15), 
+                        0 4px 10px rgba(0,0,0,0.1),
+                        0 0 0 4px rgba(255, 255, 255, 0.3); /* White border effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            cursor: pointer;
+            /* Breathing/Scaling Animation */
+            animation: tablet-breathing 3s ease-in-out infinite;
+        }
+
+        /* Tablet Breathing Animation Keyframes */
+        @keyframes tablet-breathing {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15), 
+                            0 4px 10px rgba(0,0,0,0.1),
+                            0 0 0 4px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+                box-shadow: 0 12px 35px rgba(0,0,0,0.2), 
+                            0 6px 15px rgba(0,0,0,0.15),
+                            0 0 0 4px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .tablet-logo-circle:hover {
+            animation: none; /* Stop breathing animation on hover */
+            transform: translate(-50%, -50%) scale(1.1); /* More pronounced hover effect */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25), 
+                        0 8px 20px rgba(0,0,0,0.2),
+                        0 0 0 4px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .tablet-logo-circle:active {
+            animation: none; /* Stop breathing animation on active */
+            transform: translate(-50%, -50%) scale(0.9);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1), 
+                        0 2px 8px rgba(0,0,0,0.08),
+                        0 0 0 4px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Bar Component -->
+    <div class="header-bar-container">
+        <!-- Section 1 -->
+        <div class="section-1">
+            <button class="header-btn">Button 1</button>
+            <div class="header-dropdown">
+                <a href="#" class="header-dropdown-item">
+                    <i>📊</i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>📈</i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>⚙️</i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="section-2">
+            <button class="header-btn">Button 2</button>
+            <div class="header-dropdown">
+                <a href="#" class="header-dropdown-item">
+                    <i>🌍</i>
+                    <span>Global</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>🏢</i>
+                    <span>Corporate</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>📋</i>
+                    <span>Projects</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 3 -->
+        <div class="section-3">
+            <button class="header-btn">Button 3</button>
+            <div class="header-dropdown">
+                <a href="#" class="header-dropdown-item">
+                    <i>📰</i>
+                    <span>News</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>📺</i>
+                    <span>Media</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>📢</i>
+                    <span>Updates</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 4 - Center (Empty) -->
+        <div class="section-4"></div>
+        
+        <!-- Section 5 -->
+        <div class="section-5">
+            <button class="header-btn">Button 5</button>
+            <div class="header-dropdown">
+                <a href="#" class="header-dropdown-item">
+                    <i>👥</i>
+                    <span>Team</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>💼</i>
+                    <span>Careers</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>🤝</i>
+                    <span>Partners</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 6 -->
+        <div class="section-6">
+            <button class="header-btn">Button 6</button>
+            <div class="header-dropdown">
+                <a href="#" class="header-dropdown-item">
+                    <i>📞</i>
+                    <span>Contact</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>📧</i>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>💬</i>
+                    <span>Chat</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 7 -->
+        <div class="section-7">
+            <button class="header-btn">Button 7</button>
+            <div class="header-dropdown">
+                <a href="#" class="header-dropdown-item">
+                    <i>🔍</i>
+                    <span>Search</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>⭐</i>
+                    <span>Favorites</span>
+                </a>
+                <a href="#" class="header-dropdown-item">
+                    <i>📁</i>
+                    <span>Files</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating Logo Circle -->
+        <div class="logo-circle">
+            <span style="font-size: 20px; color: #011A3F; font-weight: bold;">LOGO</span>
+        </div>
+    </div>
+
+    <script>
+        // Get all header buttons
+        const headerButtons = document.querySelectorAll('.header-btn');
+
+        // Add click event listeners to all buttons
+        headerButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                // Remove active class from all buttons
+                headerButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Prevent event from bubbling up
+                event.stopPropagation();
+            });
+        });
+
+        // Add click event listener to document to handle clicking outside
+        document.addEventListener('click', function(event) {
+            // Check if click is outside any button or dropdown
+            const clickedButton = event.target.closest('.header-btn');
+            const clickedDropdown = event.target.closest('.header-dropdown');
+            
+            if (!clickedButton && !clickedDropdown) {
+                // Remove active class from all buttons when clicking outside
+                headerButtons.forEach(btn => btn.classList.remove('active'));
+            }
+        });
+
+        // Add click event listeners to dropdown items
+        const dropdownItems = document.querySelectorAll('.header-dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                // Prevent the dropdown from closing when clicking on items
+                event.stopPropagation();
+                
+                // You can add navigation logic here
+                console.log('Clicked:', this.querySelector('span').textContent);
+            });
+        });
+    </script>
+
+    <!-- Tablet Header Bar Component -->
+    <div class="tablet-header-bar-container">
+        <!-- Section 1 -->
+        <div class="tablet-section-1">
+            <button class="tablet-header-btn">Button 1</button>
+            <div class="tablet-header-dropdown">
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>📊</i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>📈</i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>⚙️</i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="tablet-section-2">
+            <button class="tablet-header-btn">Button 2</button>
+            <div class="tablet-header-dropdown">
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>🌍</i>
+                    <span>Global</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>🏢</i>
+                    <span>Corporate</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>📋</i>
+                    <span>Projects</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 3 - Center (Empty) -->
+        <div class="tablet-section-3"></div>
+        
+        <!-- Section 4 -->
+        <div class="tablet-section-4">
+            <button class="tablet-header-btn">Button 4</button>
+            <div class="tablet-header-dropdown">
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>👥</i>
+                    <span>Team</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>💼</i>
+                    <span>Careers</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>🤝</i>
+                    <span>Partners</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Section 5 -->
+        <div class="tablet-section-5">
+            <button class="tablet-header-btn">Button 5</button>
+            <div class="tablet-header-dropdown">
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>📞</i>
+                    <span>Contact</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>📧</i>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="tablet-header-dropdown-item">
+                    <i>💬</i>
+                    <span>Chat</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating Logo Circle -->
+        <div class="tablet-logo-circle">
+            <span style="font-size: 18px; color: #011A3F; font-weight: bold;">LOGO</span>
+        </div>
+    </div>
+
+    <script>
+        // Tablet header bar functionality
+        const tabletHeaderButtons = document.querySelectorAll('.tablet-header-btn');
+        
+        tabletHeaderButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                tabletHeaderButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                event.stopPropagation();
+            });
+        });
+        
+        document.addEventListener('click', function(event) {
+            const clickedButton = event.target.closest('.tablet-header-btn');
+            const clickedDropdown = event.target.closest('.tablet-header-dropdown');
+            
+            if (!clickedButton && !clickedDropdown) {
+                tabletHeaderButtons.forEach(btn => btn.classList.remove('active'));
+            }
+        });
+        
+        const tabletDropdownItems = document.querySelectorAll('.tablet-header-dropdown-item');
+        tabletDropdownItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.stopPropagation();
+                console.log('Tablet Clicked:', this.querySelector('span').textContent);
+            });
+        });
+    </script>
+</body>
+</html> 
