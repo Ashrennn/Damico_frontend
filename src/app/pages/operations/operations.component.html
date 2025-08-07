@@ -3,124 +3,265 @@
      Component ID: DMC-CMP-5002
      ========================================== -->
 
-<!-- HERO SECTION -->
-<app-section-one
-  [title]="heroData.title"
-  [subtitle]="heroData.subtitle"
-  [backgroundImage]="heroData.backgroundImage"
-  [showOverlay]="heroData.showOverlay"
-  [overlayOpacity]="heroData.overlayOpacity"
-  [minHeight]="'70vh'"
-  [alignContent]="'center'"
-  customClass="operations-hero"
-  (sectionClick)="onSectionClick()">
-
-  <div class="hero-search">
-    <div class="search-tabs">
-      <button *ngFor="let tab of hero.tabs" 
-              [class.active]="tab === hero.activeTab"
-              class="tab-button">
-        {{ tab }}
-      </button>
-    </div>
-    <div class="search-form">
-      <input placeholder="Location" [(ngModel)]="hero.search.location" />
-      <input placeholder="Vessel Type" [(ngModel)]="hero.search.vesselType" />
-      <input placeholder="Capacity" [(ngModel)]="hero.search.capacity" />
-      <button class="search-button" (click)="onSearch()">Search</button>
-    </div>
-  </div>
-</app-section-one>
-
-<!-- STATS SECTION -->
-<app-section-two
-  [title]="statsData.title"
-  [subtitle]="statsData.subtitle"
-  [backgroundColor]="statsData.backgroundColor"
-  [textColor]="statsData.textColor"
-  [layout]="statsData.layout"
-  [columns]="statsData.columns"
-  [gap]="statsData.gap"
-  customClass="operations-stats"
-  (sectionClick)="onSectionClick()">
-
-  <div class="stats-grid">
-    <div *ngFor="let stat of stats" class="stat-card">
-      <div class="stat-value">{{ stat.value }}</div>
-      <div class="stat-label">{{ stat.label }}</div>
-    </div>
-  </div>
-</app-section-two>
-
-<!-- FEATURES SECTION -->
-<app-section-two
-  [title]="featuresData.title"
-  [subtitle]="featuresData.subtitle"
-  [backgroundColor]="featuresData.backgroundColor"
-  [textColor]="featuresData.textColor"
-  [layout]="featuresData.layout"
-  [columns]="featuresData.columns"
-  [gap]="featuresData.gap"
-  customClass="operations-features"
-  (sectionClick)="onSectionClick()">
-
-  <div class="features-grid">
-    <div *ngFor="let feature of features" class="feature-card">
-      <div class="feature-icon">
-        <span>{{ feature.icon }}</span>
-      </div>
-      <h3 class="feature-title">{{ feature.title }}</h3>
-      <p class="feature-desc">{{ feature.desc }}</p>
-    </div>
-  </div>
-</app-section-two>
-
-<!-- VESSELS SECTION -->
-<app-section-four
-  [title]="vesselsData.title"
-  [subtitle]="vesselsData.subtitle"
-  [backgroundColor]="vesselsData.backgroundColor"
-  [textColor]="vesselsData.textColor"
-  [layout]="vesselsData.layout"
-  [columns]="vesselsData.columns"
-  [gap]="vesselsData.gap"
-  customClass="operations-vessels"
-  (sectionClick)="onSectionClick()">
-
-  <div class="vessels-grid">
-    <div *ngFor="let vessel of vessels" class="vessel-card">
-      <img [src]="vessel.image" [alt]="vessel.type" class="vessel-image" />
-      <div class="vessel-content">
-        <h3 class="vessel-type">{{ vessel.type }}</h3>
-        <p class="vessel-desc">{{ vessel.desc }}</p>
-        <div class="vessel-details">
-          <span>{{ vessel.dwt }}</span> •
-          <span>{{ vessel.age }}</span> •
-          <span>{{ vessel.location }}</span>
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="hero-background"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1>Let us help you Buy, Charter, or Sell a Ship</h1>
+      <p>Choose from our wide range of services for buying, selling, or chartering vessels to match your business needs.</p>
+      
+      <!-- Search Interface -->
+      <div class="search-interface">
+        <div class="search-tabs">
+          <button class="tab-button" [class.active]="activeTab === 'Buy'" (click)="setActiveTab('Buy')">Buy</button>
+          <button class="tab-button active" [class.active]="activeTab === 'Charter'" (click)="setActiveTab('Charter')">Charter</button>
+          <button class="tab-button" [class.active]="activeTab === 'Sell'" (click)="setActiveTab('Sell')">Sell</button>
         </div>
-        <div class="vessel-price">Price: {{ vessel.price }}</div>
+        
+        <div class="search-form">
+          <input type="text" placeholder="Location" [(ngModel)]="searchData.location" />
+          <input type="text" placeholder="Vessel Type" [(ngModel)]="searchData.vesselType" />
+          <input type="text" placeholder="Capacity" [(ngModel)]="searchData.capacity" />
+          <button class="search-button" (click)="onSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-right">
+      <img src="/assets/images/operations/comp1/bg3.webp" alt="Container Ship" class="hero-image">
+    </div>
+  </div>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-section">
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Ships Available</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Ports Covered</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">5+</div>
+      <div class="stat-label">New Launches</div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Choose Us Section -->
+<div class="features-section">
+  <div class="features-container">
+    <div class="features-header">
+      <h2>Why Choose Us?</h2>
+      <p>We provide tailored vessel brokerage services, ensuring you find the perfect vessel for your needs with ease and reliability.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Expert Guidance</h3>
+        <p>Our experienced team ensures you receive professional advice and support at every step of the brokerage process.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0L9 6.83V9H6.17L4.58 7.42a5.4 5.4 0 0 0-7.65 7.65l12 12a5.4 5.4 0 0 0 7.65-7.65L20.42 4.58z"/>
+          </svg>
+        </div>
+        <h3>Reliable Deals</h3>
+        <p>We connect you with verified vessel sellers to guarantee transparent and secure transactions.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <h3>Global Access</h3>
+        <p>With access to a worldwide network, we help you find vessels that match your specifications and budget.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <h3>24/7 Support</h3>
+        <p>Our dedicated customer support team is available 24/7 to address your queries and provide seamless assistance.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vessel Listings Section -->
+<div class="vessels-section">
+  <div class="vessels-container">
+    <div class="vessels-grid">
+      <div class="vessel-card">
+        <div class="vessel-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Bulk Carrier</h3>
+        <p>High-capacity bulk carrier, perfect for transporting heavy cargo.</p>
+        <div class="vessel-details">
+          <span>65,000 DWT</span> •
+          <span>10 Years</span> •
+          <span>Rotterdam, NL</span>
+        </div>
+        <div class="vessel-price">Price: $32,800,000</div>
+        <button class="vessel-button">See more</button>
+      </div>
+      
+      <div class="vessel-card">
+        <div class="vessel-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Container Ship</h3>
+        <p>Modern container ship with excellent cargo capacity and efficiency.</p>
+        <div class="vessel-details">
+          <span>45,000 DWT</span> •
+          <span>3 Years</span> •
+          <span>Hamburg, DE</span>
+        </div>
+        <div class="vessel-price">Price: $45,600,000</div>
+        <button class="vessel-button">See more</button>
+      </div>
+      
+      <div class="vessel-card">
+        <div class="vessel-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Offshore Vessel</h3>
+        <p>Offshore support vessel with cutting-edge technology for complex operations.</p>
+        <div class="vessel-details">
+          <span>25,000 DWT</span> •
+          <span>7 Years</span> •
+          <span>Dubai, UAE</span>
+        </div>
+        <div class="vessel-price">Price: $38,700,000</div>
         <button class="vessel-button">See more</button>
       </div>
     </div>
+    
+    <div class="vessels-pagination">
+      <div class="pagination-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <button class="pagination-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
   </div>
-</app-section-four>
+</div>
 
-<!-- HELP SECTION -->
-<app-section-three
-  [title]="helpData.title"
-  [subtitle]="helpData.subtitle"
-  [backgroundColor]="helpData.backgroundColor"
-  [textColor]="helpData.textColor"
-  [layout]="helpData.layout"
-  [imagePosition]="helpData.imagePosition"
-  [imageUrl]="helpData.imageUrl"
-  [imageAlt]="helpData.imageAlt"
-  customClass="operations-help"
-  (sectionClick)="onSectionClick()">
-
-  <div class="help-content">
-    <h3>{{ help.title }}</h3>
-    <p>{{ help.desc }}</p>
-    <button class="help-button">{{ help.button }}</button>
+<!-- Help Section -->
+<div class="help-section">
+  <div class="help-container">
+    <div class="help-content">
+      <h2>Are You Unsure About Your Vessel Selection?</h2>
+      <p>Do you need expert guidance in choosing the right vessel? Or are you not sure what you are looking for? Explore our extensive library of vessels or let us help you research further to find the perfect match.</p>
+      <button class="help-button">Explore Our Library</button>
+    </div>
+    
+    <div class="help-images">
+      <div class="image-grid">
+        <img src="/assets/images/operations/comp2/bg1.jpg" alt="Vessel Library 1" class="grid-image">
+        <img src="/assets/images/operations/comp2/bg2.jpg" alt="Vessel Library 2" class="grid-image">
+        <img src="/assets/images/operations/comp2/bg3.jpg" alt="Vessel Library 3" class="grid-image">
+        <img src="/assets/images/operations/comp2/bg4.webp" alt="Vessel Library 4" class="grid-image">
+      </div>
+    </div>
   </div>
-</app-section-three>
+</div>
+
+<!-- Footer Section -->
+<div class="footer-section">
+  <div class="footer-background"></div>
+  
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Logo and Employee Portal -->
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="/assets/favicon.ico" alt="Damico Energy Logo" class="logo-image">
+          <span class="logo-text">Damico Energy</span>
+        </div>
+        <button class="employee-portal-btn">Employee Portal</button>
+        <div class="security-logos">
+          <div class="security-logo">COMODO Creating Trust Online®</div>
+          <div class="security-logo">SECTIGO</div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>COMPANY</h4>
+          <a href="#">About</a>
+          <a href="#">News & Content</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>SERVICES</h4>
+          <a href="#">Damilube</a>
+          <a href="#">Vessel Brokerage</a>
+          <a href="#">Bunker Trade</a>
+          <a href="#">Trade Desk</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>ADDRESS</h4>
+          <span>Damico Energy</span>
+          <span>Hamriyah Free Zone</span>
+          <span>Sharjah - UAE</span>
+          <span>274452</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Copyright Bar -->
+<div class="copyright-bar">
+  <div class="copyright-container">
+    <div class="copyright-left">
+      <p>Copyright © April - 2025 Damico Energy. All rights reserved.</p>
+      <p>Damico Energy is a leading provider of energy solutions, specializing in bunker fuel supply, vessel brokerage, and comprehensive maritime services across the Middle East and beyond.</p>
+    </div>
+    <div class="copyright-right">
+      <a href="#">Regulatory Disclosures</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Security</a>
+      <a href="#">Made by Jenoza Prod</a>
+    </div>
+  </div>
+</div>
