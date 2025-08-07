@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SectionOneComponent } from '../../shared/sections/section-one/section-one.component';
-import { SectionFourComponent } from '../../shared/sections/section-four/section-four.component';
 
 /**
  * Bunkering Component
  * Component ID: DMC-CMP-5004
  *
- * Bunkering page with SAP login card, background image, and footer.
+ * Bunkering page with SAP login card and beach background.
  * ==========================================
  *
  * @description
- * Provides the Bunkering page for the DAMICO site, including SAP login card, background image, and footer. Follows DAMICO standards for structure, naming, and documentation.
+ * Provides the Bunkering page for the DAMICO site, including SAP login card with beach background.
+ * Follows DAMICO standards for structure, naming, and documentation.
  *
  * @usage
  * ```html
@@ -36,47 +35,20 @@ import { SectionFourComponent } from '../../shared/sections/section-four/section
   standalone: true,
   imports: [
     CommonModule, 
-    FormsModule,
-    SectionOneComponent,
-    SectionFourComponent
+    FormsModule
   ],
   templateUrl: './bunkering.component.html',
   styleUrls: ['./bunkering.component.scss']
 })
 export class BunkeringComponent {
-  background = 'assets/bunkering/beach-bg.jpg';
-  sap = {
-    logo: 'assets/bunkering/sap-logo.png',
-    title: 'SAP Integrated Solution',
-    subtitle: 'Experience our realtime Updates!',
-    desc: 'Damico has integrated real-time tracking and management software across all its bases, ensuring efficiency, accuracy, and optimized performance for seamless operations and enhanced decision-making.'
-  };
   login = {
     email: '',
     password: '',
     remember: false
   };
 
-  // Section data for new 4-component architecture
-  heroData = {
-    title: 'SAP Integrated Solution',
-    subtitle: 'Experience our realtime Updates!',
-    backgroundImage: 'assets/bunkering/beach-bg.jpg',
-    showOverlay: true,
-    overlayOpacity: 0.6
-  };
-
-  loginData = {
-    title: 'Login to SAP System',
-    subtitle: 'Access your bunkering dashboard',
-    backgroundColor: 'var(--bg-light)',
-    textColor: 'var(--text-color)',
-    layout: 'contact' as const
-  };
-
-  onSectionClick() {
-    console.log('Section clicked!');
-  }
+  backgroundImage = 'assets/images/bunkering/bg1.jpg';
+  sapLogo = 'assets/images/bunkering/sap.png';
 
   onSubmitLogin() {
     console.log('Login:', this.login);
