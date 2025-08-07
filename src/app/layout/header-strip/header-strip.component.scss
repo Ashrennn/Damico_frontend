@@ -1,13 +1,13 @@
 .header-strip {
-  background: #06254b;
+  background: #001B3F;
   color: white;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
   font-size: 0.875rem;
 
   .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,40 +15,44 @@
 
   .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
   }
 
   .social-icon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.05);
     }
 
-    i {
+    svg {
       color: white;
-      font-size: 0.9rem;
+      width: 18px;
+      height: 18px;
     }
   }
 
   .text-links {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .text-link {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
     transition: opacity 0.3s ease;
 
     &:hover {
@@ -57,15 +61,14 @@
   }
 
   .divider {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
   }
 
   .arabic-text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
+    color: white;
   }
 }
 
