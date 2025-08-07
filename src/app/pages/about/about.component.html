@@ -1,16 +1,26 @@
 <!-- ==========================================
-     ABOUT COMPONENT TEMPLATE
+     ABOUT PAGE
      Component ID: DMC-CMP-5001
      ========================================== -->
 
-<!-- ==========================================
-     FLOATING NAVIGATION
-     ========================================== -->
-<nav class="dmc-about-navigation">
-  <ul class="dmc-about-nav-list">
-    <li class="dmc-about-nav-item" *ngFor="let item of navigationItems">
-      <button
-        class="dmc-about-nav-button"
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="hero-background"></div>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Damico Energy</h1>
+      <p>Empowering your world with sustainable, innovative, and reliable energy solutions. At Damico Energy, we are dedicated to delivering exceptional experiences tailored to meet our fuel needs with efficiency and care.</p>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+  </div>
+</div>
+
+<!-- Side Navigation -->
+<nav class="side-navigation">
+  <ul class="nav-list">
+    <li class="nav-item" *ngFor="let item of navigationItems; let i = index">
+      <button 
+        class="nav-button" 
         [class.active]="item.active"
         (click)="navigateToSection(item.id)">
         {{ item.label }}
@@ -19,121 +29,59 @@
   </ul>
 </nav>
 
-<!-- ==========================================
-     HERO SECTION
-     ========================================== -->
-<app-section-one
-  [title]="heroData.title"
-  [subtitle]="heroData.subtitle"
-  [backgroundImage]="heroData.backgroundImage"
-  [showOverlay]="heroData.showOverlay"
-  [overlayOpacity]="heroData.overlayOpacity"
-  [minHeight]="'70vh'"
-  [alignContent]="'center'"
-  customClass="about-hero"
-  (sectionClick)="onSectionClick()">
-</app-section-one>
-
-<!-- ==========================================
-     WHO WE ARE SECTION
-     ========================================== -->
-<app-section-three
-  [title]="whoWeAreData.title"
-  [subtitle]="whoWeAreData.subtitle"
-  [backgroundColor]="whoWeAreData.backgroundColor"
-  [textColor]="whoWeAreData.textColor"
-  [layout]="whoWeAreData.layout"
-  [imagePosition]="whoWeAreData.imagePosition"
-  [imageUrl]="whoWeAreData.imageUrl"
-  [imageAlt]="whoWeAreData.imageAlt"
-  customClass="about-who-we-are"
-  (sectionClick)="onSectionClick()">
-
-  <div class="section-content">
-    <div class="section-number">{{ sections[0].number }}</div>
-    <p class="section-description">{{ sections[0].description }}</p>
-    <button
-      class="section-button"
-      (click)="handleButtonClick(sections[0].buttonAction)">
-      {{ sections[0].buttonText }}
-    </button>
-  </div>
-</app-section-three>
-
-<!-- ==========================================
-     ABOUT US SECTION
-     ========================================== -->
-<app-section-three
-  [title]="aboutUsData.title"
-  [subtitle]="aboutUsData.subtitle"
-  [backgroundColor]="aboutUsData.backgroundColor"
-  [textColor]="aboutUsData.textColor"
-  [layout]="aboutUsData.layout"
-  [imagePosition]="aboutUsData.imagePosition"
-  [imageUrl]="aboutUsData.imageUrl"
-  [imageAlt]="aboutUsData.imageAlt"
-  customClass="about-about-us"
-  (sectionClick)="onSectionClick()">
-
-  <div class="section-content">
-    <div class="section-number">{{ sections[1].number }}</div>
-    <p class="section-description">{{ sections[1].description }}</p>
-    <button
-      class="section-button"
-      (click)="handleButtonClick(sections[1].buttonAction)">
-      {{ sections[1].buttonText }}
-    </button>
-  </div>
-</app-section-three>
-
-<!-- ==========================================
-     OUR HISTORY SECTION
-     ========================================== -->
-<app-section-three
-  [title]="ourHistoryData.title"
-  [subtitle]="ourHistoryData.subtitle"
-  [backgroundColor]="ourHistoryData.backgroundColor"
-  [textColor]="ourHistoryData.textColor"
-  [layout]="ourHistoryData.layout"
-  [imagePosition]="ourHistoryData.imagePosition"
-  [imageUrl]="ourHistoryData.imageUrl"
-  [imageAlt]="ourHistoryData.imageAlt"
-  customClass="about-our-history"
-  (sectionClick)="onSectionClick()">
-
-  <div class="section-content">
-    <div class="section-number">{{ sections[2].number }}</div>
-    <p class="section-description">{{ sections[2].description }}</p>
-    <button
-      class="section-button"
-      (click)="handleButtonClick(sections[2].buttonAction)">
-      {{ sections[2].buttonText }}
-    </button>
-  </div>
-</app-section-three>
-
-<!-- ==========================================
-     OUR PEOPLE SECTION
-     ========================================== -->
-<app-section-four
-  [title]="ourPeopleData.title"
-  [subtitle]="ourPeopleData.subtitle"
-  [backgroundColor]="ourPeopleData.backgroundColor"
-  [textColor]="ourPeopleData.textColor"
-  [layout]="ourPeopleData.layout"
-  [columns]="ourPeopleData.columns"
-  [gap]="ourPeopleData.gap"
-  customClass="about-our-people"
-  (sectionClick)="onSectionClick()">
-
-  <div class="team-cards">
-    <div class="team-card" *ngFor="let member of teamMembers">
-      <div class="member-avatar">
-        <img [src]="member.avatar" [alt]="member.name">
-      </div>
-      <h3 class="member-name">{{ member.name }}</h3>
-      <p class="member-role">{{ member.role }}</p>
-      <p class="member-description">{{ member.description }}</p>
+<!-- Content Sections -->
+<div class="content-sections">
+  
+  <!-- Section 01: WHO WE ARE -->
+  <section id="who-we-are" class="content-section">
+    <div class="section-image">
+      <img src="/assets/images/about/aboutus/comp2/bg1.jpg" alt="Dubai Skyline">
     </div>
-  </div>
-</app-section-four>
+    <div class="section-content yellow-bg">
+      <div class="section-number">01</div>
+      <h2>WHO WE ARE</h2>
+      <p>At Damico Energy, we are passionate about transforming the future with innovative and sustainable energy solutions. By combining cutting-edge technology and unmatched expertise, we aim to empower communities and businesses with clean, reliable energy for a brighter tomorrow.</p>
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </section>
+
+  <!-- Section 02: ABOUT US -->
+  <section id="about-us" class="content-section">
+    <div class="section-image">
+      <img src="/assets/images/about/aboutus/comp2/bg2.jpg" alt="Subway Scene">
+    </div>
+    <div class="section-content green-bg">
+      <div class="section-number">02</div>
+      <h2>ABOUT US</h2>
+      <p>Damico Energy is a trusted leader in delivering cutting-edge, sustainable energy solutions. We are driven by a commitment to innovation, reliability, and a greener future. Our mission is simple: to make clean, efficient, and affordable energy accessible to everyone.</p>
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </section>
+
+  <!-- Section 03: OUR HISTORY -->
+  <section id="our-history" class="content-section">
+    <div class="section-image">
+      <img src="/assets/images/about/aboutus/comp2/bg3.jpg" alt="Industrial Workers">
+    </div>
+    <div class="section-content blue-bg">
+      <div class="section-number">03</div>
+      <h2>OUR HISTORY</h2>
+      <p>Damico Energy began with a bold vision to revolutionize the energy sector by promoting sustainability and innovation. Through our successful projects and unwavering commitment to excellence, we have become industry pioneers, setting new standards for energy solutions.</p>
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </section>
+
+  <!-- Section 04: OUR PEOPLE -->
+  <section id="our-people" class="content-section">
+    <div class="section-image">
+      <img src="/assets/images/about/aboutus/comp2/bg4.jpg" alt="Office Workers">
+    </div>
+    <div class="section-content purple-bg">
+      <div class="section-number">04</div>
+      <h2>OUR PEOPLE</h2>
+      <p>At Damico Energy, our people are the heart of everything we do. We are proud to have a diverse team of passionate professionals who bring unmatched expertise, creativity, and commitment to every project. Together, we're not just building energy systems - we're building a brighter, greener future.</p>
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </section>
+
+</div>
