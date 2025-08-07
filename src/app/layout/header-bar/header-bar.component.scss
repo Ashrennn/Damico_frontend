@@ -1,44 +1,73 @@
 .header-bar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
+  background: transparent;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
-
-  &.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+  
+  &.header-hidden {
+    transform: translateY(-100%);
   }
 
   .header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #D7E3FF 0%, #E8F0FF 100%);
+    border-radius: 50px;
+    padding: 0.3rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    height: 50px;
+    overflow: visible;
   }
 
   .nav-left,
   .nav-right {
     display: flex;
-    gap: 2rem;
+    gap: 1.8rem;
     align-items: center;
+    flex: 1;
+  }
+
+  .nav-left {
+    justify-content: flex-end;
+  }
+
+  .nav-right {
+    justify-content: flex-start;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem;
+    position: relative;
+    z-index: 10;
   }
 
   .nav-link {
-    color: #06254b;
+    color: #001B3F;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
 
     &:hover {
       color: #f26522;
+      background: rgba(242, 101, 34, 0.1);
     }
 
     &.active {
@@ -47,9 +76,10 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: -5px;
-        left: 0;
-        right: 0;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 25px;
         height: 2px;
         background: #f26522;
         border-radius: 1px;
@@ -58,9 +88,10 @@
   }
 
   .logo-section {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .logo-link {
@@ -74,9 +105,16 @@
   }
 
   .logo-favicon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     object-fit: contain;
+    display: block;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-menu-toggle {
