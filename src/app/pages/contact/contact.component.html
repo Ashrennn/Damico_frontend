@@ -3,49 +3,109 @@
      Component ID: DMC-CMP-5005
      ========================================== -->
 
-<!-- HERO SECTION -->
-<app-section-one
-  [title]="heroData.title"
-  [subtitle]="heroData.subtitle"
-  [backgroundImage]="heroData.backgroundImage"
-  [showOverlay]="heroData.showOverlay"
-  [overlayOpacity]="heroData.overlayOpacity"
-  [minHeight]="'60vh'"
-  [alignContent]="'center'"
-  customClass="contact-hero"
-  (sectionClick)="onSectionClick()">
-</app-section-one>
+<!-- Newsletter Signup Section -->
+<div class="newsletter-section">
+  <div class="newsletter-background"></div>
+  
+  <div class="newsletter-container">
+    <div class="newsletter-content">
+      <!-- Welcome Card -->
+      <div class="welcome-card">
+        <h2>Welcome to Damico.</h2>
+        <p>Don't miss out! Be the first to hear about exclusive updates, tips, and exciting news. Sign up for our newsletter today!</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-<!-- CONTACT SECTION -->
-<app-section-four
-  [title]="contactData.title"
-  [subtitle]="contactData.subtitle"
-  [backgroundColor]="contactData.backgroundColor"
-  [textColor]="contactData.textColor"
-  [layout]="contactData.layout"
-  customClass="contact-section"
-  (sectionClick)="onSectionClick()">
-
-  <div class="contact-content">
-    <!-- Welcome Card -->
-    <div class="contact-welcome-card">
-      <h2>{{ welcome.title }}</h2>
-      <p>{{ welcome.desc }}</p>
-      <div class="contact-socials">
-        <a *ngFor="let social of welcome.socials" [href]="social.url" target="_blank">
-          <i [class]="social.icon"></i>
-        </a>
+      <!-- Newsletter Signup Card -->
+      <div class="newsletter-card">
+        <h3>SIGN UP FOR OUR NEWSLETTER TODAY!</h3>
+        <form class="newsletter-form" (ngSubmit)="onSubmitNewsletter()">
+          <input type="text" placeholder="Enter your name" [(ngModel)]="newsletter.name" name="name" />
+          <input type="email" placeholder="Enter your email" [(ngModel)]="newsletter.email" name="email" />
+          <button type="submit">SIGN UP</button>
+        </form>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Newsletter Signup Card -->
-    <div class="contact-newsletter-card">
-      <h3>Sign Up to Our Newsletter</h3>
-      <form class="contact-newsletter-form" (ngSubmit)="onSubmitNewsletter()">
-        <input type="text" placeholder="Enter your name" [(ngModel)]="newsletter.name" name="name" />
-        <input type="email" placeholder="Enter your email" [(ngModel)]="newsletter.email" name="email" />
-        <button class="contact-newsletter-btn" type="submit">SIGN UP</button>
-      </form>
+<!-- Footer Section -->
+<div class="footer-section">
+  <div class="footer-background"></div>
+  
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Logo and Employee Portal -->
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="/assets/favicon.ico" alt="Damico Energy Logo" class="logo-image">
+          <span class="logo-text">Damico Energy</span>
+        </div>
+        <button class="employee-portal-btn">Employee Portal</button>
+        <div class="security-logos">
+          <div class="security-logo">COMODO Creating Trust Online®</div>
+          <div class="security-logo">SECTIGO</div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>COMPANY</h4>
+          <a href="#">About</a>
+          <a href="#">News & Content</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>SERVICES</h4>
+          <a href="#">Damilube</a>
+          <a href="#">Vessel Brokerage</a>
+          <a href="#">Bunker Trade</a>
+          <a href="#">Trade Desk</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>ADDRESS</h4>
+          <span>Damico Energy</span>
+          <span>Hamriyah Free Zone</span>
+          <span>Sharjah - UAE</span>
+          <span>274452</span>
+        </div>
+      </div>
     </div>
   </div>
-</app-section-four>
+</div>
+
+<!-- Copyright Bar -->
+<div class="copyright-bar">
+  <div class="copyright-container">
+    <div class="copyright-left">
+      <p>Copyright © April - 2025 Damico Energy. All rights reserved.</p>
+      <p>Damico Energy is a leading provider of energy solutions, specializing in bunker fuel supply, vessel brokerage, and comprehensive maritime services across the Middle East and beyond.</p>
+    </div>
+    <div class="copyright-right">
+      <a href="#">Regulatory Disclosures</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Security</a>
+      <a href="#">Made by Jenoza Prod</a>
+    </div>
+  </div>
+</div>
