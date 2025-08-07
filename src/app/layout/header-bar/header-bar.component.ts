@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 export class HeaderBarComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
+  isHeaderVisible = true;
+  private lastScrollY = 0;
 
   navigationItems = [
     { name: 'Home', route: '/', icon: 'fas fa-home' },
@@ -25,7 +27,24 @@ export class HeaderBarComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+    const currentScrollY = window.scrollY;
+    this.isScrolled = currentScrollY > 50;
+    
+    // Only show header when actually at the top of the page
+    if (currentScrollY <= 50) {
+      this.isHeaderVisible = true;
+    } else {
+      // Hide header when scrolling down, show when scrolling up
+      if (currentScrollY > this.lastScrollY) {
+        // Scrolling down
+        this.isHeaderVisible = false;
+      } else if (currentScrollY < this.lastScrollY) {
+        // Scrolling up
+        this.isHeaderVisible = true;
+      }
+    }
+    
+    this.lastScrollY = currentScrollY;
   }
 
   toggleMobileMenu() {
