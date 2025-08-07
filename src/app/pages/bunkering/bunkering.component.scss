@@ -1,10 +1,279 @@
 // Bunkering Component Styles
 // ==========================================
 
-.bunkering-hero {
-  // Hero section styles
+.bunkering-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.bunkering-login {
-  // Login section styles
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.sap-login-card {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  min-height: 500px;
+}
+
+// Left Section - SAP Info
+.sap-info-section {
+  flex: 1;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%);
+    z-index: 1;
+  }
+}
+
+.sap-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.sap-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.sap-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.sap-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.sap-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+  
+  .rocket-icon {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+// Right Section - Login Form
+.login-form-section {
+  flex: 1;
+  background: white;
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  &::placeholder {
+    color: #9ca3af;
+  }
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #374151;
+  cursor: pointer;
+  
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 16px;
+    height: 16px;
+    accent-color: #3b82f6;
+  }
+}
+
+.forgot-password {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #1e3a8a;
+    text-decoration: underline;
+  }
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .bunkering-container {
+    padding: 1rem;
+  }
+  
+  .sap-login-card {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .sap-info-section,
+  .login-form-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .sap-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bunkering-container {
+    padding: 0.5rem;
+  }
+  
+  .sap-info-section,
+  .login-form-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .sap-title {
+    font-size: 1.25rem;
+  }
+  
+  .sap-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .sap-description {
+    font-size: 0.9rem;
+  }
+}
+
+// Animation for card entrance
+.sap-login-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 } 

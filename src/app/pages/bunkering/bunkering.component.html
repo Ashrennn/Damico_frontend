@@ -3,49 +3,68 @@
      Component ID: DMC-CMP-5004
      ========================================== -->
 
-<!-- HERO SECTION -->
-<app-section-one
-  [title]="heroData.title"
-  [subtitle]="heroData.subtitle"
-  [backgroundImage]="heroData.backgroundImage"
-  [showOverlay]="heroData.showOverlay"
-  [overlayOpacity]="heroData.overlayOpacity"
-  [minHeight]="'60vh'"
-  [alignContent]="'center'"
-  customClass="bunkering-hero"
-  (sectionClick)="onSectionClick()">
-</app-section-one>
-
-<!-- LOGIN SECTION -->
-<app-section-four
-  [title]="loginData.title"
-  [subtitle]="loginData.subtitle"
-  [backgroundColor]="loginData.backgroundColor"
-  [textColor]="loginData.textColor"
-  [layout]="loginData.layout"
-  customClass="bunkering-login"
-  (sectionClick)="onSectionClick()">
-
-  <div class="login-content">
-    <div class="sap-info">
-      <img [src]="sap.logo" alt="SAP Logo" class="sap-logo" />
-      <h2 class="sap-title">{{ sap.title }}</h2>
-      <h3 class="sap-subtitle">{{ sap.subtitle }}</h3>
-      <p class="sap-desc">{{ sap.desc }}</p>
-    </div>
-
-    <div class="login-form-container">
-      <form class="login-form" (ngSubmit)="onSubmitLogin()">
-        <label>Email address</label>
-        <input type="email" placeholder="username@bunker.damico.ae" [(ngModel)]="login.email" name="email" />
-        <label>Password</label>
-        <input type="password" placeholder="********" [(ngModel)]="login.password" name="password" />
-        <div class="login-options">
-          <label><input type="checkbox" [(ngModel)]="login.remember" name="remember" /> Remember me</label>
-          <a href="#" class="forgot-password">Forgot password?</a>
+<div class="bunkering-container" [style.background-image]="'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(' + backgroundImage + ')'">
+  <!-- Background with beach image -->
+  <div class="background-overlay"></div>
+  
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- SAP Login Card -->
+    <div class="sap-login-card">
+      <!-- Left Section - SAP Info -->
+      <div class="sap-info-section">
+        <div class="sap-content">
+          <img [src]="sapLogo" alt="SAP Logo" class="sap-logo" />
+          <h2 class="sap-title">SAP Integrated Solution</h2>
+          <h3 class="sap-subtitle">Experience our realtime Updates!</h3>
+          <p class="sap-description">
+            Damico has integrated real-time tracking and management software across all its bases, 
+            ensuring efficiency, accuracy, and optimized performance for seamless operations and 
+            enhanced decision-making.
+            <span class="rocket-icon">🚀</span>
+          </p>
         </div>
-        <button class="login-button" type="submit">Login</button>
-      </form>
+      </div>
+      
+      <!-- Right Section - Login Form -->
+      <div class="login-form-section">
+        <form class="login-form" (ngSubmit)="onSubmitLogin()">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input 
+              type="email" 
+              id="email"
+              placeholder="username@bunker.damico.ae" 
+              [(ngModel)]="login.email" 
+              name="email" 
+              class="form-input"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password"
+              placeholder="********" 
+              [(ngModel)]="login.password" 
+              name="password" 
+              class="form-input"
+            />
+          </div>
+          
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" [(ngModel)]="login.remember" name="remember" />
+              <span class="checkmark"></span>
+              Remember me
+            </label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+          
+          <button type="submit" class="login-button">Login</button>
+        </form>
+      </div>
     </div>
   </div>
-</app-section-four>
+</div>
