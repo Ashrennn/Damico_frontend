@@ -1,220 +1,432 @@
 // Contact Component Styles
 // ==========================================
 
-// Hero Section Customizations
-.contact-hero {
-  .hero-content {
-    text-align: center;
-    max-width: 600px;
+// Newsletter Section
+.newsletter-section {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  
+  .newsletter-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('/assets/images/sea-sand.jpg') center/cover no-repeat;
+    z-index: 1;
+  }
+  
+  .newsletter-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .newsletter-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
     margin: 0 auto;
     
-    h1 {
-      font-size: var(--text-4xl);
-      font-weight: var(--font-bold);
-      margin-bottom: var(--spacing-4);
-      color: var(--text-white);
-    }
-    
-    p {
-      font-size: var(--text-lg);
-      margin-bottom: var(--spacing-6);
-      color: var(--text-white);
-      opacity: 0.9;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
   }
 }
 
-// Contact Content Styles
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-8);
-  max-width: 1000px;
-  margin: 0 auto;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-6);
-  }
-}
-
-// Welcome Card Styles
-.contact-welcome-card {
-  background: var(--bg-color);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-8);
-  box-shadow: var(--shadow-lg);
+// Welcome Card
+.welcome-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  padding: 4rem 3rem;
   text-align: center;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
   
   h2 {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-bold);
-    color: var(--primary-600);
-    margin-bottom: var(--spacing-4);
-    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   p {
-    font-size: var(--text-base);
-    line-height: 1.6;
-    color: var(--text-muted);
-    margin-bottom: var(--spacing-6);
-    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  .contact-socials {
+  .social-icons {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-4);
+    gap: 2rem;
     
-    a {
+    .social-icon {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: var(--primary-600);
-      color: var(--text-white);
+      background: #6b7280;
+      color: white;
       text-decoration: none;
-      transition: var(--transition-base);
+      transition: all 0.3s ease;
       
       &:hover {
-        background: var(--primary-700);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
+        background: #1e3a8a;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
       }
       
-      i {
-        font-size: var(--text-lg);
+      svg {
+        width: 22px;
+        height: 22px;
       }
     }
   }
 }
 
-// Newsletter Card Styles
-.contact-newsletter-card {
-  background: var(--bg-color);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-8);
-  box-shadow: var(--shadow-lg);
+// Newsletter Card
+.newsletter-card {
+  background: white;
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
   
   h3 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-semibold);
-    color: var(--text-color);
-    margin-bottom: var(--spacing-6);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 3rem;
     text-align: center;
-    font-family: var(--font-heading);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   
-  .contact-newsletter-form {
+  .newsletter-form {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-4);
+    gap: 2rem;
     
     input {
-      padding: var(--spacing-3) var(--spacing-4);
-      border: 2px solid var(--border-gray-200);
-      border-radius: var(--radius-md);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      transition: var(--transition-base);
+      padding: 1.2rem 1.5rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
       
       &:focus {
         outline: none;
-        border-color: var(--primary-600);
-        box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+        border-color: #1e3a8a;
+        box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
       }
       
       &::placeholder {
-        color: var(--text-muted);
+        color: #9ca3af;
+        font-weight: 500;
       }
     }
     
-    .contact-newsletter-btn {
-      background: var(--primary-600);
-      color: var(--text-white);
+    button {
+      background: #1e3a8a;
+      color: white;
       border: none;
-      padding: var(--spacing-3) var(--spacing-6);
-      border-radius: var(--radius-md);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      font-weight: var(--font-semibold);
+      padding: 1.2rem 2.5rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
       cursor: pointer;
-      transition: var(--transition-base);
+      transition: all 0.3s ease;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       
       &:hover {
-        background: var(--primary-700);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
+        background: #1e40af;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(30, 58, 138, 0.4);
       }
       
       &:active {
-        transform: translateY(0);
+        transform: translateY(-1px);
       }
     }
   }
 }
 
-// Contact Section Customizations
-.contact-section {
-  .section-header {
-    text-align: center;
-    margin-bottom: var(--spacing-8);
+// Footer Section
+.footer-section {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  
+  .footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                url('/assets/images/beach-background.jpg') center/cover no-repeat;
+    z-index: 1;
+  }
+  
+  .footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .footer-content {
+    background: white;
+    border-radius: 25px;
+    padding: 4rem 3rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
     
-    h2 {
-      font-size: var(--text-3xl);
-      font-weight: var(--font-bold);
-      color: var(--text-color);
-      margin-bottom: var(--spacing-2);
-      font-family: var(--font-heading);
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+}
+
+// Footer Left
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+    .logo-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: contain;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  }
+  
+  .employee-portal-btn {
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    &:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+    }
+  }
+  
+  .security-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    .security-logo {
+      font-size: 1rem;
+      color: #6b7280;
+      font-weight: 500;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  }
+}
+
+// Footer Links
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    a, span {
+      font-size: 1rem;
+      color: #374151;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      
+      &:hover {
+        color: #1e3a8a;
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+// Copyright Bar
+.copyright-bar {
+  background: #1e3a8a;
+  color: white;
+  padding: 2.5rem 0;
+  
+  .copyright-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  
+  .copyright-left {
+    flex: 2;
+    
     p {
-      font-size: var(--text-lg);
-      color: var(--text-muted);
-      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      &:last-child {
+        margin-bottom: 0;
+        opacity: 0.9;
+      }
+    }
+  }
+  
+  .copyright-right {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: opacity 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      
+      &:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+      }
     }
   }
 }
 
 // Responsive Design
 @media (max-width: 768px) {
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-6);
-  }
-  
-  .contact-hero .hero-content {
-    h1 { font-size: var(--text-3xl); }
-    p { font-size: var(--text-base); }
-  }
-  
-  .contact-welcome-card,
-  .contact-newsletter-card {
-    padding: var(--spacing-6);
-  }
-  
-  .contact-welcome-card h2 { font-size: var(--text-xl); }
-  .contact-newsletter-card h3 { font-size: var(--text-lg); }
-  
-  .contact-socials {
-    gap: var(--spacing-3);
+  .newsletter-section {
+    padding: 3rem 1rem;
+    min-height: 60vh;
     
-    a {
-      width: 45px;
-      height: 45px;
-      
-      i { font-size: var(--text-base); }
+    .newsletter-content {
+      gap: 2rem;
+    }
+  }
+  
+  .welcome-card,
+  .newsletter-card {
+    padding: 2.5rem 2rem;
+    
+    h2 {
+      font-size: 2.2rem;
+    }
+    
+    h3 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  .footer-section {
+    padding: 3rem 1rem;
+    min-height: 50vh;
+    
+    .footer-content {
+      padding: 2.5rem 2rem;
+    }
+  }
+  
+  .copyright-bar {
+    .copyright-container {
+      padding: 0 1rem;
     }
   }
 }
 
 @media (max-width: 480px) {
-  .contact-content { gap: var(--spacing-4); }
-  .contact-welcome-card,
-  .contact-newsletter-card { padding: var(--spacing-4); }
+  .welcome-card,
+  .newsletter-card {
+    padding: 2rem 1.5rem;
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+    }
+  }
+  
+  .footer-content {
+    padding: 2rem 1.5rem;
+  }
 } 
