@@ -1,6 +1,6 @@
 <app-loader></app-loader>
-<app-header-strip></app-header-strip>
-<app-header-bar></app-header-bar>
+<app-header-strip (headerBarToggle)="onHeaderBarToggle($event)"></app-header-strip>
+<app-header-bar [class.header-hidden]="isHeaderBarHidden"></app-header-bar>
 
 <main class="main-content">
   <router-outlet></router-outlet>
