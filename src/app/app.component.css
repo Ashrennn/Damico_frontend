@@ -1,7 +1,24 @@
-/* Main content area with proper spacing for fixed headers */
+/* Header bar visibility control */
+.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+}
+
+/* Main content adjustments */
 .main-content {
-  min-height: calc(100vh - 110px - 300px); /* Viewport height minus headers and footer */
-  padding: 0;
+  min-height: 100vh;
+  padding-top: 0; /* Adjust based on your layout needs */
+}
+
+/* Ensure smooth transitions for all header components */
+app-header-bar {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+app-header-strip {
+  transition: all 0.3s ease;
 }
 
 /* Responsive adjustments */

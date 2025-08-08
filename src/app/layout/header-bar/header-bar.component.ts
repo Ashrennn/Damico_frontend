@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderBarComponent {
   isScrolled = false;
-  isMobileMenuOpen = false;
   isHeaderVisible = true;
   private lastScrollY = 0;
 
@@ -45,13 +44,5 @@ export class HeaderBarComponent {
     }
     
     this.lastScrollY = currentScrollY;
-  }
-
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  closeMobileMenu() {
-    this.isMobileMenuOpen = false;
   }
 } 

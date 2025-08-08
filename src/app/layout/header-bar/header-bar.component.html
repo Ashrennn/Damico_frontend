@@ -1,10 +1,29 @@
 <header class="header-bar" [class.scrolled]="isScrolled" [class.header-hidden]="!isHeaderVisible">
   <div class="header-container">
-    <!-- Left Navigation -->
-    <nav class="nav-left">
+    <!-- Left Navigation (Desktop) -->
+    <nav class="nav-left desktop-nav">
       <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
       <a routerLink="/operations" routerLinkActive="active" class="nav-link">Operations</a>
       <a routerLink="/library" routerLinkActive="active" class="nav-link">Library</a>
+    </nav>
+
+    <!-- Left Navigation Icons (Mobile) -->
+    <nav class="nav-left mobile-nav-icons">
+      <a routerLink="/about" routerLinkActive="active" class="nav-icon-link" title="About">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      </a>
+      <a routerLink="/operations" routerLinkActive="active" class="nav-icon-link" title="Operations">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+        </svg>
+      </a>
+      <a routerLink="/library" routerLinkActive="active" class="nav-icon-link" title="Library">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
+        </svg>
+      </a>
     </nav>
 
     <!-- Central Logo -->
@@ -14,26 +33,30 @@
       </a>
     </div>
 
-    <!-- Right Navigation -->
-    <nav class="nav-right">
+    <!-- Right Navigation (Desktop) -->
+    <nav class="nav-right desktop-nav">
       <a routerLink="/bunkering" routerLinkActive="active" class="nav-link">Bunkering</a>
       <a routerLink="/dmc-csr" routerLinkActive="active" class="nav-link">DMC-CSR</a>
       <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
     </nav>
 
-    <!-- Mobile Menu Toggle -->
-    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
-      <span class="hamburger" [class.active]="isMobileMenuOpen"></span>
-    </div>
+    <!-- Right Navigation Icons (Mobile) -->
+    <nav class="nav-right mobile-nav-icons">
+      <a routerLink="/bunkering" routerLinkActive="active" class="nav-icon-link" title="Bunkering">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v2H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.15.52-.06.78L3.95 19zM7 6h10v3H7V6z"/>
+        </svg>
+      </a>
+      <a routerLink="/dmc-csr" routerLinkActive="active" class="nav-icon-link" title="DMC-CSR">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-icon-link" title="Contact">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </nav>
   </div>
-
-  <!-- Mobile Menu -->
-  <nav class="mobile-nav" [class.mobile-open]="isMobileMenuOpen">
-    <a routerLink="/about" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">About</a>
-    <a routerLink="/operations" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Operations</a>
-    <a routerLink="/library" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Library</a>
-    <a routerLink="/bunkering" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Bunkering</a>
-    <a routerLink="/dmc-csr" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">DMC-CSR</a>
-    <a routerLink="/contact" routerLinkActive="active" class="mobile-nav-link" (click)="closeMobileMenu()">Contact</a>
-  </nav>
 </header> 
