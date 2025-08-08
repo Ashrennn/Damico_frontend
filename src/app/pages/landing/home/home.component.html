@@ -10,16 +10,6 @@
       </p>
       <button class="dmc-home-hero-button">Learn More</button>
     </div>
-    
-    <div class="dmc-home-hero-image">
-      <div class="dmc-home-hero-can">
-        <div class="dmc-home-hero-can-main">
-          <img src="/assets/engine-coolant.jpg" alt="DAMILUBE ENGINE COOLANT OIL" class="dmc-product-can">
-        </div>
-        <div class="dmc-home-hero-can-blur-1"></div>
-        <div class="dmc-home-hero-can-blur-2"></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -27,48 +17,37 @@
      UAE BUNKER RESPONDER SECTION
      ========================================== -->
 <section class="dmc-home-uae-bunker">
-  <div class="dmc-home-uae-bunker-background"></div>
-  
-  <div class="dmc-home-uae-bunker-content">
-    <div class="dmc-home-uae-bunker-overlay">
-      <h2 class="dmc-home-uae-bunker-title">
-        UAE <span class="highlight">Bunker Responder</span>
-      </h2>
-      <p class="dmc-home-uae-bunker-description">
-        Leading the way in maritime fuel supply and bunkering services across the United Arab Emirates. 
-        Our comprehensive network ensures reliable, efficient, and compliant fuel solutions for vessels 
-        operating in the region's busy ports and waterways.
-      </p>
-    </div>
-    
-    <div class="dmc-home-uae-bunker-cards">
-      <div class="dmc-home-uae-bunker-card" *ngFor="let card of uaeBunkerCards">
-        <img [src]="card.image" [alt]="card.title">
-      </div>
-    </div>
+  <div class="dmc-home-uae-bunker">
+  <div class="glass-panel dmc-home-uae-bunker-text">
+    <h1>Discover the UAE's <span class="highlight">Immediate</span> Bunker responder</h1>
+    <p>Your trusted partner for rapid and reliable fuel solutions. With a commitment to efficiency,
+        compliance, and 24/7 availability, we ensure seamless operations for maritime vessels.
+        Count on us for premium services that meet your urgent bunkering needs across UAE’s ports without delays.</p>
   </div>
-  
+
+  <div class="glass-panel dmc-home-uae-bunker-images">
+    <img src="/assets/Truck.jpg" alt="Supply Chain">
+    <img src="/assets/Cart.png" alt="Logistics">
+    <img src="/assets/Cargo.jpg" alt="Port Operations">
+  </div>
+</div>
+
   <!-- UAE Flag -->
   <div class="dmc-uae-flag">
-    <div class="dmc-flag-pole"></div>
-    <div class="dmc-flag-fabric">
-      <div class="dmc-flag-stripe dmc-flag-red"></div>
-      <div class="dmc-flag-stripe dmc-flag-green"></div>
-      <div class="dmc-flag-stripe dmc-flag-white"></div>
-      <div class="dmc-flag-stripe dmc-flag-black"></div>
-    </div>
-  </div>
+  <div class="dmc-flag-fabric"></div>
+</div>
+
 </section>
 
 <!-- ==========================================
      SERVICES LIST SECTION
      ========================================== -->
-<section class="dmc-home-services">
+<div class="dmc-home-services">
   <div class="dmc-home-services-container">
     <div class="dmc-home-service-card" *ngFor="let service of services">
       <div class="dmc-home-service-left">
         <div class="dmc-home-service-icon">
-          <span class="dmc-service-emoji">{{ service.icon }}</span>
+          <img [src]="service.image" alt="{{ service.title }}">
         </div>
         <div class="dmc-home-service-info">
           <h3 class="dmc-home-service-title">{{ service.title }}</h3>
@@ -82,8 +61,7 @@
       </div>
     </div>
   </div>
-</section>
-
+</div>
 <!-- ==========================================
      LOADED VESSELS SECTION
      ========================================== -->
@@ -95,7 +73,7 @@
   <div class="dmc-home-vessels-content">
     <div class="dmc-home-vessels-ship">
       <div class="dmc-home-vessels-ship-illustration">
-        <img src="/assets/damilube-background.png" alt="Cargo Ship">
+        <img src="/assets/ship.png" alt="Cargo Ship">
       </div>
     </div>
     

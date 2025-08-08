@@ -15,34 +15,27 @@
 .dmc-uae-flag {
   position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 54.5rem;
   z-index: 10;
-
-  .dmc-flag-pole {
-    width: 4px;
-    height: 120px;
-    background: #8b4513;
-    margin: 0 auto;
-  }
-
-  .dmc-flag-fabric {
-    width: 160px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .dmc-flag-stripe {
-    height: 20px;
-    width: 100%;
-
-    &.dmc-flag-red { background: #ce1126; }
-    &.dmc-flag-green { background: #00732f; }
-    &.dmc-flag-white { background: #fff; }
-    &.dmc-flag-black { background: #000; }
-  }
 }
+
+.dmc-flag-pole {
+  width: 4px;
+  height: 120px;
+  background: #8b4513;
+  margin: 0 auto;
+}
+
+.dmc-flag-fabric {
+  width: 200px; /* bigger flag */
+  height: 100px; /* proportionally taller */
+  background: url("/assets/UAE-flag.webp") no-repeat center center;
+  background-size: 120% auto; /* zoom to remove transparent edges */
+  background-position: center;
+  margin-top: 3rem;
+  box-shadow: none; /* remove any outer shadow frame */
+}
+
 
 /* Product Can Image */
 .dmc-product-can {
@@ -65,119 +58,131 @@
   padding: 2rem 4vw;
   position: relative;
   overflow: hidden;
-
-  &-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  &-text {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    max-width: 500px;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  &-title {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #fff;
-  }
-
-  &-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #e6edfa;
-    max-width: 500px;
-  }
-
-  &-button {
-    background: #fff;
-    color: #06254b;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #f0f0f0;
-      transform: translateY(-2px);
-    }
-  }
-
-  &-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-
-  &-can {
-    position: relative;
-    width: 300px;
-    height: 400px;
-
-    &-main {
-      width: 200px;
-      height: 300px;
-      background: linear-gradient(45deg, #06254b, #1a3a5a);
-      border-radius: 20px;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      border: 3px solid #FFD700;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        background: linear-gradient(45deg, #fff, #f0f0f0);
-        border-radius: 15px;
-      }
-    }
-
-    &-blur-1,
-    &-blur-2 {
-      position: absolute;
-      width: 150px;
-      height: 200px;
-      background: linear-gradient(45deg, #06254b, #1a3a5a);
-      border-radius: 15px;
-      opacity: 0.6;
-      filter: blur(10px);
-    }
-
-    &-blur-1 {
-      top: 50px;
-      left: -50px;
-    }
-
-    &-blur-2 {
-      top: 100px;
-      right: -50px;
-    }
-  }
 }
 
+.dmc-home-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Keep container on the left */
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dmc-home-hero-text {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  max-width: 500px;
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Remove auto-centering */
+  margin-left: 2rem; /* Breathing space from the edge */
+}
+
+.dmc-home-hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.dmc-home-hero-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #e6edfa;
+  max-width: 500px;
+}
+
+.dmc-home-hero-button {
+  background: #fff;
+  color: #06254b;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dmc-home-hero-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.dmc-home-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dmc-home-hero-can {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.dmc-home-hero-can-main {
+  width: 200px;
+  height: 300px;
+  background: linear-gradient(45deg, #06254b, #1a3a5a);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 3px solid #FFD700;
+}
+
+.dmc-home-hero-can-main::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  border-radius: 15px;
+}
+
+.dmc-home-hero-can-blur-1,
+.dmc-home-hero-can-blur-2 {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  background: linear-gradient(45deg, #06254b, #1a3a5a);
+  border-radius: 15px;
+  opacity: 0.6;
+  filter: blur(10px);
+}
+
+.dmc-home-hero-can-blur-1 {
+  top: 50px;
+  left: -50px;
+}
+
+.dmc-home-hero-can-blur-2 {
+  top: 100px;
+  right: -50px;
+}
+
+/* Responsive: center container on smaller screens */
+@media (max-width: 768px) {
+  .dmc-home-hero-content {
+    justify-content: center;
+  }
+
+  .dmc-home-hero-text {
+    margin: 0;
+    text-align: center;
+  }
+}
 /* ==========================================
    UAE BUNKER RESPONDER SECTION
    ========================================== */
@@ -186,92 +191,68 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  justify-content: center;
+  background: url("/assets/Temp BG 2.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 4rem 4vw;
+  gap: 2rem;
+}
 
-  &-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("/assets/Temp BG 2.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: 1;
-    filter: brightness(0.6);
-  }
+/* Shared glass style */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  color: #fff;
+}
 
-  &-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 4rem 4vw;
-    gap: 3rem;
-  }
+/* Left panel (Text) */
+.dmc-home-uae-bunker-text {
+  flex: 1 1 45%;
+}
 
-  &-overlay {
-    flex: 1 1 45%;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 2rem;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    color: #fff;
-  }
+.dmc-home-uae-bunker-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
-  &-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+.dmc-home-uae-bunker-text h1 .highlight {
+  color: #f26522;
+}
 
-    .highlight {
-      color: #f26522;
-    }
-  }
+.dmc-home-uae-bunker-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
 
-  &-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #e0e0e0;
-  }
+/* Right panel (Images) */
+.dmc-home-uae-bunker-images {
+  flex: 1 1 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
 
-  &-cards {
-    flex: 1 1 50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1rem;
-  }
+.dmc-home-uae-bunker-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-  &-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    &:nth-child(3) {
-      grid-column: span 2;
-      height: 200px;
-    }
-  }
+/* Make last image span across */
+.dmc-home-uae-bunker-images img:nth-child(3) {
+  grid-column: span 2;
+  height: 260px;
 }
 
 /* ==========================================
@@ -280,113 +261,149 @@
 .dmc-home-services {
   background: #fff;
   padding: 4rem 4vw;
-
-  &-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  &-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #f9f9f9;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-  }
-
-  &-left {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    flex: 1;
-  }
-
-  &-icon {
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    background: #f0f4f9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-  }
-
-  &-emoji {
-    font-size: 3rem;
-    display: block;
-  }
-
-  &-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-
-  &-info {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #06254b;
-    margin: 0;
-  }
-
-  &-subtitle {
-    font-size: 0.95rem;
-    color: #888;
-    font-weight: 600;
-    margin-top: 0.3rem;
-  }
-
-  &-description {
-    font-size: 0.95rem;
-    color: #444;
-    margin-top: 0.5rem;
-    max-width: 600px;
-  }
-
-  &-date {
-    background-color: #06254b;
-    color: #fff;
-    padding: 1.2rem 1.5rem;
-    text-align: center;
-    border-radius: 8px;
-    font-weight: bold;
-    min-width: 80px;
-
-    .date-day {
-      font-size: 1.8rem;
-      display: block;
-      line-height: 1.2;
-    }
-
-    .date-month {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-    }
-  }
 }
 
+/* Container */
+.dmc-home-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Service card */
+.dmc-home-service-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f7fa; /* lighter background for neumorphism */
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1.5rem;
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.15), /* outer shadow */
+    -8px -8px 16px rgba(255, 255, 255, 0.9); /* highlight */
+  transition: all 0.3s ease;
+}
+
+.dmc-home-service-card:hover {
+  box-shadow:
+    4px 4px 12px rgba(0, 0, 0, 0.2),
+    -4px -4px 12px rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+}
+
+/* Left section: image + text beside */
+.dmc-home-service-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Neumorphic icon container */
+.dmc-home-service-icon {
+  width: 130px;   /* bigger container */
+  height: 130px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  border-radius: 20px;
+  box-shadow:
+    inset 6px 6px 12px rgba(0, 0, 0, 0.1),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+.dmc-home-service-icon {
+  width: 160px;   /* much bigger container */
+  height: 160px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  border-radius: 20px;
+  box-shadow:
+    inset 6px 6px 12px rgba(0, 0, 0, 0.1),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+.dmc-home-service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills container, crops edges */
+  border-radius: 20px; /* match container’s rounded corners */
+}
+
+.dmc-home-service-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #06254b;
+}
+
+.dmc-home-service-subtitle {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.dmc-home-service-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Date box (neumorphic) */
+.dmc-home-service-date {
+  background-color: #06254b;
+  color: #fff;
+  padding: 2rem 2.8rem; /* bigger */
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 130px;
+  border-radius: 20px;
+  box-shadow:
+    inset 4px 4px 8px rgba(255, 255, 255, 0.15),
+    inset -4px -4px 8px rgba(0, 0, 0, 0.25),
+    6px 6px 14px rgba(0, 0, 0, 0.25),
+    -6px -6px 14px rgba(255, 255, 255, 0.1);
+}
+
+.dmc-home-service-date .date-day {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.dmc-home-service-date .date-month {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .dmc-home-service-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .dmc-home-service-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dmc-home-service-date {
+    align-self: flex-start;
+  }
+}
 /* ==========================================
    LOADED VESSELS SECTION
    ========================================== */
@@ -397,92 +414,93 @@
   align-items: center;
   overflow: hidden;
   font-family: "Segoe UI", sans-serif;
-
-  &-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-  }
-
-  &-ocean {
-    width: 100%;
-    height: 100%;
-    background: url('/assets/images/sea-sand.jpg') no-repeat center center;
-    background-size: cover;
-  }
-
-  &-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 2rem 4vw;
-    flex-wrap: wrap;
-  }
-
-  &-ship {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &-illustration img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
-    }
-  }
-
-  &-counter {
-    flex: 1;
-    text-align: center;
-    color: #06254b;
-    padding: 1rem;
-  }
-
-  &-count {
-    font-size: 6rem;
-    font-weight: bold;
-    margin: 0;
-    color: #001f4e;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  &-description {
-    font-size: 1.5rem;
-    margin: 1rem 0 2rem 0;
-    font-weight: 600;
-
-    span {
-      color: #ff5722;
-    }
-  }
-
-  &-box {
-    background: #06254b;
-    color: #fff;
-    padding: 1.5rem 2rem;
-    border-radius: 20px;
-    max-width: 420px;
-    margin: 0 auto;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
-    h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
-  }
 }
+
+.dmc-home-vessels-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.dmc-home-vessels-ocean {
+  width: 100%;
+  height: 100%;
+  background: url('/assets/images/sea-sand.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.dmc-home-vessels-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 4vw;
+  flex-wrap: wrap;
+}
+
+.dmc-home-vessels-ship {
+  flex: 1.2; /* Give more room for the bigger ship */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dmc-home-vessels-ship-illustration img {
+  width: 100%;
+  max-width: 1000px; /* doubled from 500px */
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.dmc-home-vessels-counter {
+  flex: 1;
+  text-align: center;
+  color: #06254b;
+  padding: 1rem;
+}
+
+.dmc-home-vessels-count {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 0;
+  color: #001f4e;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dmc-home-vessels-description {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem 0;
+  font-weight: 600;
+}
+
+.dmc-home-vessels-description span {
+  color: #ff5722;
+}
+
+.dmc-home-vessels-box {
+  background: #06254b;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dmc-home-vessels-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
 
 /* ==========================================
    BECOME A SHIP OWNER SECTION
@@ -716,7 +734,7 @@ body {
 @media (max-width: 900px) {
   .dmc-home-hero-content {
     flex-direction: column;
-    text-align: center;
+    text-align: centerzzz;
   }
 
   .dmc-home-uae-bunker-content {

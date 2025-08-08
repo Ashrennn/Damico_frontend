@@ -14,35 +14,35 @@ export class HomeComponent {
   // Services list
   services = [
     {
-      icon: '🚢',
+      image: '/assets/icons/marine-fuel.jpg',
       title: 'Marine Fuel Supply',
       subtitle: 'High-quality marine fuel solutions',
       description: 'Specialized in providing high-quality marine fuel solutions across the MENA region, ensuring reliable and efficient bunkering services for vessels.',
       date: { day: '15', month: 'APR' }
     },
     {
-      icon: '🌍',
+      image: '/assets/icons/trade-operations.jpg',
       title: 'Trade Operations',
       subtitle: 'Advanced trading desk operations',
       description: 'Advanced trading desk operations managing commodity flows and risk exposure across international markets with cutting-edge technology.',
       date: { day: '12', month: 'APR' }
     },
     {
-      icon: '⚓',
+      image: '/assets/icons/vessel-brokerage.jpg',
       title: 'Vessel Brokerage',
       subtitle: 'Professional vessel brokerage services',
       description: 'Professional vessel brokerage services offering comprehensive solutions for maritime transportation and chartering needs.',
       date: { day: '10', month: 'APR' }
     },
     {
-      icon: '🛢️',
+      image: '/assets/icons/lubricant-distribution.jpg',
       title: 'Lubricant Distribution',
       subtitle: 'High-performance marine lubricants',
       description: 'Distribution of high-performance marine lubricants, ensuring optimal engine performance and reliability for marine vessels.',
       date: { day: '08', month: 'APR' }
     },
     {
-      icon: '🔧',
+      image: '/assets/icons/technical-services.jpg',
       title: 'Technical Services',
       subtitle: 'Comprehensive technical support',
       description: 'Comprehensive technical support and consulting services for marine fuel management and optimization.',
