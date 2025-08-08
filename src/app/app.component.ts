@@ -22,4 +22,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   selectedDeviceType = 'laptop-small';
+  isHeaderBarHidden = false;
+
+  /**
+   * Handle header bar toggle based on dropdown state
+   * @param shouldHide - Boolean indicating if header bar should be hidden
+   */
+  onHeaderBarToggle(shouldHide: boolean): void {
+    this.isHeaderBarHidden = shouldHide;
+    console.log('Header bar visibility:', shouldHide ? 'hidden' : 'visible');
+  }
 }
