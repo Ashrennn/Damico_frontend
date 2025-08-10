@@ -47,7 +47,7 @@ import { SectionFourComponent } from '../../shared/sections/section-four/section
 })
 export class DmcCsrComponent {
   hero = {
-    background: 'assets/dmc-csr/plant-watering-bg.jpg',
+    background: '/assets/dmc-csr/plant-watering-bg.jpg',
     title: 'You can build a better tomorrow with Damico.',
     desc: 'At Damico, we believe in quality, sustainability, and innovation. Our commitment to excellence empowers individuals and businesses to achieve their goals.',
     buttons: [
@@ -69,10 +69,10 @@ export class DmcCsrComponent {
     desc: 'Look at our company\'s growth and achievements. Download our corporate profile.',
     button: { label: 'Corporate Profile', url: '#' },
     cards: [
-      { image: 'assets/dmc-csr/damilube.jpg', title: 'Damilube' },
-      { image: 'assets/dmc-csr/bunker-trade.jpg', title: 'Bunker Trade' },
+      { image: 'assets/dmc-csr/damilube.webp', title: 'Damilube' },
+      { image: 'assets/dmc-csr/bunker-trade.webp', title: 'Bunker Trade' },
       { image: 'assets/dmc-csr/vessel-brokerage.jpg', title: 'Vessel Brokerage' },
-      { image: 'assets/dmc-csr/trade-desk.jpg', title: 'Trade Desk' }
+      { image: 'assets/dmc-csr/trade-desk.png', title: 'Trade Desk' }
     ]
   };
 
@@ -82,16 +82,16 @@ export class DmcCsrComponent {
     desc: 'We offer a wide range of products and services including fuels from crude oil and custom blend mixtures. Our in-house refining capability ensures quality and consistency.',
     button: { label: 'Explore Products & Services', url: '#' },
     products: [
-      { image: 'assets/dmc-csr/kerosene.jpg', title: 'Kerosene' },
-      { image: 'assets/dmc-csr/lubricant-oil.jpg', title: 'Lubricant Oil' },
-      { image: 'assets/dmc-csr/base-oil.jpg', title: 'Base Oil' }
+      { image: '/assets/dmc-csr/kerosene.jpg', title: 'Kerosene' },
+      { image: '/assets/dmc-csr/lubricant-oil.jpg', title: 'Lubricant Oil' },
+      { image: '/assets/dmc-csr/base-oil.jpeg', title: 'Base Oil' }
     ]
   };
 
   globalOffices = {
     background: 'assets/dmc-csr/beach-bg.jpg',
     title: 'Our Global Offices',
-    map: 'assets/dmc-csr/world-map.png'
+    map: '/assets/dmc-csr/world-map.png'
   };
 
   // Section data for new 4-component architecture

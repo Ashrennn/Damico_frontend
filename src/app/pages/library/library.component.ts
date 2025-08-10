@@ -61,16 +61,16 @@ export class LibraryComponent {
   ];
 
   gridCards = [
-    { title: 'Global Energy Solutions', image: 'assets/library/energy.jpg' },
-    { title: 'DamiLube High-Performance Lubricants', image: 'assets/library/lubricants.jpg' },
-    { title: 'Sustainability at Heart', image: 'assets/library/sustainability.jpg' },
-    { title: 'Eco-Friendly Matchsticks for a Greener Tomorrow', image: 'assets/library/matchsticks.jpg' },
-    { title: 'Empowering Communities: Mohade Foundation', image: 'assets/library/empowering.jpg' },
-    { title: 'Transparency in Oil Exports', image: 'assets/library/transparency.jpg' }
+    { title: 'Global Energy Solutions', image: '/assets/library/energy.jpg' },
+    { title: 'DamiLube High-Performance Lubricants', image: '/assets/library/lubricants.jpg' },
+    { title: 'Sustainability at Heart', image: '/assets/library/sustainability.jpg' },
+    { title: 'Eco-Friendly Matchsticks for a Greener Tomorrow', image: '/assets/library/empowering.jpg' },
+    { title: 'Empowering Communities: Mohade Foundation', image: '/assets/library/matchsticks.jpg' },
+    { title: 'Transparency in Oil Exports', image: '/assets/library/transparancy.jpg' }
   ];
 
   beKind = {
-    image: 'assets/library/be-kind.jpg',
+    image: '/assets/library/be-kind.jpg',
     text: 'Be Kind'
   };
 

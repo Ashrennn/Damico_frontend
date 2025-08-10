@@ -7,46 +7,66 @@
 <section class="dmc-dmc-csr-hero" [ngStyle]="{ 'background-image': 'url(' + hero.background + ')' }">
   <div class="dmc-dmc-csr-hero-overlay">
     <div class="dmc-dmc-csr-hero-content">
+      
       <!-- Main Content Card -->
       <div class="dmc-dmc-csr-main-card">
-        <h1>{{ hero.title }}</h1>
-        <p>{{ hero.desc }}</p>
+        <h1>You can build a better tomorrow with Damico.</h1>
+        <p>At Damico, we believe that greatness is built, not just envisioned. With a strong foundation in quality, sustainability, and innovation, we empower individuals and businesses to shape a better tomorrow.</p>
         <div class="dmc-dmc-csr-buttons">
-          <button *ngFor="let btn of hero.buttons" class="dmc-dmc-csr-btn">{{ btn.label }}</button>
+          <button class="dmc-dmc-csr-btn">Learn More</button>
+          <button class="dmc-dmc-csr-btn">Customer Log in</button>
         </div>
       </div>
+      
       <!-- Statistics Panel -->
       <div class="dmc-dmc-csr-stats-panel">
-        <div *ngFor="let stat of hero.stats" class="dmc-dmc-csr-stat">
-          <span class="dmc-dmc-csr-stat-label">{{ stat.label }}</span>
-          <span class="dmc-dmc-csr-stat-value">{{ stat.value }}</span>
+        <div class="dmc-dmc-csr-stat">
+          <span class="dmc-dmc-csr-stat-value">7+</span>
+          <span class="dmc-dmc-csr-stat-label">Executed Trades every day</span>
         </div>
+        <div class="dmc-dmc-csr-stat">
+          <span class="dmc-dmc-csr-stat-value">10+</span>
+          <span class="dmc-dmc-csr-stat-label">Daily Inquiries</span>
+        </div>
+        <div class="dmc-dmc-csr-stat">
+          <span class="dmc-dmc-csr-stat-value">12+</span>
+          <span class="dmc-dmc-csr-stat-label">List of customer base</span>
+        </div>
+        <div class="dmc-dmc-csr-stat">
+          <span class="dmc-dmc-csr-stat-value">3+</span>
+          <span class="dmc-dmc-csr-stat-label">Vessel Owned</span>
+        </div>
+        
+        <!-- Video Play Button -->
         <div class="dmc-dmc-csr-video-indicator">
           <div class="dmc-dmc-csr-play-icon">▶</div>
         </div>
       </div>
+      
     </div>
   </div>
 </section>
 
-<!-- CORPORATE PROFILE SECTION -->
 <section class="dmc-dmc-csr-corporate" [ngStyle]="{ 'background-image': 'url(' + corporateProfile.background + ')' }">
   <div class="dmc-dmc-csr-corporate-overlay">
     <div class="dmc-dmc-csr-corporate-content">
-      <!-- Content Card -->
+      
+      <!-- Left Content Card -->
       <div class="dmc-dmc-csr-corporate-card">
         <h2>{{ corporateProfile.title }}</h2>
         <p class="dmc-dmc-csr-date">{{ corporateProfile.date }}</p>
         <p>{{ corporateProfile.desc }}</p>
         <button class="dmc-dmc-csr-btn">{{ corporateProfile.button.label }}</button>
       </div>
-      <!-- Image Cards Grid -->
+      
+      <!-- Right Image Cards Grid -->
       <div class="dmc-dmc-csr-cards-grid">
         <div *ngFor="let card of corporateProfile.cards" class="dmc-dmc-csr-image-card">
           <img [src]="card.image" [alt]="card.title" />
           <h3>{{ card.title }}</h3>
         </div>
       </div>
+      
     </div>
   </div>
 </section>
@@ -55,19 +75,34 @@
 <section class="dmc-dmc-csr-offer" [ngStyle]="{ 'background-image': 'url(' + whatWeOffer.background + ')' }">
   <div class="dmc-dmc-csr-offer-overlay">
     <div class="dmc-dmc-csr-offer-content">
-      <!-- Content Card -->
+      
+      <!-- Left Content Card -->
       <div class="dmc-dmc-csr-offer-card">
         <h2>{{ whatWeOffer.title }}</h2>
         <p>{{ whatWeOffer.desc }}</p>
         <button class="dmc-dmc-csr-btn">{{ whatWeOffer.button.label }}</button>
       </div>
-      <!-- Product Cards -->
+      
+      <!-- Right Products Section -->
       <div class="dmc-dmc-csr-products">
-        <div *ngFor="let product of whatWeOffer.products" class="dmc-dmc-csr-product-card">
-          <img [src]="product.image" [alt]="product.title" />
-          <h3>{{ product.title }}</h3>
+        
+        <!-- Orange Header Section -->
+        <div class="dmc-dmc-csr-products-header">
+          <div class="dmc-dmc-csr-products-header-content">
+            Our Premium Products
+          </div>
         </div>
+        
+        <!-- Product Cards Grid -->
+        <div class="dmc-dmc-csr-products-grid">
+          <div *ngFor="let product of whatWeOffer.products" class="dmc-dmc-csr-product-card">
+            <img [src]="product.image" [alt]="product.title" />
+            <h3>{{ product.title }}</h3>
+          </div>
+        </div>
+        
       </div>
+      
     </div>
   </div>
 </section>
@@ -76,10 +111,23 @@
 <section class="dmc-dmc-csr-global" [ngStyle]="{ 'background-image': 'url(' + globalOffices.background + ')' }">
   <div class="dmc-dmc-csr-global-overlay">
     <div class="dmc-dmc-csr-global-content">
+      
       <h2>{{ globalOffices.title }}</h2>
+      
       <div class="dmc-dmc-csr-world-map">
         <img [src]="globalOffices.map" alt="World Map" />
+        
+        <!-- Office Location Pins -->
+        <div class="dmc-dmc-csr-office-pins">
+          <div class="dmc-dmc-csr-office-pin usa" title="USA Office"></div>
+          <div class="dmc-dmc-csr-office-pin europe" title="Europe Office"></div>
+          <div class="dmc-dmc-csr-office-pin middle-east" title="Middle East Office"></div>
+          <div class="dmc-dmc-csr-office-pin asia" title="Asia Office"></div>
+          <div class="dmc-dmc-csr-office-pin southeast-asia" title="Southeast Asia Office"></div>
+        </div>
+        
       </div>
+      
     </div>
   </div>
 </section>

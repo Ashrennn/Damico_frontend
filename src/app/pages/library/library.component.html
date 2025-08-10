@@ -7,24 +7,36 @@
 <section class="dmc-library-hero">
   <div class="dmc-library-hero-content">
     <div class="dmc-library-hero-text">
-      <h1>{{ hero.title }}</h1>
-      <p class="dmc-library-hero-subtitle">{{ hero.subtitle }}</p>
+      <h1>Welcome to<br>Damico Group</h1>
+      <p class="dmc-library-hero-subtitle">Excellence in oil exports, lubrication<br>and community impact.</p>
       <div class="dmc-library-hero-meta">
-        <span>{{ hero.date }}</span> | <span>{{ hero.location }}</span>
+        <span>Tuesday, April 1, 2025</span><br>
+        <span>Dubai (UAE)</span>
       </div>
     </div>
     <div class="dmc-library-hero-clock">
-      <!-- Placeholder for clock -->
       <div class="dmc-library-clock">
-        <svg width="180" height="180" viewBox="0 0 180 180">
-          <circle cx="90" cy="90" r="85" stroke="#222" stroke-width="4" fill="#fff"/>
-          <line x1="90" y1="90" x2="90" y2="40" stroke="#222" stroke-width="6" stroke-linecap="round"/>
-          <line x1="90" y1="90" x2="140" y2="90" stroke="#e53935" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="90" cy="90" r="8" fill="#222"/>
+        <svg width="220" height="220" viewBox="0 0 220 220">
+          <!-- Clock face -->
+          <circle cx="110" cy="110" r="105" stroke="none" fill="#374151"/>
+          
+          <!-- Clock hands positioned exactly like the image -->
+          <!-- Hour hand (shorter, pointing to around 10) -->
+          <line x1="110" y1="110" x2="80" y2="70" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          
+          <!-- Minute hand (longer, pointing to around 2) -->
+          <line x1="110" y1="110" x2="150" y2="60" stroke="white" stroke-width="5" stroke-linecap="round"/>
+          
+          <!-- Second hand (thin red, pointing to around 4) -->
+          <line x1="110" y1="110" x2="170" y2="110" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+          
+          <!-- Center dot -->
+          <circle cx="110" cy="110" r="5" fill="white"/>
         </svg>
       </div>
     </div>
   </div>
+  
   <div class="dmc-library-hero-features">
     <div *ngFor="let feature of features" class="dmc-library-hero-feature">
       <div class="dmc-library-hero-feature-title">{{ feature.title }}</div>
@@ -47,33 +59,106 @@
 <section class="dmc-library-kind-mohade">
   <div class="dmc-library-kind">
     <img [src]="beKind.image" alt="Be Kind" class="dmc-library-kind-image" />
-    <div class="dmc-library-kind-text">{{ beKind.text }}</div>
   </div>
   <div class="dmc-library-mohade">
-    <h3>{{ mohade.title }}</h3>
-    <p class="dmc-library-mohade-desc">{{ mohade.desc }}</p>
+    <h3>For the Love of Mohade</h3>
+    <p class="dmc-library-mohade-desc">
+      "She was my light, my strength, and my endless source of inspiration. 
+      Mohade believed that no act of kindness was too small, no dream too far to 
+      reach. Her heart embraced the world, and her hands worked tirelessly to 
+      make it better."
+    </p>
+    <p class="dmc-library-mohade-desc">
+      The Mohade Charity Foundation is her legacy—a testament to her 
+      unwavering compassion and dedication to those in need. Through this 
+      foundation, her love continues to shine, touching countless lives and 
+      spreading hope where it is most needed.
+    </p>
+    <p class="dmc-library-mohade-quote">
+      This is not just her story—it is the story of everyone who 
+      believes in the power of giving. Together, we carry her dream 
+      forward.
+    </p>
   </div>
 </section>
-
-<!-- SPECIAL THANKS SECTION -->
-<section class="dmc-library-special">
-  <div class="dmc-library-special-card">
-    <h4>{{ specialThanks.title }}</h4>
-    <p>{{ specialThanks.desc }}</p>
-  </div>
-</section>
-
-<!-- BOTTOM CARDS SECTION -->
-<section class="dmc-library-bottom-cards">
-  <div class="dmc-library-bottom-cards-row">
-    <div *ngFor="let card of bottomCards" class="dmc-library-bottom-card">
-      <div class="dmc-library-bottom-card-title">{{ card.title }}</div>
-      <div class="dmc-library-bottom-card-desc">{{ card.desc }}</div>
+<!-- COMBINED SPECIAL THANKS AND BOTTOM CARDS SECTION -->
+<section class="dmc-library-special-bottom-section">
+  <div class="dmc-library-special-bottom-container">
+    
+    <!-- Special Thanks Card - Top Center -->
+    <div class="dmc-library-special-card">
+      <h4>Special Thanks</h4>
+      <p>We deeply appreciate Az Corp Inc for their trust, unwavering support, and shared belief in Damico's mission to create sustainable and impactful solutions for global progress.</p>
     </div>
+    
+    <!-- Image Card - Top Right with Ferris Wheel -->
+    <div class="dmc-library-image-card">
+      <div class="dmc-library-image-card-content">
+        <div class="dmc-library-image-card-title">Visionary Leadership</div>
+        <div class="dmc-library-image-card-desc">"The future belongs to those who believe in their dreams. Damico embraces this with determination, ambition, and transformative intention for a better tomorrow."</div>
+      </div>
+    </div>
+    
+    <!-- Bottom Left Card - Building Sustainable Future -->
+    <div class="dmc-library-bottom-card">
+      <div class="dmc-library-bottom-card-title">Building a Sustainable Future</div>
+      <div class="dmc-library-bottom-card-desc">Damico leads with innovation and sustainability, advancing energy solutions that empower global communities, build lasting partnerships, and drive progress. It creates fuel for a brighter and better future.</div>
+    </div>
+    
+    <!-- Bottom Center Card - Empowering Communities -->
+    <div class="dmc-library-bottom-card">
+      <div class="dmc-library-bottom-card-title">Empowering Communities</div>
+      <div class="dmc-library-bottom-card-desc">At Damico, we are committed to uplifting communities, empowering people, and making meaningful differences globally through innovative energy solutions and accessible, sustainable technologies.</div>
+    </div>
+    
   </div>
 </section>
 
 <!-- FOOTER (reuse from home/footer if needed) -->
-<footer class="dmc-library-footer">
-  <!-- Footer content here or reuse home/footer -->
-</footer>
+<div class="footer-section">
+  <div class="footer-background"></div>
+  
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Logo and Employee Portal -->
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="/assets/favicon.ico" alt="Damico Energy Logo" class="logo-image">
+          <span class="logo-text">Damico Energy</span>
+        </div>
+        <button class="employee-portal-btn">Employee Portal</button>
+        <div class="security-logos">
+          <div class="security-logo">COMODO Creating Trust Online®</div>
+          <div class="security-logo">SECTIGO</div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>COMPANY</h4>
+          <a href="#">About</a>
+          <a href="#">News & Content</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>SERVICES</h4>
+          <a href="#">Damilube</a>
+          <a href="#">Vessel Brokerage</a>
+          <a href="#">Bunker Trade</a>
+          <a href="#">Trade Desk</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>ADDRESS</h4>
+          <span>Damico Energy</span>
+          <span>Hamriyah Free Zone</span>
+          <span>Sharjah - UAE</span>
+          <span>274452</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
